@@ -1,6 +1,6 @@
 [project]
-name = "agentclientkernel"
-version = "0.1.0"
+name = "agent-client-kernel"
+version = "0.2.0"
 description = "A Jupyter Kernel for Agent Client Protocol using MetaKernel"
 authors = [
     { name = "Jim White", email = "jim@jimwhite.net" }
@@ -23,7 +23,6 @@ dependencies = [
     "ipykernel>=7.0",
     "jupyter-client>=8.5",
     "agent-client-protocol>=0.4.0",
-    "metakernel @ file:./metakernel",
     "nest-asyncio>=1.6.0",
 ]
 
@@ -32,14 +31,20 @@ Homepage = "https://github.com/jimwhite/agent-client-kernel"
 Repository = "https://github.com/jimwhite/agent-client-kernel"
 
 [project.scripts]
-jupyter-agentclientkernel = "agentclientkernel.__main__:main"
+jupyter-agent-client-kernel = "agent_client_kernel.__main__:main"
 
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
 
-[tool.setuptools]
-packages = ["agentclientkernel"]
+[tool.hatch.build.targets.wheel]
+packages = [
+    "agent_client_kernel",
+    "metakernel",
+]
 
-[tool.setuptools.package-data]
-agentclientkernel = ["resources/*.png"]
+[tool.poetry]
+packages = [
+    { include = "agent_client_kernel" },
+    { include = "metakernel" },
+]

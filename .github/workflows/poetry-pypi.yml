@@ -1,0 +1,72 @@
+# .github/workflows/poetry-pypi.yml
+name: Publish Python Package w/ Poetry
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag name (e.g., v0.1.0)'
+        required: true
+        type: string
+      prerelease:
+        description: 'Mark as pre-release'
+        required: false
+        type: boolean
+        default: false
+
+#TODO: Need to update pyproject.toml version automatically
+
+permissions:
+  contents: write  # Needed to create tags and releases
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: publishing
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for proper tagging
+          submodules: 'recursive' # Get jimwhite/metakernel
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python -
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Create and Push Tag
+        run: |
+          git tag -a "${{ inputs.tag_name }}" -m "Release ${{ inputs.tag_name }}"
+          git push origin "${{ inputs.tag_name }}"
+
+      - name: Build package
+        run: poetry build
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.tag_name }}
+          name: Release ${{ inputs.tag_name }}
+          files: dist/*
+          prerelease: ${{ inputs.prerelease }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to PyPI
+        env:
+          PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          poetry config pypi-token.pypi ${PYPI_API_TOKEN}
+          poetry publish
