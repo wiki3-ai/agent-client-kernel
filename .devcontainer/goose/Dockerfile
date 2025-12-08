@@ -29,4 +29,4 @@ RUN cd /home/jovyan/agent-client-kernel \
     && pip install --upgrade uv jupyter-mcp-tools \
     && git submodule update --init --recursive \
     && pip install -e . \
-    && python -m agentclientkernel install --user
+    && python -m agent_client_kernel install --user

@@ -1,0 +1,41 @@
+{
+    "name": "JupyterLab: OpenHands ACP",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "../.."
+    },
+    "forwardPorts": [
+        8888
+    ],
+    "portsAttributes": {
+        "8888": {
+            "label": "Jupyter",
+            "requireLocalPort": true
+        }
+    },
+    "remoteEnv": {
+      "OPENAI_API_KEY": "${localEnv:OPENAI_API_KEY}",
+      "ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}",
+      "GOOGLE_API_KEY": "${localEnv:GOOGLE_API_KEY}"
+    },
+    "secrets": {
+      "OPENAI_API_KEY": {
+        "description": "Your OpenAI API key for accessing OpenAI services.",
+        "documentationUrl": "https://docs.github.com/en/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces"
+      },
+      "ANTHROPIC_API_KEY": {
+        "description": "Your Anthropic API key for accessing Claude models.",
+        "documentationUrl": "https://docs.github.com/en/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces"
+      },
+      "GOOGLE_API_KEY": {
+        "description": "Your Google API key for accessing Google AI services.",
+        "documentationUrl": "https://docs.github.com/en/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces"
+      }
+    },
+    "containerEnv": {
+        "JUPYTER_PORT": "8888",
+        "GRANT_SUDO": "yes",
+        "ACP_AGENT_COMMAND": "openhands",
+        "ACP_AGENT_ARGS": "acp"
+    }
+}

@@ -48,7 +48,7 @@ Alternatively, install the package, agent, and kernel:
 pip install --upgrade uv jupyter-mcp-tools
 git submodule update --init --recursive
 pip install -e .
-python -m agentclientkernel install --user
+python -m agent_client_kernel install --user
 ```
 
 ## Configuration
@@ -171,7 +171,7 @@ See the example notebooks in `examples/` for demonstrations:
 
 ```bash
 jupyter kernelspec remove agentclient
-pip uninstall agentclientkernel
+pip uninstall agent_client_kernel
 ```
 
 ## License

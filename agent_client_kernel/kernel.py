@@ -403,7 +403,7 @@ class ACPKernel(MetaKernel):
     }
     
     kernel_json = {
-        'argv': [sys.executable, '-m', 'agentclientkernel', '-f', '{connection_file}'],
+        'argv': [sys.executable, '-m', 'agent_client_kernel', '-f', '{connection_file}'],
         'display_name': DISPLAY_NAME,
         'language': 'agent',
         'name': KERNEL_NAME
@@ -443,7 +443,7 @@ class ACPKernel(MetaKernel):
         
         # Load the unified agent magic module
         try:
-            module = importlib.import_module('agentclientkernel.magics.agent_magic')
+            module = importlib.import_module('agent_client_kernel.magics.agent_magic')
             if hasattr(module, 'register_magics'):
                 module.register_magics(self)
                 self._log.info("Loaded unified agent magic")
@@ -515,7 +515,7 @@ Supported agents:
         if expr.lower() in ['agent', '%agent']:
             # Get the agent magic's docstring (same as %agent?)
             try:
-                from agentclientkernel.magics.agent_magic import AgentMagic
+                from agent_client_kernel.magics.agent_magic import AgentMagic
                 agent_magic = AgentMagic(self)
                 return agent_magic.line_agent.__doc__ or "No help available for %agent"
             except:
