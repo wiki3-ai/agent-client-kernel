@@ -14,15 +14,33 @@ The kernel spawns and communicates with external ACP agents (such as codex-acp) 
 
 - **ACP Client Implementation**: Full client-side ACP protocol support
 - **External Agent Integration**: Connects to any ACP-compatible agent
-- **Codex Support**: Works with OpenAI Codex out of the box
+- **Multiple Agent Support**: Pre-configured devcontainers for Codex, Gemini, Goose, Kimi, and Docker cagent
 - **Based on MetaKernel**: Built-in magics (help, shell, file operations, etc.)
 - **Configurable**: Easily switch between different agents via environment variables
 - **Compatible with JupyterLab and Jupyter Notebook**
 
 ## Installation
 
-Just use the Dockerfile by opening the devcontainer in GitHub Codespaces or locally.  
-After JupyterLab starts, open a Terminal and run `codex`.  Follow prompts for API key and authorization then `/quit`.
+### Using Devcontainers
+
+This project provides multiple devcontainer configurations for different ACP agents. Each devcontainer comes with JupyterLab and the agent-client-kernel pre-installed with the respective agent.
+
+**Available devcontainers:**
+- `.devcontainer/codex/` - OpenAI Codex with ACP adapter
+- `.devcontainer/gemini/` - Google Gemini CLI (Apache 2.0)
+- `.devcontainer/goose/` - Block's Goose agent (Apache 2.0)
+- `.devcontainer/kimi/` - MoonshotAI's Kimi CLI (Apache 2.0)
+- `.devcontainer/cagent/` - Docker's cagent (Apache 2.0)
+
+**To use a devcontainer:**
+1. Open the repository in GitHub Codespaces or VS Code with Dev Containers extension
+2. When prompted, select the desired devcontainer (e.g., "Codex", "Gemini", etc.)
+3. Wait for the container to build and start
+4. JupyterLab will be available on port 8888
+
+**For Codex:** After JupyterLab starts, open a Terminal and run `codex`. Follow prompts for API key and authorization then `/quit`.
+
+### Manual Installation
 
 Alternatively, install the package, agent, and kernel:
 

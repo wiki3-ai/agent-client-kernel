@@ -1,0 +1,22 @@
+{
+    "name": "JupyterLab: Gemini ACP",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "../.."
+    },
+    "forwardPorts": [
+        8888
+    ],
+    "portsAttributes": {
+        "8888": {
+            "label": "Jupyter",
+            "requireLocalPort": true
+        }
+    },
+    "containerEnv": {
+        "JUPYTER_PORT": "8888",
+        "GRANT_SUDO": "yes",
+        "ACP_AGENT_COMMAND": "gemini",
+        "ACP_AGENT_ARGS": "--experimental-acp"
+    }
+}

@@ -1,9 +1,9 @@
 {
-    "name": "JupyterLab withAgent Client Kernel",
+    "name": "JupyterLab: cagent ACP",
     "build": {
-        "dockerfile": "../Dockerfile"
+        "dockerfile": "Dockerfile",
+        "context": "../.."
     },
-    // "remoteUser": "root",
     "forwardPorts": [
         8888
     ],
@@ -15,7 +15,8 @@
     },
     "containerEnv": {
         "JUPYTER_PORT": "8888",
-        "GRANT_SUDO": "yes"
-        // "RESTARTABLE": "yes"
+        "GRANT_SUDO": "yes",
+        "ACP_AGENT_COMMAND": "cagent",
+        "ACP_AGENT_ARGS": "acp"
     }
 }
