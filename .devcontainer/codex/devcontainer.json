@@ -39,5 +39,6 @@
         "ACP_AGENT_COMMAND": "codex-acp",
         "ACP_AGENT_ARGS": ""
         // "RESTARTABLE": "yes"
-    }
+    },
+    "postStartCommand": "jupyter lab"
 }
