@@ -37,5 +37,6 @@
         "GRANT_SUDO": "yes",
         "ACP_AGENT_COMMAND": "openhands",
         "ACP_AGENT_ARGS": "acp"
-    }
+    },
+    "postStartCommand": "echo jupyter lab"
 }
