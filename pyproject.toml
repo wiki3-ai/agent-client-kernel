@@ -3,7 +3,7 @@ name = "agent-client-kernel"
 version = "0.2.0"
 description = "A Jupyter Kernel for Agent Client Protocol using MetaKernel"
 authors = [
-    { name = "Jim White", email = "jim@jimwhite.net" }
+    { name = "Jim White", email = "jim@fovi.com" }
 ]
 readme = "README.md"
 license = "BSD-3-Clause"
