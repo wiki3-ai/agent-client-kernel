@@ -10,13 +10,11 @@ RUN npm install -g @openai/codex@latest @zed-industries/codex-acp@latest
 
 USER jovyan
 
-COPY --chown=jovyan:users . /home/jovyan/agent-client-kernel
+COPY --chown=jovyan:users . .
 
-WORKDIR /home/jovyan
-
-RUN cd /home/jovyan/agent-client-kernel \
-    && pip install --upgrade pip \
-    && pip install --upgrade uv jupyter-mcp-tools \
+RUN pip install --upgrade pip \
+    && pip install --upgrade jupyter-mcp-tools \
     && git submodule update --init --recursive \
+    && pip install -e metakernel/ \
     && pip install -e . \
     && python -m agent_client_kernel install --user

@@ -40,5 +40,6 @@
         "ACP_AGENT_ARGS": ""
         // "RESTARTABLE": "yes"
     },
-    "postStartCommand": "jupyter lab"
+    // Codespaces ports are private by default so skip the auth token"
+    "postStartCommand": "jupyter lab --NotebookApp.token=''"
 }
