@@ -22,7 +22,7 @@ classifiers = [
 dependencies = [
     "ipykernel>=7.0",
     "jupyter-client>=8.5",
-    "agent-client-protocol>=0.7.0",
+    "agent-client-protocol @ git+https://github.com/agentclientprotocol/python-sdk.git",
 ]
 
 [project.optional-dependencies]
@@ -42,6 +42,9 @@ jupyter-agent-client-kernel = "agent_client_kernel.__main__:main"
 [build-system]
 requires = ["hatchling>=1.25"]
 build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = [

@@ -37,6 +37,7 @@ from acp.schema import (
     CurrentModeUpdate,
     DeniedOutcome,
     EmbeddedResourceContentBlock,
+    EnvVariable,
     ImageContentBlock,
     McpServerStdio,
     PermissionOption,
@@ -68,7 +69,7 @@ class MCPServer:
     name: str
     command: str
     args: list[str] = field(default_factory=list)
-    env: list[dict[str, str]] = field(default_factory=list)
+    env: dict[str, str] = field(default_factory=dict)
 
 
 @dataclass
@@ -379,10 +380,14 @@ class ACPKernel(Kernel):
                     name=server.name,
                     command=server.command,
                     args=server.args,
-                    env=server.env,
+                    env=[EnvVariable(name=k, value=v) for k, v in server.env.items()],
                 )
                 for server in self.state.mcp_servers
             ]
+
+            self._log.info("Creating session with %d MCP servers", len(mcp_servers))
+            for server in self.state.mcp_servers:
+                self._log.info("  MCP server: %s -> %s %s", server.name, server.command, server.args)
 
             session = await self._conn.new_session(mcp_servers=mcp_servers, cwd=self.state.cwd)
             self.state.session_id = session.session_id
@@ -419,9 +424,49 @@ class ACPKernel(Kernel):
         self.state.session_id = None
 
     async def _restart_session(self) -> None:
-        """Restart the agent session (e.g., after MCP config change)."""
+        """Restart the agent session (e.g., after config change)."""
         await self._stop_agent()
         await self._start_agent()
+
+    async def _resume_session(self) -> bool:
+        """
+        Resume the session with updated MCP servers.
+        
+        Uses the ACP resume_session method to update the session without
+        restarting. Returns True if successful, False if the agent doesn't
+        support resume_session (in which case a restart is needed).
+        """
+        if not self.is_connected or not self._conn or not self.state.session_id:
+            return False
+
+        # Build MCP servers list
+        mcp_servers = [
+            McpServerStdio(
+                name=server.name,
+                command=server.command,
+                args=server.args,
+                env=[EnvVariable(name=k, value=v) for k, v in server.env.items()],
+            )
+            for server in self.state.mcp_servers
+        ]
+
+        try:
+            self._log.info("Resuming session with %d MCP servers", len(mcp_servers))
+            for server in self.state.mcp_servers:
+                self._log.info("  MCP server: %s -> %s %s", server.name, server.command, server.args)
+
+            await self._conn.resume_session(
+                session_id=self.state.session_id,
+                cwd=self.state.cwd,
+                mcp_servers=mcp_servers,
+            )
+            self._log.info("Session resumed successfully")
+            return True
+        except RequestError as e:
+            if "Method not found" in str(e):
+                self._log.info("Agent does not support resume_session")
+                return False
+            raise
 
     async def _send_prompt(self, code: str) -> str:
         """Send a prompt to the agent and return the response."""
@@ -457,7 +502,7 @@ class ACPKernel(Kernel):
             self._log.error("Error sending prompt: %s", e, exc_info=True)
             raise
 
-    def _handle_magic(self, line: str) -> tuple[bool, str | None]:
+    async def _handle_magic(self, line: str) -> tuple[bool, str | None]:
         """
         Handle magic commands.
         
@@ -480,7 +525,11 @@ class ACPKernel(Kernel):
         # Route to magic handlers
         handler = getattr(self, f"_magic_{magic_name}", None)
         if handler:
-            return True, handler(args.strip())
+            result = handler(args.strip())
+            # Support async handlers
+            if asyncio.iscoroutine(result):
+                result = await result
+            return True, result
 
         return True, f"Unknown magic command: %{magic_name}"
 
@@ -525,7 +574,7 @@ Configuration:
   %agent env                             - Show environment variables
 """
 
-    def _magic_agent_mcp(self, args: str) -> str:
+    async def _magic_agent_mcp(self, args: str) -> str:
         """Handle %agent mcp subcommand."""
         if not args:
             return self._magic_agent_mcp_list("")
@@ -535,17 +584,17 @@ Configuration:
         action_args = parts[1] if len(parts) > 1 else ""
 
         if action == "add":
-            return self._magic_agent_mcp_add(action_args)
+            return await self._magic_agent_mcp_add(action_args)
         elif action == "list":
             return self._magic_agent_mcp_list(action_args)
         elif action == "remove":
-            return self._magic_agent_mcp_remove(action_args)
+            return await self._magic_agent_mcp_remove(action_args)
         elif action == "clear":
-            return self._magic_agent_mcp_clear(action_args)
+            return await self._magic_agent_mcp_clear(action_args)
 
         return f"Unknown mcp action: {action}"
 
-    def _magic_agent_mcp_add(self, args: str) -> str:
+    async def _magic_agent_mcp_add(self, args: str) -> str:
         """Add an MCP server."""
         if not args:
             return "Usage: %agent mcp add NAME COMMAND [ARGS...]"
@@ -558,16 +607,27 @@ Configuration:
         command = parts[1]
         server_args = parts[2].split() if len(parts) > 2 else []
 
-        # Check if server exists
+        # Check if server exists (update in place)
+        updated = False
         for i, server in enumerate(self.state.mcp_servers):
             if server.name == name:
                 self.state.mcp_servers[i] = MCPServer(name=name, command=command, args=server_args)
-                self._schedule_session_restart()
-                return f"Updated MCP server '{name}'"
+                updated = True
+                break
 
-        self.state.mcp_servers.append(MCPServer(name=name, command=command, args=server_args))
-        self._schedule_session_restart()
-        return f"Added MCP server '{name}'"
+        if not updated:
+            self.state.mcp_servers.append(MCPServer(name=name, command=command, args=server_args))
+
+        action = "Updated" if updated else "Added"
+        
+        if self.is_connected:
+            # Try to use resume_session to apply changes without restart
+            if await self._resume_session():
+                return f"{action} MCP server '{name}'. Session updated."
+            else:
+                return f"{action} MCP server '{name}'. Run %agent session restart to apply."
+        else:
+            return f"{action} MCP server '{name}'. It will be available when the session starts."
 
     def _magic_agent_mcp_list(self, args: str) -> str:
         """List MCP servers."""
@@ -580,7 +640,7 @@ Configuration:
             lines.append(f"  - {server.name}: {server.command} {args_str}")
         return "\n".join(lines)
 
-    def _magic_agent_mcp_remove(self, args: str) -> str:
+    async def _magic_agent_mcp_remove(self, args: str) -> str:
         """Remove an MCP server."""
         if not args:
             return "Usage: %agent mcp remove NAME"
@@ -589,17 +649,26 @@ Configuration:
         for i, server in enumerate(self.state.mcp_servers):
             if server.name == name:
                 self.state.mcp_servers.pop(i)
-                self._schedule_session_restart()
+                if self.is_connected:
+                    # Try to use resume_session to apply changes without restart
+                    if await self._resume_session():
+                        return f"Removed MCP server '{name}'. Session updated."
+                    else:
+                        return f"Removed MCP server '{name}'. Run %agent session restart to apply."
                 return f"Removed MCP server '{name}'"
 
         return f"No MCP server named '{name}' found"
 
-    def _magic_agent_mcp_clear(self, args: str) -> str:
+    async def _magic_agent_mcp_clear(self, args: str) -> str:
         """Clear all MCP servers."""
         count = len(self.state.mcp_servers)
         self.state.mcp_servers = []
-        if count > 0:
-            self._schedule_session_restart()
+        if count > 0 and self.is_connected:
+            # Try to use resume_session to apply changes without restart
+            if await self._resume_session():
+                return f"Removed {count} MCP server(s). Session updated."
+            else:
+                return f"Removed {count} MCP server(s). Run %agent session restart to apply."
         return f"Removed {count} MCP server(s)"
 
     def _magic_agent_session(self, args: str) -> str:
@@ -620,7 +689,7 @@ Configuration:
 
         return f"Unknown session action: {action}"
 
-    def _magic_agent_session_new(self, args: str) -> str:
+    async def _magic_agent_session_new(self, args: str) -> str:
         """Create a new session."""
         cwd = args.strip() if args.strip() else os.getcwd()
 
@@ -628,8 +697,8 @@ Configuration:
             return f"Directory does not exist: {cwd}"
 
         self.state.cwd = cwd
-        self._schedule_session_restart()
-        return f"Creating new session with working directory: {cwd}"
+        await self._restart_session()
+        return f"Created new session with working directory: {cwd}"
 
     def _magic_agent_session_info(self, args: str) -> str:
         """Show session information."""
@@ -648,10 +717,10 @@ Configuration:
 
         return "\n".join(lines)
 
-    def _magic_agent_session_restart(self, args: str) -> str:
+    async def _magic_agent_session_restart(self, args: str) -> str:
         """Restart the session."""
-        self._schedule_session_restart()
-        return "Restarting session..."
+        await self._restart_session()
+        return f"Session restarted. Session ID: {self.state.session_id}"
 
     def _magic_agent_permissions(self, args: str) -> str:
         """Handle %agent permissions subcommand."""
@@ -695,12 +764,6 @@ Configuration:
             lines.append(f"  {name}: {value}")
         return "\n".join(lines)
 
-    def _schedule_session_restart(self) -> None:
-        """Schedule a session restart (runs in next execution)."""
-        if self.is_connected:
-            # Schedule restart as a task
-            asyncio.ensure_future(self._restart_session())
-
     async def do_execute(
         self,
         code: str,
@@ -720,7 +783,7 @@ Configuration:
             }
 
         # Check for magic commands
-        is_magic, magic_result = self._handle_magic(code)
+        is_magic, magic_result = await self._handle_magic(code)
         if is_magic:
             if magic_result and not silent:
                 self.send_response(
