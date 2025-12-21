@@ -92,6 +92,27 @@ class ACPClientImpl(Client):
         self._kernel = kernel
         self._log = logging.getLogger(f"{__name__}.ACPClient")
 
+    def _send_stream(self, name: str, text: str) -> None:
+        """Send stream output to the currently active cell."""
+        # Use the kernel's current parent header for proper cell association
+        parent = getattr(self._kernel, '_current_parent', None)
+        
+        if parent is not None and hasattr(self._kernel, 'session'):
+            # Use session.send with explicit parent for proper cell routing
+            self._kernel.session.send(
+                self._kernel.iopub_socket,
+                "stream",
+                {"name": name, "text": text},
+                parent=parent,
+            )
+        else:
+            # Fallback to send_response (may not route to correct cell)
+            self._kernel.send_response(
+                self._kernel.iopub_socket,
+                "stream",
+                {"name": name, "text": text},
+            )
+
     async def request_permission(
         self,
         options: list[PermissionOption],
@@ -156,11 +177,7 @@ class ACPClientImpl(Client):
             if isinstance(content, TextContentBlock):
                 self._kernel.state.response_text += content.text
                 # Stream output to notebook
-                self._kernel.send_response(
-                    self._kernel.iopub_socket,
-                    "stream",
-                    {"name": "stdout", "text": content.text},
-                )
+                self._send_stream("stdout", content.text)
             elif isinstance(content, ImageContentBlock):
                 self._kernel.state.response_text += "[image]"
             elif isinstance(content, AudioContentBlock):
@@ -170,11 +187,7 @@ class ACPClientImpl(Client):
             content = update.content
             if isinstance(content, TextContentBlock):
                 # Show thoughts as stderr (dimmed in notebooks)
-                self._kernel.send_response(
-                    self._kernel.iopub_socket,
-                    "stream",
-                    {"name": "stderr", "text": f"💭 {content.text}"},
-                )
+                self._send_stream("stderr", f"💭 {content.text}")
 
         elif isinstance(update, ToolCallStart):
             self._kernel.state.tool_calls[update.tool_call_id] = {
@@ -183,32 +196,20 @@ class ACPClientImpl(Client):
                 "status": update.status,
                 "started": True,
             }
-            self._kernel.send_response(
-                self._kernel.iopub_socket,
-                "stream",
-                {"name": "stderr", "text": f"\n🔧 {update.title or 'Tool call'} ({update.status or 'pending'})\n"},
-            )
+            self._send_stream("stderr", f"\n🔧 {update.title or 'Tool call'} ({update.status or 'pending'})\n")
 
         elif isinstance(update, ToolCallProgress):
             tool_state = self._kernel.state.tool_calls.get(update.tool_call_id, {})
             tool_state["status"] = update.status
             if update.status == "completed":
-                self._kernel.send_response(
-                    self._kernel.iopub_socket,
-                    "stream",
-                    {"name": "stderr", "text": f"✅ Tool {update.tool_call_id} completed\n"},
-                )
+                self._send_stream("stderr", f"✅ Tool {update.tool_call_id} completed\n")
 
         elif isinstance(update, AgentPlanUpdate):
             plan_text = "\n📋 Plan:\n"
             for entry in update.entries or []:
                 status_emoji = {"pending": "⏳", "in_progress": "🔄", "completed": "✅"}.get(entry.status, "•")
                 plan_text += f"  {status_emoji} {entry.content}\n"
-            self._kernel.send_response(
-                self._kernel.iopub_socket,
-                "stream",
-                {"name": "stderr", "text": plan_text},
-            )
+            self._send_stream("stderr", plan_text)
 
         elif isinstance(update, AvailableCommandsUpdate):
             self._kernel.state.available_commands = [
@@ -229,11 +230,7 @@ class ACPClientImpl(Client):
             pathlib_path = Path(path)
             pathlib_path.parent.mkdir(parents=True, exist_ok=True)
             pathlib_path.write_text(content)
-            self._kernel.send_response(
-                self._kernel.iopub_socket,
-                "stream",
-                {"name": "stderr", "text": f"📝 Wrote {path}\n"},
-            )
+            self._send_stream("stderr", f"📝 Wrote {path}\n")
             return WriteTextFileResponse()
         except Exception as e:
             self._log.error("Failed to write file %s: %s", path, e)
@@ -323,8 +320,11 @@ class ACPKernel(Kernel):
         self._conn: ClientSideConnection | None = None
         self._client: ACPClientImpl | None = None
 
-        # Session state
+        # Session state (per-kernel instance, so per-notebook)
         self.state = SessionState()
+
+        # Current parent header for proper cell association of async output
+        self._current_parent: dict | None = None
 
         # Agent configuration from environment
         self._agent_command = os.environ.get("ACP_AGENT_COMMAND", "codex-acp")
@@ -773,6 +773,13 @@ Configuration:
         allow_stdin: bool = False,
     ):
         """Execute code in the kernel."""
+        # Store the current parent header for proper cell association of async output
+        try:
+            self._current_parent = self.get_parent()
+        except AttributeError:
+            # In test environments, get_parent() may not work
+            self._current_parent = None
+
         code = code.strip()
         if not code:
             return {
