@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@openai/codex": "^0.77.0",
+    "@zed-industries/codex-acp": "^0.7.4"
+  }
+}

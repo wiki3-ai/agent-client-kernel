@@ -40,6 +40,7 @@
         "ACP_AGENT_ARGS": ""
         // "RESTARTABLE": "yes"
     },
-    // Codespaces ports are private by default so skip the auth token"
-    "postStartCommand": "jupyter lab --NotebookApp.token=''"
+    // Codespaces ports are private by default so skip the auth token.
+    // Need to disable XSRF check for Jupyter MCP servers if auth token is disabled.
+    // "postStartCommand": "jupyter lab --NotebookApp.token=''  --ServerApp.disable_check_xsrf=True"
 }
