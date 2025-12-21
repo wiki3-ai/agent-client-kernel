@@ -19,11 +19,11 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
+
 dependencies = [
     "ipykernel>=7.0",
     "jupyter-client>=8.5",
     "agent-client-protocol @ git+https://github.com/agentclientprotocol/python-sdk.git",
-    "jupyter-collaboration",
     "ipympl",
     "ipywidgets",
     "matplotlib",

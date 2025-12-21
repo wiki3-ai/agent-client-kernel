@@ -7,6 +7,6 @@ RUN npm install -g @openai/codex@latest @zed-industries/codex-acp@latest
 
 COPY --chown=jovyan:users . .
 
-RUN pip install --upgrade jupyter-mcp-tools \
+RUN pip install --upgrade uv jupyter-mcp-tools jupyter-collaboration \
     && pip install -e . \
     && python -m agent_client_kernel install --user
