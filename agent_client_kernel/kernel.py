@@ -10,8 +10,10 @@ import sys
 from pathlib import Path
 
 # Configure logging to output to stderr
+# Set ACP_LOG_LEVEL environment variable to DEBUG for verbose output
+log_level = os.environ.get('ACP_LOG_LEVEL', 'INFO').upper()
 logging.basicConfig(
-    level=logging.INFO,
+    level=getattr(logging, log_level, logging.INFO),
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     stream=sys.stderr
 )
@@ -53,9 +55,9 @@ class ACPClient(Client):
         self._log = logging.getLogger(__name__)
         self._terminals = {}  # Track active terminals by ID
     
-    async def requestPermission(self, params):
+    async def request_permission(self, options, session_id: str, tool_call, **kwargs):
         """Handle permission requests from the agent"""
-        self._log.info("Permission requested: %s", params)
+        self._log.info("Permission requested: options=%s, tool_call=%s", options, tool_call)
         
         # Get permission mode from kernel (default: auto)
         mode = getattr(self._kernel, '_permission_mode', 'auto')
@@ -72,16 +74,17 @@ class ACPClient(Client):
             # For now, fall back to auto-approve
             approved = True
             # Select the first 'allow' option if available
-            option_id = self._get_allow_option_id(params.options)
+            option_id = self._get_allow_option_id(options)
             outcome = AllowedOutcome(outcome='selected', optionId=option_id)
         else:  # auto mode
             approved = True
             # Select the first 'allow' option if available
-            option_id = self._get_allow_option_id(params.options)
+            option_id = self._get_allow_option_id(options)
             outcome = AllowedOutcome(outcome='selected', optionId=option_id)
         
         self._kernel._permission_history.append({
-            'request': str(params),
+            'options': str(options),
+            'tool_call': str(tool_call),
             'approved': approved
         })
         
@@ -99,15 +102,15 @@ class ACPClient(Client):
         # Ultimate fallback
         return 'approved'
     
-    async def writeTextFile(self, params):
+    async def write_text_file(self, content: str, path: str, session_id: str, **kwargs):
         """Handle file write requests"""
         from acp.schema import WriteTextFileResponse
         
-        self._log.info("Writing file: %s", params.path)
+        self._log.info("Writing file: %s", path)
         
         try:
             # Resolve the path relative to session CWD
-            file_path = Path(params.path)
+            file_path = Path(path)
             if not file_path.is_absolute():
                 file_path = Path(self._kernel._session_cwd) / file_path
             
@@ -115,92 +118,92 @@ class ACPClient(Client):
             file_path.parent.mkdir(parents=True, exist_ok=True)
             
             # Write the content to the file
-            file_path.write_text(params.content, encoding='utf-8')
+            file_path.write_text(content, encoding='utf-8')
             
             self._log.info("Successfully wrote file: %s", file_path)
             return WriteTextFileResponse()
         except Exception as e:
-            self._log.error("Error writing file %s: %s", params.path, e)
+            self._log.error("Error writing file %s: %s", path, e)
             raise RequestError.internal_error(f"Failed to write file: {str(e)}")
     
-    async def readTextFile(self, params):
+    async def read_text_file(self, path: str, session_id: str, limit: int = None, line: int = None, **kwargs):
         """Handle file read requests"""
         from acp.schema import ReadTextFileResponse
         
-        self._log.info("Reading file: %s", params.path)
+        self._log.info("Reading file: %s", path)
         
         try:
             # Resolve the path relative to session CWD
-            file_path = Path(params.path)
+            file_path = Path(path)
             if not file_path.is_absolute():
                 file_path = Path(self._kernel._session_cwd) / file_path
             
             # Check if file exists
             if not file_path.exists():
-                raise RequestError.invalid_params(f"File not found: {params.path}")
+                raise RequestError.invalid_params(f"File not found: {path}")
             
             # Read the file content
             content = file_path.read_text(encoding='utf-8')
             
             # Handle line parameter (read from specific line)
-            if params.line is not None:
+            if line is not None:
                 lines = content.splitlines(keepends=True)
-                if params.line > 0 and params.line <= len(lines):
+                if line > 0 and line <= len(lines):
                     # Get lines starting from the specified line
-                    content = ''.join(lines[params.line - 1:])
+                    content = ''.join(lines[line - 1:])
             
             # Handle limit parameter (limit number of characters)
-            if params.limit is not None and params.limit > 0:
-                content = content[:params.limit]
+            if limit is not None and limit > 0:
+                content = content[:limit]
             
             self._log.info("Successfully read file: %s (%d chars)", file_path, len(content))
             return ReadTextFileResponse(content=content)
         except RequestError:
             raise
         except Exception as e:
-            self._log.error("Error reading file %s: %s", params.path, e)
+            self._log.error("Error reading file %s: %s", path, e)
             raise RequestError.internal_error(f"Failed to read file: {str(e)}")
     
-    async def createTerminal(self, params):
+    async def create_terminal(self, command: str, session_id: str, args=None, cwd: str = None, env=None, output_byte_limit: int = None, **kwargs):
         """Handle terminal creation requests"""
         from acp.schema import CreateTerminalResponse
         import uuid
         
-        self._log.info("Creating terminal: %s %s", params.command, params.args or [])
+        self._log.info("Creating terminal: %s %s", command, args or [])
         
         try:
             # Generate a unique terminal ID
             terminal_id = str(uuid.uuid4())
             
             # Determine working directory
-            cwd = params.cwd
-            if cwd is None:
-                cwd = self._kernel._session_cwd
-            elif not Path(cwd).is_absolute():
-                cwd = str(Path(self._kernel._session_cwd) / cwd)
+            terminal_cwd = cwd
+            if terminal_cwd is None:
+                terminal_cwd = self._kernel._session_cwd
+            elif not Path(terminal_cwd).is_absolute():
+                terminal_cwd = str(Path(self._kernel._session_cwd) / terminal_cwd)
             
             # Prepare environment variables
-            env = os.environ.copy()
-            if params.env:
-                for env_var in params.env:
-                    env[env_var.name] = env_var.value
+            environ = os.environ.copy()
+            if env:
+                for env_var in env:
+                    environ[env_var.name] = env_var.value
             
             # Create the terminal process
             process = await asyncio.create_subprocess_exec(
-                params.command,
-                *(params.args or []),
+                command,
+                *(args or []),
                 stdin=aio_subprocess.PIPE,
                 stdout=aio_subprocess.PIPE,
                 stderr=aio_subprocess.STDOUT,  # Merge stderr into stdout
-                cwd=cwd,
-                env=env,
+                cwd=terminal_cwd,
+                env=environ,
             )
             
             # Store terminal state
             self._terminals[terminal_id] = {
                 'process': process,
                 'output_buffer': [],
-                'output_byte_limit': params.outputByteLimit or 1024 * 1024,  # Default 1MB
+                'output_byte_limit': output_byte_limit or 1024 * 1024,  # Default 1MB
                 'total_bytes': 0,
             }
             
@@ -243,11 +246,10 @@ class ACPClient(Client):
         except Exception as e:
             self._log.error("Error reading terminal output for %s: %s", terminal_id, e)
     
-    async def terminalOutput(self, params):
+    async def terminal_output(self, session_id: str, terminal_id: str, **kwargs):
         """Handle terminal output requests"""
         from acp.schema import TerminalOutputResponse, TerminalExitStatus
         
-        terminal_id = params.terminalId
         self._log.info("Getting output for terminal: %s", terminal_id)
         
         terminal = self._terminals.get(terminal_id)
@@ -279,11 +281,10 @@ class ACPClient(Client):
             exitStatus=exit_status
         )
     
-    async def releaseTerminal(self, params):
+    async def release_terminal(self, session_id: str, terminal_id: str, **kwargs):
         """Handle terminal release requests"""
         from acp.schema import ReleaseTerminalResponse
         
-        terminal_id = params.terminalId
         self._log.info("Releasing terminal: %s", terminal_id)
         
         terminal = self._terminals.get(terminal_id)
@@ -301,11 +302,10 @@ class ACPClient(Client):
         
         return ReleaseTerminalResponse()
     
-    async def waitForTerminalExit(self, params):
+    async def wait_for_terminal_exit(self, session_id: str, terminal_id: str, **kwargs):
         """Handle terminal exit wait requests"""
         from acp.schema import WaitForTerminalExitResponse
         
-        terminal_id = params.terminalId
         self._log.info("Waiting for terminal exit: %s", terminal_id)
         
         terminal = self._terminals.get(terminal_id)
@@ -324,11 +324,10 @@ class ACPClient(Client):
             signal=None  # Unix signals not easily accessible in asyncio
         )
     
-    async def killTerminal(self, params):
+    async def kill_terminal(self, session_id: str, terminal_id: str, **kwargs):
         """Handle terminal kill requests"""
         from acp.schema import KillTerminalCommandResponse
         
-        terminal_id = params.terminalId
         self._log.info("Killing terminal: %s", terminal_id)
         
         terminal = self._terminals.get(terminal_id)
@@ -356,33 +355,82 @@ class ACPClient(Client):
         
         return KillTerminalCommandResponse()
     
-    async def sessionUpdate(self, params: SessionNotification) -> None:
-        """Handle session updates from the agent"""
-        update = params.update
-        if isinstance(update, dict):
-            kind = update.get("sessionUpdate")
-            content = update.get("content")
-        else:
-            kind = getattr(update, "sessionUpdate", None)
+    async def session_update(self, session_id: str, update, **kwargs) -> None:
+        """Handle session updates from the agent
+        
+        ACP session/update notifications can include:
+        - agent_message_chunk: Streaming text from the agent
+        - user_message_chunk: (less common) User message echo
+        - thought_message_chunk: Agent's internal reasoning (AgentThoughtChunk)
+        - tool_call: A tool call has been initiated (ToolCallStart)
+        - tool_call_update: Progress/status update for a tool call (ToolCallProgress)
+        - plan: Agent's planned actions (AgentPlanUpdate)
+        - mode_change: Agent mode changed (CurrentModeUpdate)
+        """
+        import logging
+        log = logging.getLogger(__name__)
+        
+        # Debug: log the raw update
+        log.debug("session_update received: session_id=%s, update=%s, type=%s", session_id, update, type(update))
+        
+        # Get the update type from sessionUpdate field
+        kind = getattr(update, "sessionUpdate", None)
+        log.debug("Update kind: %s", kind)
+        
+        # Handle text message chunks (agent responses)
+        if kind == "agent_message_chunk":
             content = getattr(update, "content", None)
+            if content is not None:
+                text = getattr(content, "text", "")
+                log.debug("agent_message_chunk text: %s", text)
+                if text:
+                    self._kernel._agent_output.append(text)
         
-        if kind != "agent_message_chunk" or content is None:
-            return
+        # Handle thought/reasoning chunks (internal model reasoning)
+        elif kind == "thought_message_chunk":
+            content = getattr(update, "content", None)
+            if content is not None:
+                text = getattr(content, "text", "")
+                if text:
+                    self._kernel._agent_output.append(f"\n💭 *{text}*\n")
         
-        if isinstance(content, dict):
-            text = content.get("text", "")
-        else:
-            text = getattr(content, "text", "")
+        # Handle tool calls - show what tools the agent is using
+        elif kind == "tool_call":
+            title = getattr(update, "title", "")
+            status = getattr(update, "status", "pending")
+            if title:
+                self._kernel._agent_output.append(f"\n🔧 **Tool Call**: {title} ({status})\n")
         
-        if text:
-            # Send output to notebook
-            self._kernel._agent_output.append(text)
+        # Handle tool call status updates
+        elif kind == "tool_call_update":
+            status = getattr(update, "status", "")
+            content_items = getattr(update, "content", [])
+            
+            # If tool completed with output, show it
+            if status == "completed" and content_items:
+                for item in content_items if isinstance(content_items, list) else []:
+                    item_content = getattr(item, "content", None)
+                    if item_content:
+                        text = getattr(item_content, "text", "")
+                        if text:
+                            self._kernel._agent_output.append(f"\n📋 **Tool Result**:\n{text}\n")
+        
+        # Handle agent plans
+        elif kind == "plan":
+            entries = getattr(update, "entries", [])
+            if entries:
+                self._kernel._agent_output.append("\n📝 **Agent Plan**:\n")
+                for entry in entries:
+                    content_text = getattr(entry, "content", "")
+                    status = getattr(entry, "status", "")
+                    status_icon = {"pending": "⏳", "in_progress": "🔄", "completed": "✅"}.get(status, "")
+                    self._kernel._agent_output.append(f"  {status_icon} {content_text}\n")
     
-    async def extMethod(self, method: str, params: dict) -> dict:
+    async def ext_method(self, method: str, params: dict) -> dict:
         """Handle extension method calls"""
         raise RequestError.method_not_found(method)
     
-    async def extNotification(self, method: str, params: dict) -> None:
+    async def ext_notification(self, method: str, params: dict) -> None:
         """Handle extension notifications"""
         pass
 
@@ -721,7 +769,14 @@ Commands:
         self._session_id = None
     
     async def _send_prompt(self, code: str) -> str:
-        """Send a prompt to the agent and get the response"""
+        """Send a prompt to the agent and get the response
+        
+        The ACP protocol works as follows:
+        1. Client sends session/prompt request
+        2. Agent sends session/update notifications with streaming content
+           (agent_message_chunk, tool_call, plan, etc.)
+        3. Agent responds to session/prompt with PromptResponse containing stopReason
+        """
         # Ensure agent is started
         if self._conn is None or self._session_id is None:
             await self._start_agent()
@@ -729,19 +784,35 @@ Commands:
         # Clear previous output
         self._agent_output = []
         
-        # Send the prompt
-        await self._conn.prompt(
+        # Send the prompt and await the response
+        # The prompt() call blocks until the turn completes (stopReason is received)
+        # Meanwhile, session/update notifications are handled by sessionUpdate callback
+        response = await self._conn.prompt(
             PromptRequest(
                 sessionId=self._session_id,
                 prompt=[text_block(code)],
             )
         )
         
-        # Wait a bit for the response to accumulate
-        await asyncio.sleep(0.5)
+        # Log the stop reason for debugging
+        stop_reason = getattr(response, 'stopReason', None) if response else None
+        self._log.debug("Prompt completed with stopReason: %s", stop_reason)
         
-        # Return the accumulated output
-        return ''.join(self._agent_output) if self._agent_output else "No response from agent"
+        # Return the accumulated output from session/update notifications
+        if self._agent_output:
+            return ''.join(self._agent_output)
+        
+        # If no output was streamed, check if there's an issue
+        if stop_reason == 'refusal':
+            return "Agent refused to process the request"
+        elif stop_reason == 'cancelled':
+            return "Request was cancelled"
+        elif stop_reason == 'max_tokens':
+            return "Response truncated due to token limit"
+        elif stop_reason == 'max_turn_requests':
+            return "Maximum turn requests exceeded"
+        
+        return "No response from agent"
     
     def do_execute_direct(self, code):
         """
