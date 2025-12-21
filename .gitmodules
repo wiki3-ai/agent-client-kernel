@@ -1,4 +1,0 @@
-[submodule "metakernel"]
-	path = metakernel
-	url = https://github.com/jimwhite/metakernel.git
-	branch = ipykernel7
