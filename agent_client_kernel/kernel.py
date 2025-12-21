@@ -13,6 +13,7 @@ import logging
 import os
 import re
 import sys
+import uuid
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -34,20 +35,25 @@ from acp.schema import (
     AllowedOutcome,
     AudioContentBlock,
     AvailableCommandsUpdate,
+    CreateTerminalResponse,
     CurrentModeUpdate,
     DeniedOutcome,
     EmbeddedResourceContentBlock,
     EnvVariable,
     ImageContentBlock,
+    KillTerminalCommandResponse,
     McpServerStdio,
     PermissionOption,
     ReadTextFileResponse,
+    ReleaseTerminalResponse,
     RequestPermissionResponse,
     ResourceContentBlock,
+    TerminalOutputResponse,
     TextContentBlock,
     ToolCallProgress,
     ToolCallStart,
     ToolCallUpdate,
+    WaitForTerminalExitResponse,
     WriteTextFileResponse,
 )
 
@@ -62,6 +68,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Debug logging filter - comma-separated list of update types to log
+# e.g., ACP_DEBUG_UPDATES="AgentMessageChunk,ToolCallStart" or "all" for everything
+DEBUG_UPDATES = os.environ.get("ACP_DEBUG_UPDATES", "").split(",") if os.environ.get("ACP_DEBUG_UPDATES") else []
+
 
 @dataclass
 class MCPServer:
@@ -70,6 +80,17 @@ class MCPServer:
     command: str
     args: list[str] = field(default_factory=list)
     env: dict[str, str] = field(default_factory=dict)
+
+
+@dataclass
+class TerminalState:
+    """State for a terminal process."""
+    terminal_id: str
+    process: asyncio.subprocess.Process
+    output: str = ""
+    output_byte_limit: int | None = None
+    exit_code: int | None = None
+    cwd: str | None = None
 
 
 @dataclass
@@ -83,6 +104,7 @@ class SessionState:
     response_text: str = ""
     tool_calls: dict[str, dict[str, Any]] = field(default_factory=dict)
     available_commands: list[dict[str, Any]] = field(default_factory=list)
+    terminals: dict[str, TerminalState] = field(default_factory=dict)
 
 
 class ACPClientImpl(Client):
@@ -154,6 +176,38 @@ class ACPClientImpl(Client):
 
         return RequestPermissionResponse(outcome=DeniedOutcome(outcome="cancelled"))
 
+    def _should_log_update(self, update_type: str) -> bool:
+        """Check if this update type should be logged based on ACP_DEBUG_UPDATES."""
+        if not DEBUG_UPDATES:
+            return False
+        return "all" in DEBUG_UPDATES or update_type in DEBUG_UPDATES
+
+    def _get_update_summary(self, update: Any) -> str:
+        """Get a concise summary of an update for logging."""
+        if isinstance(update, AgentMessageChunk):
+            content = update.content
+            if isinstance(content, TextContentBlock):
+                text = content.text[:100] + "..." if len(content.text) > 100 else content.text
+                return f"text={text!r}"
+            return f"content_type={type(content).__name__}"
+        elif isinstance(update, AgentThoughtChunk):
+            content = update.content
+            if isinstance(content, TextContentBlock):
+                text = content.text[:100] + "..." if len(content.text) > 100 else content.text
+                return f"thought={text!r}"
+            return f"content_type={type(content).__name__}"
+        elif isinstance(update, ToolCallStart):
+            return f"tool={update.title}, kind={update.kind}, status={update.status}"
+        elif isinstance(update, ToolCallProgress):
+            return f"tool_id={update.tool_call_id}, status={update.status}"
+        elif isinstance(update, AgentPlanUpdate):
+            entries = [e.content[:30] for e in (update.entries or [])]
+            return f"entries={entries}"
+        elif isinstance(update, AvailableCommandsUpdate):
+            cmds = [c.name for c in (update.available_commands or [])]
+            return f"commands={cmds}"
+        return ""
+
     async def session_update(
         self,
         session_id: str,
@@ -170,7 +224,12 @@ class ACPClientImpl(Client):
         **kwargs: Any,
     ) -> None:
         """Handle session updates from the agent."""
-        self._log.debug("session_update: session_id=%s, type=%s", session_id, type(update).__name__)
+        update_type = type(update).__name__
+        
+        # Only log at DEBUG level if filtering is enabled and type matches
+        if self._should_log_update(update_type):
+            summary = self._get_update_summary(update)
+            self._log.debug("session_update: %s - %s", update_type, summary)
 
         if isinstance(update, AgentMessageChunk):
             content = update.content
@@ -264,25 +323,162 @@ class ACPClientImpl(Client):
             self._log.error("Failed to read file %s: %s", path, e)
             raise RequestError.internal_error(str(e))
 
-    async def create_terminal(self, *args, **kwargs):
-        """Terminal creation not implemented."""
-        raise RequestError.method_not_found("terminal/create")
+    async def create_terminal(
+        self,
+        command: str,
+        session_id: str,
+        args: list[str] | None = None,
+        cwd: str | None = None,
+        env: list[EnvVariable] | None = None,
+        output_byte_limit: int | None = None,
+        **kwargs: Any,
+    ) -> CreateTerminalResponse:
+        """Create a terminal and run a command."""
+        terminal_id = str(uuid.uuid4())
+        
+        # Build environment
+        proc_env = os.environ.copy()
+        if env:
+            for var in env:
+                proc_env[var.name] = var.value
+        
+        # Use session cwd if not specified
+        work_dir = cwd or self._kernel.state.cwd
+        
+        self._log.info("Creating terminal %s: %s %s (cwd=%s)", terminal_id, command, args or [], work_dir)
+        self._send_stream("stderr", f"🖥️ Running: {command} {' '.join(args or [])}\n")
+        
+        try:
+            # Start the process
+            process = await asyncio.create_subprocess_exec(
+                command,
+                *(args or []),
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.STDOUT,
+                cwd=work_dir,
+                env=proc_env,
+            )
+            
+            # Store terminal state
+            self._kernel.state.terminals[terminal_id] = TerminalState(
+                terminal_id=terminal_id,
+                process=process,
+                output="",
+                output_byte_limit=output_byte_limit,
+                cwd=work_dir,
+            )
+            
+            # Start background task to collect output
+            asyncio.create_task(self._collect_terminal_output(terminal_id))
+            
+            return CreateTerminalResponse(terminal_id=terminal_id)
+            
+        except Exception as e:
+            self._log.error("Failed to create terminal: %s", e)
+            raise RequestError.internal_error(str(e))
 
-    async def terminal_output(self, *args, **kwargs):
-        """Terminal output not implemented."""
-        raise RequestError.method_not_found("terminal/output")
+    async def _collect_terminal_output(self, terminal_id: str) -> None:
+        """Background task to collect terminal output."""
+        terminal = self._kernel.state.terminals.get(terminal_id)
+        if not terminal or not terminal.process.stdout:
+            return
+        
+        try:
+            while True:
+                chunk = await terminal.process.stdout.read(4096)
+                if not chunk:
+                    break
+                
+                text = chunk.decode("utf-8", errors="replace")
+                terminal.output += text
+                
+                # Apply byte limit by truncating from beginning
+                if terminal.output_byte_limit and len(terminal.output) > terminal.output_byte_limit:
+                    terminal.output = terminal.output[-terminal.output_byte_limit:]
+                
+                # Stream to notebook
+                self._send_stream("stdout", text)
+            
+            # Wait for process to complete and store exit code
+            await terminal.process.wait()
+            terminal.exit_code = terminal.process.returncode
+            
+        except Exception as e:
+            self._log.error("Error collecting terminal output: %s", e)
 
-    async def release_terminal(self, *args, **kwargs):
-        """Terminal release not implemented."""
-        raise RequestError.method_not_found("terminal/release")
+    async def terminal_output(
+        self,
+        session_id: str,
+        terminal_id: str,
+        **kwargs: Any,
+    ) -> TerminalOutputResponse:
+        """Get terminal output."""
+        terminal = self._kernel.state.terminals.get(terminal_id)
+        if not terminal:
+            raise RequestError.invalid_params({"terminal_id": terminal_id, "reason": "terminal not found"})
+        
+        from acp.schema import TerminalExitStatus
+        exit_status = None
+        if terminal.exit_code is not None:
+            exit_status = TerminalExitStatus(exit_code=terminal.exit_code)
+        
+        truncated = bool(terminal.output_byte_limit and len(terminal.output) >= terminal.output_byte_limit)
+        
+        return TerminalOutputResponse(
+            output=terminal.output,
+            truncated=truncated,
+            exit_status=exit_status,
+        )
 
-    async def wait_for_terminal_exit(self, *args, **kwargs):
-        """Terminal wait not implemented."""
-        raise RequestError.method_not_found("terminal/wait_for_exit")
+    async def release_terminal(
+        self,
+        session_id: str,
+        terminal_id: str,
+        **kwargs: Any,
+    ) -> ReleaseTerminalResponse | None:
+        """Release a terminal."""
+        terminal = self._kernel.state.terminals.pop(terminal_id, None)
+        if terminal and terminal.process.returncode is None:
+            terminal.process.terminate()
+            try:
+                await asyncio.wait_for(terminal.process.wait(), timeout=2.0)
+            except asyncio.TimeoutError:
+                terminal.process.kill()
+        
+        return ReleaseTerminalResponse()
 
-    async def kill_terminal(self, *args, **kwargs):
-        """Terminal kill not implemented."""
-        raise RequestError.method_not_found("terminal/kill")
+    async def wait_for_terminal_exit(
+        self,
+        session_id: str,
+        terminal_id: str,
+        **kwargs: Any,
+    ) -> WaitForTerminalExitResponse:
+        """Wait for terminal to exit."""
+        terminal = self._kernel.state.terminals.get(terminal_id)
+        if not terminal:
+            raise RequestError.invalid_params({"terminal_id": terminal_id, "reason": "terminal not found"})
+        
+        # Wait for process to complete
+        if terminal.process.returncode is None:
+            await terminal.process.wait()
+            terminal.exit_code = terminal.process.returncode
+        
+        return WaitForTerminalExitResponse(exit_code=terminal.exit_code)
+
+    async def kill_terminal(
+        self,
+        session_id: str,
+        terminal_id: str,
+        **kwargs: Any,
+    ) -> KillTerminalCommandResponse | None:
+        """Kill a terminal."""
+        terminal = self._kernel.state.terminals.get(terminal_id)
+        if terminal and terminal.process.returncode is None:
+            terminal.process.kill()
+            await terminal.process.wait()
+            terminal.exit_code = terminal.process.returncode
+        
+        return KillTerminalCommandResponse()
 
     async def ext_method(self, method: str, params: dict[str, Any]) -> dict[str, Any]:
         """Handle extension methods."""

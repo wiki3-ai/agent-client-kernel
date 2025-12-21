@@ -23,7 +23,13 @@ dependencies = [
     "ipykernel>=7.0",
     "jupyter-client>=8.5",
     "agent-client-protocol @ git+https://github.com/agentclientprotocol/python-sdk.git",
+    "jupyter-collaboration",
+    "ipympl",
+    "ipywidgets",
+    "matplotlib",
 ]
+
+# conda install -c conda-forge ipympl
 
 [project.optional-dependencies]
 dev = [
@@ -33,8 +39,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/jimwhite/agent-client-kernel"
-Repository = "https://github.com/jimwhite/agent-client-kernel"
+Homepage = "https://github.com/wiki3-ai/agent-client-kernel"
+Repository = "https://github.com/wiki3-ai/agent-client-kernel"
 
 [project.scripts]
 jupyter-agent-client-kernel = "agent_client_kernel.__main__:main"
