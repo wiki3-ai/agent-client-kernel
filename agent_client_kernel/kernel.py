@@ -698,11 +698,10 @@ Configuration:
     def _schedule_session_restart(self) -> None:
         """Schedule a session restart (runs in next execution)."""
         if self.is_connected:
-            # Run restart in the event loop
-            loop = asyncio.get_event_loop()
-            loop.create_task(self._restart_session())
+            # Schedule restart as a task
+            asyncio.ensure_future(self._restart_session())
 
-    def do_execute(
+    async def do_execute(
         self,
         code: str,
         silent: bool,
@@ -738,8 +737,7 @@ Configuration:
 
         # Send to agent
         try:
-            loop = asyncio.get_event_loop()
-            result = loop.run_until_complete(self._send_prompt(code))
+            result = await self._send_prompt(code)
             
             return {
                 "status": "ok",
@@ -766,12 +764,11 @@ Configuration:
                 "traceback": [error_msg],
             }
 
-    def do_shutdown(self, restart: bool):
+    async def do_shutdown(self, restart: bool):
         """Shutdown the kernel."""
         if self._proc is not None:
             try:
-                loop = asyncio.get_event_loop()
-                loop.run_until_complete(self._stop_agent())
+                await self._stop_agent()
             except Exception as e:
                 self._log.error("Error stopping agent: %s", e)
         return {"status": "ok", "restart": restart}

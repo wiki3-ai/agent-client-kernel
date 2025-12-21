@@ -2,12 +2,13 @@
 Entry point for the Agent Client Protocol kernel
 """
 
+from ipykernel.kernelapp import IPKernelApp
 from .kernel import ACPKernel
 
 
 def main():
     """Entry point for the kernel"""
-    ACPKernel.run_as_main()
+    IPKernelApp.launch_instance(kernel_class=ACPKernel)
 
 
 if __name__ == '__main__':
