@@ -27,6 +27,8 @@ dependencies = [
     "ipympl",
     "ipywidgets",
     "matplotlib",
+    "jupyter-mcp-tools",
+    "jupyter-collaboration"
 ]
 
 # conda install -c conda-forge ipympl

@@ -14,8 +14,6 @@ RUN echo 'source ${VIRTUAL_ENV}/bin/activate' >> ${HOME}/.bashrc
 ENV PATH="${VIRTUAL_ENV}/bin:${PATH}"
 
 # Install packages in the user venv
-RUN pip install --upgrade pip \
-  && pip install git+https://github.com/jimwhite/metakernel.git@ipykernel7 \
-  && pip install openhands jupyter-mcp-tools \
+RUN pip install openhands jupyter-mcp-tools \
   && pip install -e . \
   && python -m agent_client_kernel install --user 
