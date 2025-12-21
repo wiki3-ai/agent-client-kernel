@@ -1,17 +1,27 @@
 FROM quay.io/jupyter/minimal-notebook:latest
 
+# Install nodejs and graphviz via conda (no root required)
+# RUN conda install -y -c conda-forge nodejs graphviz && \
+#     conda clean -afy
 RUN conda install -y -c conda-forge nodejs graphviz
 
-# Install npm packages
+# Install npm packages globally (jovyan user)
 RUN npm install -g @openai/codex@latest @zed-industries/codex-acp@latest
 
+# Copy project files with correct ownership
 COPY --chown=jovyan:users . .
 
-RUN conda create -n jupyter \
-    && conda init --all
+# Install uv and project dependencies
+# Using conda run to ensure we're in the base conda environment
+# Then using uv for fast Python package installation
+SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
 
-RUN conda activate jupyter \
-    && pip install "uv>0.9.15" \
-    && uv sync \
-    && uv pip install --link-mode=copy -e . \
-    && python -m agent_client_kernel install --user 
+RUN pip install --upgrade "uv>=0.9.15"
+
+# Use uv to install dependencies from pyproject.toml
+# --system flag tells uv to install into the current environment (conda base)
+# --no-cache reduces image size
+RUN uv pip install --system --no-cache -e .
+
+# Install the kernel for the current user
+RUN python -m agent_client_kernel install --user
