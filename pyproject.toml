@@ -1,7 +1,7 @@
 [project]
 name = "agent-client-kernel"
-version = "0.2.0"
-description = "A Jupyter Kernel for Agent Client Protocol using MetaKernel"
+version = "0.3.0"
+description = "A Jupyter Kernel implementing the Agent Client Protocol"
 authors = [
     { name = "Jim White", email = "jim@fovi.com" }
 ]
@@ -22,8 +22,14 @@ classifiers = [
 dependencies = [
     "ipykernel>=7.0",
     "jupyter-client>=8.5",
-    "agent-client-protocol>=0.4.0",
-    "nest-asyncio>=1.6.0",
+    "agent-client-protocol>=0.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "pytest-cov>=4.0",
 ]
 
 [project.urls]
@@ -40,11 +46,12 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = [
     "agent_client_kernel",
-    "metakernel",
 ]
 
-[tool.poetry]
-packages = [
-    { include = "agent_client_kernel" },
-    { include = "metakernel" },
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+filterwarnings = [
+    "ignore::DeprecationWarning",
 ]
