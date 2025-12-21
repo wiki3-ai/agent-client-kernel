@@ -278,3 +278,60 @@ class TestFileOperations:
         )
 
         assert test_file.read_text() == "nested content"
+
+    @pytest.mark.asyncio
+    async def test_read_text_file_truncates_large_files(self, acp_client, mock_kernel, tmp_path):
+        """Test that large files are truncated to prevent JSON-RPC buffer overflow."""
+        from agent_client_kernel.kernel import ACPClientImpl
+        
+        # Create a file larger than MAX_FILE_CONTENT_SIZE
+        large_content = "x" * (ACPClientImpl.MAX_FILE_CONTENT_SIZE + 10000)
+        test_file = tmp_path / "large.txt"
+        test_file.write_text(large_content)
+
+        response = await acp_client.read_text_file(
+            path=str(test_file), session_id="test"
+        )
+
+        # Content should be truncated
+        assert len(response.content) < len(large_content)
+        assert "truncated" in response.content
+        # Warning should be sent
+        mock_kernel.send_response.assert_called()
+
+    @pytest.mark.asyncio
+    async def test_read_text_file_truncates_at_line_boundary(self, acp_client, mock_kernel, tmp_path):
+        """Test that truncation happens at line boundaries."""
+        from agent_client_kernel.kernel import ACPClientImpl
+        
+        # Create a file with lines, larger than limit
+        line = "This is a test line that is reasonably long.\n"
+        num_lines = (ACPClientImpl.MAX_FILE_CONTENT_SIZE // len(line)) + 100
+        large_content = line * num_lines
+        test_file = tmp_path / "large_lines.txt"
+        test_file.write_text(large_content)
+
+        response = await acp_client.read_text_file(
+            path=str(test_file), session_id="test"
+        )
+
+        # Content before the truncation message should end with newline
+        truncation_marker = "... [truncated:"
+        marker_pos = response.content.find(truncation_marker)
+        assert marker_pos > 0
+        content_before_marker = response.content[:marker_pos]
+        assert content_before_marker.endswith("\n")
+
+    @pytest.mark.asyncio
+    async def test_read_text_file_small_file_not_truncated(self, acp_client, mock_kernel, tmp_path):
+        """Test that small files are not truncated."""
+        small_content = "Small file content\nwith multiple lines\n"
+        test_file = tmp_path / "small.txt"
+        test_file.write_text(small_content)
+
+        response = await acp_client.read_text_file(
+            path=str(test_file), session_id="test"
+        )
+
+        assert response.content == small_content
+        assert "truncated" not in response.content

@@ -276,6 +276,9 @@ class ACPClientImpl(Client):
                 for cmd in (update.available_commands or [])
             ]
 
+    # Maximum size for file content in JSON-RPC responses (must fit in 64KB with JSON overhead)
+    MAX_FILE_CONTENT_SIZE = 48 * 1024  # 48KB to leave room for JSON framing
+
     async def write_text_file(
         self,
         content: str,
@@ -315,6 +318,18 @@ class ACPClientImpl(Client):
                 start = (line - 1) if line else 0
                 end = (start + limit) if limit else len(lines)
                 content = "".join(lines[start:end])
+            
+            # Enforce size limit to prevent JSON-RPC buffer overflow
+            # The asyncio StreamReader has a 64KB line limit
+            if len(content.encode('utf-8')) > self.MAX_FILE_CONTENT_SIZE:
+                truncated_content = content.encode('utf-8')[:self.MAX_FILE_CONTENT_SIZE].decode('utf-8', errors='ignore')
+                # Find last complete line to avoid cutting mid-line
+                last_newline = truncated_content.rfind('\n')
+                if last_newline > 0:
+                    truncated_content = truncated_content[:last_newline + 1]
+                truncated_content += f"\n... [truncated: file exceeds {self.MAX_FILE_CONTENT_SIZE // 1024}KB limit, use 'line' and 'limit' params to read sections]"
+                self._send_stream("stderr", f"⚠️ File {path} truncated (>{self.MAX_FILE_CONTENT_SIZE // 1024}KB)\n")
+                return ReadTextFileResponse(content=truncated_content)
             
             return ReadTextFileResponse(content=content)
         except FileNotFoundError:
@@ -422,10 +437,16 @@ class ACPClientImpl(Client):
         if terminal.exit_code is not None:
             exit_status = TerminalExitStatus(exit_code=terminal.exit_code)
         
+        output = terminal.output
         truncated = bool(terminal.output_byte_limit and len(terminal.output) >= terminal.output_byte_limit)
         
+        # Enforce size limit to prevent JSON-RPC buffer overflow
+        if len(output.encode('utf-8')) > self.MAX_FILE_CONTENT_SIZE:
+            output = output.encode('utf-8')[-self.MAX_FILE_CONTENT_SIZE:].decode('utf-8', errors='ignore')
+            truncated = True
+        
         return TerminalOutputResponse(
-            output=terminal.output,
+            output=output,
             truncated=truncated,
             exit_status=exit_status,
         )
@@ -693,6 +714,26 @@ class ACPKernel(Kernel):
                 )
 
             return self.state.response_text
+
+        except ValueError as e:
+            # Check for stream buffer overflow error (agent response too large)
+            if "chunk is longer than limit" in str(e) or "Separator is found" in str(e):
+                self._log.warning("Agent response exceeded stream buffer limit, restarting connection")
+                # Clean up the broken connection
+                await self._stop_agent()
+                # Notify user about what happened - note that any streamed content before
+                # the oversized message was already displayed
+                self.send_response(
+                    self.iopub_socket,
+                    "stream",
+                    {"name": "stderr", "text": "\n⚠️ Agent sent a message exceeding 64KB (likely a large file). Connection reset.\n"},
+                )
+                raise RuntimeError(
+                    "Agent sent a message larger than 64KB. This typically happens when "
+                    "reading or outputting very large files. Any content streamed before "
+                    "the error is shown above. Please retry with a smaller request."
+                ) from e
+            raise
 
         except Exception as e:
             self._log.error("Error sending prompt: %s", e, exc_info=True)

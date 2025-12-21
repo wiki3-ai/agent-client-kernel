@@ -145,6 +145,109 @@ class TestDoInspect:
         assert result["found"] is False
 
 
+class TestSendPromptErrorHandling:
+    """Test _send_prompt error handling."""
+
+    @pytest.mark.asyncio
+    async def test_buffer_overflow_error_recovery(self, kernel):
+        """Test that buffer overflow errors are caught and connection is reset."""
+        # Set up connected state
+        proc = MagicMock()
+        proc.returncode = None
+        kernel._proc = proc
+        kernel._conn = AsyncMock()
+        kernel.state.session_id = "test-session"
+
+        # Mock _stop_agent to track if it's called
+        kernel._stop_agent = AsyncMock()
+
+        # Simulate buffer overflow error from the connection
+        kernel._conn.prompt = AsyncMock(
+            side_effect=ValueError("Separator is found, but chunk is longer than limit")
+        )
+
+        # Call _send_prompt and expect RuntimeError
+        with pytest.raises(RuntimeError) as exc_info:
+            await kernel._send_prompt("test prompt")
+
+        # Verify the error message is user-friendly
+        assert "larger than 64KB" in str(exc_info.value)
+        assert "content streamed before" in str(exc_info.value)
+
+        # Verify connection was cleaned up
+        kernel._stop_agent.assert_called_once()
+
+        # Verify user was notified
+        kernel.send_response.assert_called()
+        call_args = kernel.send_response.call_args_list[-1]
+        assert "stderr" in str(call_args) or call_args[0][2].get("name") == "stderr"
+
+    @pytest.mark.asyncio
+    async def test_buffer_overflow_error_chunk_variant(self, kernel):
+        """Test buffer overflow with 'chunk is longer than limit' message."""
+        proc = MagicMock()
+        proc.returncode = None
+        kernel._proc = proc
+        kernel._conn = AsyncMock()
+        kernel.state.session_id = "test-session"
+        kernel._stop_agent = AsyncMock()
+
+        kernel._conn.prompt = AsyncMock(
+            side_effect=ValueError("chunk is longer than limit")
+        )
+
+        with pytest.raises(RuntimeError) as exc_info:
+            await kernel._send_prompt("test prompt")
+
+        assert "larger than 64KB" in str(exc_info.value)
+        kernel._stop_agent.assert_called_once()
+
+    @pytest.mark.asyncio
+    async def test_other_value_errors_propagate(self, kernel):
+        """Test that non-buffer-overflow ValueErrors propagate normally."""
+        proc = MagicMock()
+        proc.returncode = None
+        kernel._proc = proc
+        kernel._conn = AsyncMock()
+        kernel.state.session_id = "test-session"
+        kernel._stop_agent = AsyncMock()
+
+        kernel._conn.prompt = AsyncMock(
+            side_effect=ValueError("Some other error")
+        )
+
+        with pytest.raises(ValueError) as exc_info:
+            await kernel._send_prompt("test prompt")
+
+        assert "Some other error" in str(exc_info.value)
+        # Connection should NOT be stopped for other errors
+        kernel._stop_agent.assert_not_called()
+
+    @pytest.mark.asyncio
+    async def test_do_execute_handles_buffer_overflow(self, kernel):
+        """Test that do_execute properly handles buffer overflow from _send_prompt."""
+        proc = MagicMock()
+        proc.returncode = None
+        kernel._proc = proc
+        kernel._conn = AsyncMock()
+        kernel.state.session_id = "test-session"
+        kernel._stop_agent = AsyncMock()
+        kernel._start_agent = AsyncMock()
+
+        kernel._conn.prompt = AsyncMock(
+            side_effect=ValueError("Separator is found, but chunk is longer than limit")
+        )
+
+        result = await kernel.do_execute("Hello agent", silent=False)
+
+        # Should return error status
+        assert result["status"] == "error"
+        assert "RuntimeError" in result["ename"]
+
+        # Connection should have been cleaned up
+        kernel._stop_agent.assert_called_once()
+
+
 class TestSessionState:
     """Test SessionState dataclass."""
 
