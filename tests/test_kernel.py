@@ -373,3 +373,31 @@ class TestAgentInitialization:
                 # Verify process was cleaned up
                 assert kernel._proc is None
                 assert kernel._conn is None
+
+    @pytest.mark.asyncio
+    async def test_initialize_works_with_minimal_agent_response(self, kernel):
+        """Test backward compatibility - works with agents that return minimal initialize response."""
+        from acp.schema import InitializeResponse
+        
+        mock_conn = AsyncMock()
+        # Simulate an agent that only returns protocol_version (minimal response)
+        mock_conn.initialize = AsyncMock(return_value=InitializeResponse(protocol_version=1))
+        mock_conn.new_session = AsyncMock(return_value=MagicMock(session_id="compat-session"))
+
+        mock_proc = MagicMock()
+        mock_proc.stdin = MagicMock()
+        mock_proc.stdout = MagicMock()
+        mock_proc.returncode = None
+
+        with patch("agent_client_kernel.kernel.asyncio.create_subprocess_exec", new_callable=AsyncMock) as mock_exec:
+            mock_exec.return_value = mock_proc
+            with patch("agent_client_kernel.kernel.connect_to_agent") as mock_connect:
+                mock_connect.return_value = mock_conn
+
+                # Should succeed without errors
+                await kernel._start_agent()
+
+                # Verify session was created successfully
+                assert kernel.state.session_id == "compat-session"
+                mock_conn.initialize.assert_called_once()
+                mock_conn.new_session.assert_called_once()

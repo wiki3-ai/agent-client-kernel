@@ -368,9 +368,17 @@ class ACPClientImpl(Client):
                     elif isinstance(content_item, TerminalToolCallContent):
                         self._send_stream("stderr", f"🖥️ Terminal: {content_item.terminal_id}\n")
                     elif isinstance(content_item, ContentToolCallContent):
-                        # Generic content
+                        # Generic content - extract text from TextContentBlock if present
                         if content_item.content:
-                            content_str = str(content_item.content)
+                            inner_content = content_item.content
+                            # Handle TextContentBlock or similar content blocks
+                            if hasattr(inner_content, 'text'):
+                                content_str = inner_content.text
+                            elif isinstance(inner_content, str):
+                                content_str = inner_content
+                            else:
+                                content_str = str(inner_content)
+                            
                             if len(content_str) > self.COLLAPSE_THRESHOLD:
                                 self._send_collapsible(f"📋 {tool_title}", content_str, is_stderr=True)
                             else:
