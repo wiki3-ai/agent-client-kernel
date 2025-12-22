@@ -110,6 +110,9 @@ class SessionState:
 class ACPClientImpl(Client):
     """ACP Client implementation that handles callbacks from the agent."""
 
+    # Threshold for collapsing long messages (in characters)
+    COLLAPSE_THRESHOLD = 500
+
     def __init__(self, kernel: "ACPKernel") -> None:
         self._kernel = kernel
         self._log = logging.getLogger(f"{__name__}.ACPClient")
@@ -134,6 +137,49 @@ class ACPClientImpl(Client):
                 "stream",
                 {"name": name, "text": text},
             )
+
+    def _send_display_html(self, html: str, plain_fallback: str = "") -> None:
+        """Send HTML display data to the currently active cell."""
+        parent = getattr(self._kernel, '_current_parent', None)
+        content = {
+            "data": {
+                "text/html": html,
+                "text/plain": plain_fallback or "[HTML content]",
+            },
+            "metadata": {},
+            "transient": {},
+        }
+        
+        if parent is not None and hasattr(self._kernel, 'session'):
+            self._kernel.session.send(
+                self._kernel.iopub_socket,
+                "display_data",
+                content,
+                parent=parent,
+            )
+        else:
+            self._kernel.send_response(
+                self._kernel.iopub_socket,
+                "display_data",
+                content,
+            )
+
+    def _send_collapsible(self, summary: str, full_text: str, is_stderr: bool = False) -> None:
+        """Send a collapsible message - shows summary with toggle to reveal full content."""
+        import html as html_module
+        
+        # Determine styling based on stderr vs stdout
+        color_style = "color: #888;" if is_stderr else ""
+        
+        # Escape HTML in the content
+        escaped_full = html_module.escape(full_text)
+        escaped_summary = html_module.escape(summary)
+        
+        html = f'''<details style="margin: 2px 0; {color_style}">
+<summary style="cursor: pointer; user-select: none;">{escaped_summary} <span style="color: #666; font-size: 0.9em;">({len(full_text)} chars - click to expand)</span></summary>
+<pre style="margin: 4px 0; padding: 8px; background: #f5f5f5; border-radius: 4px; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;">{escaped_full}</pre>
+</details>'''
+        self._send_display_html(html, plain_fallback=f"{summary}\n{full_text}")
 
     async def request_permission(
         self,
@@ -235,8 +281,14 @@ class ACPClientImpl(Client):
             content = update.content
             if isinstance(content, TextContentBlock):
                 self._kernel.state.response_text += content.text
-                # Stream output to notebook
-                self._send_stream("stdout", content.text)
+                # Stream output to notebook - use collapsible for long messages
+                if len(content.text) > self.COLLAPSE_THRESHOLD:
+                    # Create a summary (first line or first N chars)
+                    lines = content.text.strip().split('\n')
+                    summary = lines[0][:100] + "..." if len(lines[0]) > 100 else lines[0]
+                    self._send_collapsible(f"📄 {summary}", content.text, is_stderr=False)
+                else:
+                    self._send_stream("stdout", content.text)
             elif isinstance(content, ImageContentBlock):
                 self._kernel.state.response_text += "[image]"
             elif isinstance(content, AudioContentBlock):
@@ -246,7 +298,12 @@ class ACPClientImpl(Client):
             content = update.content
             if isinstance(content, TextContentBlock):
                 # Show thoughts as stderr (dimmed in notebooks)
-                self._send_stream("stderr", f"💭 {content.text}")
+                if len(content.text) > self.COLLAPSE_THRESHOLD:
+                    lines = content.text.strip().split('\n')
+                    summary = lines[0][:80] + "..." if len(lines[0]) > 80 else lines[0]
+                    self._send_collapsible(f"💭 {summary}", content.text, is_stderr=True)
+                else:
+                    self._send_stream("stderr", f"💭 {content.text}")
 
         elif isinstance(update, ToolCallStart):
             self._kernel.state.tool_calls[update.tool_call_id] = {
@@ -264,11 +321,16 @@ class ACPClientImpl(Client):
                 self._send_stream("stderr", f"✅ Tool {update.tool_call_id} completed\n")
 
         elif isinstance(update, AgentPlanUpdate):
-            plan_text = "\n📋 Plan:\n"
+            plan_text = "📋 Plan:\n"
             for entry in update.entries or []:
                 status_emoji = {"pending": "⏳", "in_progress": "🔄", "completed": "✅"}.get(entry.status, "•")
                 plan_text += f"  {status_emoji} {entry.content}\n"
-            self._send_stream("stderr", plan_text)
+            # Use collapsible for long plans
+            if len(plan_text) > self.COLLAPSE_THRESHOLD:
+                entry_count = len(update.entries or [])
+                self._send_collapsible(f"📋 Plan ({entry_count} items)", plan_text, is_stderr=True)
+            else:
+                self._send_stream("stderr", "\n" + plan_text)
 
         elif isinstance(update, AvailableCommandsUpdate):
             self._kernel.state.available_commands = [
