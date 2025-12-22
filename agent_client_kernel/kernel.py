@@ -1037,7 +1037,7 @@ Configuration:
         
         if self.is_connected:
             # MCP servers require session restart to take effect
-            return f"{action} MCP server '{name}'. Run %agent session restart to apply."
+            return f"{action} MCP server '{name}'. Run `%agent session restart` to apply."
         else:
             return f"{action} MCP server '{name}'. It will be available when the session starts."
 
@@ -1062,7 +1062,7 @@ Configuration:
             if server.name == name:
                 self.state.mcp_servers.pop(i)
                 if self.is_connected:
-                    return f"Removed MCP server '{name}'. Run %agent session restart to apply."
+                    return f"Removed MCP server '{name}'. Run `%agent session restart` to apply."
                 return f"Removed MCP server '{name}'"
 
         return f"No MCP server named '{name}' found"
@@ -1072,7 +1072,7 @@ Configuration:
         count = len(self.state.mcp_servers)
         self.state.mcp_servers = []
         if count > 0 and self.is_connected:
-            return f"Removed {count} MCP server(s). Run %agent session restart to apply."
+            return f"Removed {count} MCP server(s). Run `%agent session restart` to apply."
         return f"Removed {count} MCP server(s)"
 
     def _magic_agent_session(self, args: str) -> str:
