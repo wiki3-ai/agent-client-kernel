@@ -13,10 +13,17 @@
             "requireLocalPort": true
         }
     },
+    // export ACP_AGENT_COMMAND=gemini                                                                                      
+    // export ACP_AGENT_ARGS=--experimental-acp                                                                             
+    // export GRANT_SUDO=yes 
     "containerEnv": {
         "JUPYTER_PORT": "8888",
         "GRANT_SUDO": "yes",
         "ACP_AGENT_COMMAND": "gemini",
         "ACP_AGENT_ARGS": "--experimental-acp"
     }
+        // Codespaces ports are private by default so skip the auth token.
+    // Need to disable XSRF check for Jupyter MCP servers if auth token is disabled.
+    // If you need auth or don't mind the token, then just `jupyter lab` will do the trick.
+    // "postStartCommand": "jupyter lab --NotebookApp.token=''  --ServerApp.disable_check_xsrf=True"
 }
