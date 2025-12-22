@@ -139,15 +139,22 @@ class ACPClientImpl(Client):
             )
 
     def _send_display_html(self, html: str, plain_fallback: str = "") -> None:
-        """Send HTML display data to the currently active cell."""
+        """Send HTML display data to the currently active cell.
+        
+        Note: We use a unique display_id to help Jupyter frontends properly
+        sequence display_data with stream messages. Some frontends batch
+        messages and can drop subsequent stream messages after display_data.
+        """
+        import uuid as uuid_mod
         parent = getattr(self._kernel, '_current_parent', None)
+        display_id = str(uuid_mod.uuid4())
         content = {
             "data": {
                 "text/html": html,
                 "text/plain": plain_fallback or "[HTML content]",
             },
             "metadata": {},
-            "transient": {},
+            "transient": {"display_id": display_id},
         }
         
         if parent is not None and hasattr(self._kernel, 'session'):
@@ -157,11 +164,24 @@ class ACPClientImpl(Client):
                 content,
                 parent=parent,
             )
+            # Send empty stream to flush the output queue
+            # This helps ensure subsequent stream messages are processed
+            self._kernel.session.send(
+                self._kernel.iopub_socket,
+                "stream",
+                {"name": "stdout", "text": ""},
+                parent=parent,
+            )
         else:
             self._kernel.send_response(
                 self._kernel.iopub_socket,
                 "display_data",
                 content,
+            )
+            self._kernel.send_response(
+                self._kernel.iopub_socket,
+                "stream",
+                {"name": "stdout", "text": ""},
             )
 
     def _send_collapsible(self, summary: str, full_text: str, is_stderr: bool = False) -> None:
@@ -281,14 +301,8 @@ class ACPClientImpl(Client):
             content = update.content
             if isinstance(content, TextContentBlock):
                 self._kernel.state.response_text += content.text
-                # Stream output to notebook - use collapsible for long messages
-                if len(content.text) > self.COLLAPSE_THRESHOLD:
-                    # Create a summary (first line or first N chars)
-                    lines = content.text.strip().split('\n')
-                    summary = lines[0][:100] + "..." if len(lines[0]) > 100 else lines[0]
-                    self._send_collapsible(f"📄 {summary}", content.text, is_stderr=False)
-                else:
-                    self._send_stream("stdout", content.text)
+                # Stream output to notebook directly (no collapsible for regular responses)
+                self._send_stream("stdout", content.text)
             elif isinstance(content, ImageContentBlock):
                 self._kernel.state.response_text += "[image]"
             elif isinstance(content, AudioContentBlock):
@@ -317,8 +331,46 @@ class ACPClientImpl(Client):
         elif isinstance(update, ToolCallProgress):
             tool_state = self._kernel.state.tool_calls.get(update.tool_call_id, {})
             tool_state["status"] = update.status
+            tool_title = update.title or tool_state.get("title") or update.tool_call_id
+            
+            # Show progress content if available
+            if update.content:
+                from acp.schema import FileEditToolCallContent, TerminalToolCallContent, ContentToolCallContent
+                for content_item in update.content:
+                    if isinstance(content_item, FileEditToolCallContent):
+                        # Show file edit details
+                        edit_info = f"📝 Edit: {content_item.path}"
+                        if content_item.old_text or content_item.new_text:
+                            diff_text = ""
+                            if content_item.old_text:
+                                diff_text += f"--- Old:\n{content_item.old_text}\n"
+                            if content_item.new_text:
+                                diff_text += f"+++ New:\n{content_item.new_text}\n"
+                            if len(diff_text) > self.COLLAPSE_THRESHOLD:
+                                self._send_collapsible(edit_info, diff_text, is_stderr=True)
+                            else:
+                                self._send_stream("stderr", f"{edit_info}\n{diff_text}")
+                        else:
+                            self._send_stream("stderr", f"{edit_info}\n")
+                    elif isinstance(content_item, TerminalToolCallContent):
+                        self._send_stream("stderr", f"🖥️ Terminal: {content_item.terminal_id}\n")
+                    elif isinstance(content_item, ContentToolCallContent):
+                        # Generic content
+                        if content_item.content:
+                            content_str = str(content_item.content)
+                            if len(content_str) > self.COLLAPSE_THRESHOLD:
+                                self._send_collapsible(f"📋 {tool_title}", content_str, is_stderr=True)
+                            else:
+                                self._send_stream("stderr", f"📋 {content_str}\n")
+            
+            # Show status update
             if update.status == "completed":
-                self._send_stream("stderr", f"✅ Tool {update.tool_call_id} completed\n")
+                self._send_stream("stderr", f"✅ {tool_title} completed\n")
+            elif update.status == "failed":
+                self._send_stream("stderr", f"❌ {tool_title} failed\n")
+            elif update.status == "in_progress" and not update.content:
+                # Only show in_progress if there's no content (to avoid redundant messages)
+                self._send_stream("stderr", f"🔄 {tool_title} in progress...\n")
 
         elif isinstance(update, AgentPlanUpdate):
             plan_text = "📋 Plan:\n"
