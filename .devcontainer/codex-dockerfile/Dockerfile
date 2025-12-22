@@ -21,7 +21,7 @@ RUN pip install --upgrade "uv>=0.9.15"
 # Use uv to install dependencies from pyproject.toml
 # --system flag tells uv to install into the current environment (conda base)
 # --no-cache reduces image size
-RUN uv pip install --system --no-cache -e .
+RUN uv pip install --system --no-cache -e .[dev]
 
 # Install the kernel for the current user
 RUN python -m agent_client_kernel install --user

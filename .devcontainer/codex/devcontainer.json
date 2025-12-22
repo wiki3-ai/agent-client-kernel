@@ -1,10 +1,10 @@
 {
     "name": "JupyterLab: Codex ACP",
+    // "image": "ghcr.io/wiki3-ai/agent-client-kernel-codex:latest",
     "build": {
-        "dockerfile": "Dockerfile",
-        "context": "../.."
+      "dockerfile": "../codex-dockerfile/Dockerfile",
+      "context": "../.."
     },
-    // "remoteUser": "root",
     "forwardPorts": [
         8888
     ],
@@ -37,8 +37,8 @@
         "JUPYTER_PORT": "8888",
         "GRANT_SUDO": "yes",
         "ACP_AGENT_COMMAND": "codex-acp",
-        "ACP_AGENT_ARGS": ""
-        // "RESTARTABLE": "yes"
+        "ACP_AGENT_ARGS": "",
+        "RESTARTABLE": "yes"
     },
     // Codespaces ports are private by default so skip the auth token.
     // Need to disable XSRF check for Jupyter MCP servers if auth token is disabled.
