@@ -13,7 +13,7 @@ SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
 
 RUN pip install --upgrade "uv>=0.9.15"
 
-RUN uv tool install openhands@latest
+RUN uv tool install openhands --with fastapi
 
 # Use uv to install dependencies from pyproject.toml
 # --system flag tells uv to install into the current environment (conda base)
