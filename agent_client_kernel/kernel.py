@@ -121,6 +121,170 @@ class ACPClientImpl(Client):
         self._kernel = kernel
         self._log = logging.getLogger(f"{__name__}.ACPClient")
 
+    def _to_json_data(self, obj: Any) -> Any:
+        """Convert an object to JSON-serializable data.
+        
+        Handles Pydantic models, dicts, and other objects.
+        """
+        from pydantic import BaseModel
+        
+        if isinstance(obj, BaseModel):
+            return obj.model_dump(exclude_none=True, by_alias=True)
+        elif hasattr(obj, '__dict__') and not isinstance(obj, (str, int, float, bool, list, dict)):
+            return obj.__dict__
+        else:
+            return obj
+
+    def _json_to_html_tree(self, data: Any, depth: int = 0, max_open_depth: int = 1) -> str:
+        """Convert JSON data to an interactive HTML tree with expand/collapse at each level.
+        
+        Args:
+            data: The JSON-serializable data to render
+            depth: Current depth in the tree (for indentation and auto-expand logic)
+            max_open_depth: Levels to auto-expand (0 = all collapsed, 1 = first level open)
+        
+        Returns:
+            HTML string with nested <details> elements
+        """
+        import html as html_module
+        
+        indent = "  " * depth
+        is_open = depth < max_open_depth
+        open_attr = " open" if is_open else ""
+        
+        if isinstance(data, dict):
+            if not data:
+                return '<span style="color: #666;">{}</span>'
+            
+            items_html = []
+            for key, value in data.items():
+                key_escaped = html_module.escape(str(key))
+                value_html = self._json_to_html_tree(value, depth + 1, max_open_depth)
+                
+                if isinstance(value, (dict, list)) and value:
+                    # Nested structure - make it collapsible
+                    bracket = "{" if isinstance(value, dict) else "["
+                    count = len(value)
+                    preview = f"{bracket}…{count} items"
+                    items_html.append(
+                        f'<details class="json-tree" style="margin-left: 16px;"{open_attr}>'
+                        f'<summary style="cursor: pointer;">'
+                        f'<span class="arrow" style="color: #0066cc;">▶</span> '
+                        f'<span style="color: #881280;">"{key_escaped}"</span>: '
+                        f'<span style="color: #666; font-size: 0.9em;">{preview}</span>'
+                        f'</summary>'
+                        f'<div style="margin-left: 8px;">{value_html}</div>'
+                        f'</details>'
+                    )
+                else:
+                    # Primitive value - inline
+                    items_html.append(
+                        f'<div style="margin-left: 16px;">'
+                        f'<span style="color: #881280;">"{key_escaped}"</span>: {value_html}'
+                        f'</div>'
+                    )
+            
+            return "\n".join(items_html)
+        
+        elif isinstance(data, list):
+            if not data:
+                return '<span style="color: #666;">[]</span>'
+            
+            items_html = []
+            for i, item in enumerate(data):
+                item_html = self._json_to_html_tree(item, depth + 1, max_open_depth)
+                
+                if isinstance(item, (dict, list)) and item:
+                    bracket = "{" if isinstance(item, dict) else "["
+                    count = len(item)
+                    preview = f"{bracket}…{count} items"
+                    items_html.append(
+                        f'<details class="json-tree" style="margin-left: 16px;"{open_attr}>'
+                        f'<summary style="cursor: pointer;">'
+                        f'<span class="arrow" style="color: #0066cc;">▶</span> '
+                        f'<span style="color: #666;">[{i}]</span>: '
+                        f'<span style="color: #666; font-size: 0.9em;">{preview}</span>'
+                        f'</summary>'
+                        f'<div style="margin-left: 8px;">{item_html}</div>'
+                        f'</details>'
+                    )
+                else:
+                    items_html.append(
+                        f'<div style="margin-left: 16px;">'
+                        f'<span style="color: #666;">[{i}]</span>: {item_html}'
+                        f'</div>'
+                    )
+            
+            return "\n".join(items_html)
+        
+        elif isinstance(data, str):
+            escaped = html_module.escape(data)
+            # Truncate long strings
+            if len(escaped) > 100:
+                escaped = escaped[:100] + "…"
+            return f'<span style="color: #067d17;">"{escaped}"</span>'
+        
+        elif isinstance(data, bool):
+            return f'<span style="color: #0000ff;">{str(data).lower()}</span>'
+        
+        elif isinstance(data, (int, float)):
+            return f'<span style="color: #098658;">{data}</span>'
+        
+        elif data is None:
+            return '<span style="color: #0000ff;">null</span>'
+        
+        else:
+            # Fallback for other types
+            escaped = html_module.escape(str(data))
+            return f'<span style="color: #666;">{escaped}</span>'
+
+    def _send_formatted_object(self, title: str, obj: Any, is_stderr: bool = False) -> None:
+        """Send a formatted object as an interactive JSON tree viewer."""
+        import html as html_module
+        import json
+        
+        data = self._to_json_data(obj)
+        color_style = "color: #888;" if is_stderr else ""
+        
+        # Build the tree HTML
+        tree_html = self._json_to_html_tree(data, depth=0, max_open_depth=1)
+        
+        # Create plain text fallback
+        try:
+            json_str = json.dumps(data, indent=2, default=str, ensure_ascii=False)
+        except (TypeError, ValueError):
+            json_str = str(obj)
+        
+        # CSS for rotating arrows when expanded
+        css = '''<style>
+.json-tree details > summary .arrow { transition: transform 0.15s; display: inline-block; }
+.json-tree details[open] > summary .arrow { transform: rotate(90deg); }
+.json-tree details > summary { list-style: none; }
+.json-tree details > summary::-webkit-details-marker { display: none; }
+</style>'''
+        
+        # Wrap in a container with title
+        html = f'''{css}<details class="json-tree" style="margin: 4px 0; {color_style}" open>
+<summary style="cursor: pointer; font-weight: bold;">{html_module.escape(title)}</summary>
+<div style="font-family: monospace; font-size: 0.9em; padding: 8px; background: #f8f8f8; border-radius: 4px; margin-top: 4px;">
+{tree_html}
+</div>
+</details>'''
+        
+        self._send_display_html(html, plain_fallback=f"{title}\n{json_str}")
+
+    def _to_json_str(self, obj: Any, indent: int = 2) -> str:
+        """Convert an object to a pretty JSON string.
+        
+        Handles Pydantic models, dicts, and other JSON-serializable objects.
+        """
+        import json
+        data = self._to_json_data(obj)
+        try:
+            return json.dumps(data, indent=indent, default=str, ensure_ascii=False)
+        except (TypeError, ValueError):
+            return str(obj)
+
     def _send_stream(self, name: str, text: str) -> None:
         """Send stream output to the currently active cell."""
         # Use the kernel's current parent header for proper cell association
@@ -377,7 +541,9 @@ class ACPClientImpl(Client):
                             elif isinstance(inner_content, str):
                                 content_str = inner_content
                             else:
-                                content_str = str(inner_content)
+                                # Use JSON formatter for complex objects
+                                self._send_formatted_object(f"📋 {tool_title}", inner_content, is_stderr=True)
+                                continue
                             
                             if len(content_str) > self.COLLAPSE_THRESHOLD:
                                 self._send_collapsible(f"📋 {tool_title}", content_str, is_stderr=True)
@@ -421,8 +587,8 @@ class ACPClientImpl(Client):
             self._send_stream("stderr", f"🔄 Mode: {mode_name}\n")
 
         else:
-            # Catch-all for unknown update types - display them so nothing is hidden
-            self._send_stream("stderr", f"📨 {update_type}: {str(update)[:200]}\n")
+            # Catch-all for unknown update types - use JSON formatter for clean display
+            self._send_formatted_object(f"📨 {update_type}", update, is_stderr=True)
 
     # Maximum size for file content in JSON-RPC responses (must fit in 64KB with JSON overhead)
     MAX_FILE_CONTENT_SIZE = 48 * 1024  # 48KB to leave room for JSON framing
