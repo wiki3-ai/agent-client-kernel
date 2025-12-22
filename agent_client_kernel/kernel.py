@@ -572,13 +572,22 @@ class ACPKernel(Kernel):
                 spawn_program = sys.executable
                 spawn_args = [str(program_path), *self._agent_args]
 
-            # Start the agent process
+            # Start the agent process with a larger buffer limit to handle large responses.
+            # The default asyncio StreamReader limit is 64KB per line, which is too small
+            # for large tool outputs (e.g., jupyter/execute_cell results).
+            # 
+            # NOTE: The proper fix is for codex-acp to truncate large MCP tool outputs
+            # before sending them to the client. See end_mcp_tool_call() in conversation.rs
+            # which sends CallToolResult content without any size checking.
+            # Bug: https://github.com/zed-industries/codex-acp - should truncate large outputs
+            buffer_limit = 1 * 1024 * 1024  # 1MB
             self._proc = await asyncio.create_subprocess_exec(
                 spawn_program,
                 *spawn_args,
                 stdin=aio_subprocess.PIPE,
                 stdout=aio_subprocess.PIPE,
                 stderr=aio_subprocess.PIPE,
+                limit=buffer_limit,
             )
 
             if self._proc.stdin is None or self._proc.stdout is None:
@@ -717,8 +726,10 @@ class ACPKernel(Kernel):
 
         except ValueError as e:
             # Check for stream buffer overflow error (agent response too large)
+            # This happens when the agent sends a JSON-RPC message exceeding our buffer limit.
+            # The proper fix is for the agent to truncate large outputs before sending.
             if "chunk is longer than limit" in str(e) or "Separator is found" in str(e):
-                self._log.warning("Agent response exceeded stream buffer limit, restarting connection")
+                self._log.warning("Agent response exceeded stream buffer limit (1MB), restarting connection")
                 # Clean up the broken connection
                 await self._stop_agent()
                 # Notify user about what happened - note that any streamed content before
@@ -726,12 +737,13 @@ class ACPKernel(Kernel):
                 self.send_response(
                     self.iopub_socket,
                     "stream",
-                    {"name": "stderr", "text": "\n⚠️ Agent sent a message exceeding 64KB (likely a large file). Connection reset.\n"},
+                    {"name": "stderr", "text": "\n⚠️ Agent sent a message exceeding 1MB buffer limit (likely large tool output). Connection reset.\n"},
                 )
                 raise RuntimeError(
-                    "Agent sent a message larger than 64KB. This typically happens when "
-                    "reading or outputting very large files. Any content streamed before "
-                    "the error is shown above. Please retry with a smaller request."
+                    "Agent sent a message larger than 1MB. This typically happens when "
+                    "a tool (e.g., jupyter/execute_cell) returns very large output. "
+                    "The agent should truncate large outputs before sending. "
+                    "Any content streamed before the error is shown above."
                 ) from e
             raise
 

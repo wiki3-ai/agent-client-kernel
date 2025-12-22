@@ -171,8 +171,8 @@ class TestSendPromptErrorHandling:
             await kernel._send_prompt("test prompt")
 
         # Verify the error message is user-friendly
-        assert "larger than 64KB" in str(exc_info.value)
-        assert "content streamed before" in str(exc_info.value)
+        assert "larger than 1MB" in str(exc_info.value)
+        assert "streamed before" in str(exc_info.value)
 
         # Verify connection was cleaned up
         kernel._stop_agent.assert_called_once()
@@ -199,7 +199,7 @@ class TestSendPromptErrorHandling:
         with pytest.raises(RuntimeError) as exc_info:
             await kernel._send_prompt("test prompt")
 
-        assert "larger than 64KB" in str(exc_info.value)
+        assert "larger than 1MB" in str(exc_info.value)
         kernel._stop_agent.assert_called_once()
 
     @pytest.mark.asyncio
