@@ -1,19 +1,24 @@
 FROM quay.io/jupyter/minimal-notebook:python-3.12
 
-# Copy the repo into the container for installation
+# Install nodejs and graphviz via conda (no root required)
+RUN conda install -y -c conda-forge nodejs graphviz
+
+# Copy project files with correct ownership
 COPY --chown=jovyan:users . .
 
-# Create a user venv for installing packages
-ENV VIRTUAL_ENV=${HOME}/.venv
-RUN python -m venv ${VIRTUAL_ENV}
+# Install uv and project dependencies
+# Using conda run to ensure we're in the base conda environment
+# Then using uv for fast Python package installation
+SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
 
-# Add venv activation to bashrc so all new shells use it
-RUN echo 'source ${VIRTUAL_ENV}/bin/activate' >> ${HOME}/.bashrc
+RUN pip install --upgrade "uv>=0.9.15"
 
-# Ensure the venv is used for this build and set PATH permanently
-ENV PATH="${VIRTUAL_ENV}/bin:${PATH}"
+RUN uv tool install openhands@latest
 
-# Install packages in the user venv
-RUN pip install openhands jupyter-mcp-tools \
-  && pip install -e . \
-  && python -m agent_client_kernel install --user 
+# Use uv to install dependencies from pyproject.toml
+# --system flag tells uv to install into the current environment (conda base)
+# --no-cache reduces image size
+RUN uv pip install --system --no-cache -e .
+
+# Install the kernel for the current user
+RUN python -m agent_client_kernel install --user
