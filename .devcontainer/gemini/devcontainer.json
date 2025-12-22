@@ -29,6 +29,10 @@
     // export ACP_AGENT_COMMAND="gemini"
     // export ACP_AGENT_ARGS="--experimental-acp --yolo"
     // export GRANT_SUDO=yes 
+
+    // export ACP_LOG_LEVEL=DEBUG
+    // export ACP_DEBUG_UPDATES=all
+
     "containerEnv": {
         "JUPYTER_PORT": "8888",
         "GRANT_SUDO": "yes",

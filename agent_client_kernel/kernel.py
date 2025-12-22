@@ -36,12 +36,15 @@ from acp.schema import (
     AllowedOutcome,
     AudioContentBlock,
     AvailableCommandsUpdate,
+    ClientCapabilities,
     CreateTerminalResponse,
     CurrentModeUpdate,
     DeniedOutcome,
     EmbeddedResourceContentBlock,
     EnvVariable,
+    FileSystemCapability,
     ImageContentBlock,
+    Implementation,
     KillTerminalCommandResponse,
     McpServerStdio,
     PermissionOption,
@@ -777,8 +780,20 @@ class ACPKernel(Kernel):
             self._client = ACPClientImpl(self)
             self._conn = connect_to_agent(self._client, self._proc.stdin, self._proc.stdout)
 
-            # Initialize the agent
-            await self._conn.initialize(protocol_version=PROTOCOL_VERSION)
+            # Initialize the agent with client capabilities
+            # Gemini-cli and other ACP agents require these capabilities to be specified
+            await self._conn.initialize(
+                protocol_version=PROTOCOL_VERSION,
+                client_capabilities=ClientCapabilities(
+                    fs=FileSystemCapability(read_text_file=True, write_text_file=True),
+                    terminal=True,
+                ),
+                client_info=Implementation(
+                    name="agent-client-kernel",
+                    title="Agent Client Kernel",
+                    version=__version__,
+                ),
+            )
 
             # Create a new session with MCP servers
             mcp_servers = [

@@ -7,7 +7,11 @@ import re
 import pytest
 from unittest.mock import AsyncMock, MagicMock, patch
 
+from acp import PROTOCOL_VERSION
+from acp.schema import ClientCapabilities, FileSystemCapability, Implementation
+
 from agent_client_kernel.kernel import ACPKernel, SessionState
+from agent_client_kernel import __version__
 
 
 @pytest.fixture
@@ -269,3 +273,103 @@ class TestSessionState:
         """Test custom cwd."""
         state = SessionState(cwd="/custom/path")
         assert state.cwd == "/custom/path"
+
+
+class TestAgentInitialization:
+    """Test agent initialization with proper client capabilities."""
+
+    @pytest.mark.asyncio
+    async def test_initialize_sends_client_capabilities(self, kernel):
+        """Test that _start_agent sends proper client capabilities."""
+        # Create a mock connection that records initialize params
+        mock_conn = AsyncMock()
+        mock_conn.initialize = AsyncMock()
+        mock_conn.new_session = AsyncMock(return_value=MagicMock(session_id="test-session"))
+
+        # Create a mock process
+        mock_proc = MagicMock()
+        mock_proc.stdin = MagicMock()
+        mock_proc.stdout = MagicMock()
+        mock_proc.returncode = None
+
+        with patch("agent_client_kernel.kernel.asyncio.create_subprocess_exec", new_callable=AsyncMock) as mock_exec:
+            mock_exec.return_value = mock_proc
+            with patch("agent_client_kernel.kernel.connect_to_agent") as mock_connect:
+                mock_connect.return_value = mock_conn
+
+                await kernel._start_agent()
+
+                # Verify initialize was called with client_capabilities
+                mock_conn.initialize.assert_called_once()
+                call_kwargs = mock_conn.initialize.call_args.kwargs
+
+                assert "protocol_version" in call_kwargs
+                assert call_kwargs["protocol_version"] == PROTOCOL_VERSION
+
+                assert "client_capabilities" in call_kwargs
+                caps = call_kwargs["client_capabilities"]
+                assert isinstance(caps, ClientCapabilities)
+                assert caps.fs is not None
+                assert caps.fs.read_text_file is True
+                assert caps.fs.write_text_file is True
+                assert caps.terminal is True
+
+                assert "client_info" in call_kwargs
+                info = call_kwargs["client_info"]
+                assert isinstance(info, Implementation)
+                assert info.name == "agent-client-kernel"
+                assert info.version == __version__
+
+    @pytest.mark.asyncio
+    async def test_initialize_creates_session_after_init(self, kernel):
+        """Test that new_session is called after initialize."""
+        mock_conn = AsyncMock()
+        mock_conn.initialize = AsyncMock()
+        mock_conn.new_session = AsyncMock(return_value=MagicMock(session_id="test-session-123"))
+
+        mock_proc = MagicMock()
+        mock_proc.stdin = MagicMock()
+        mock_proc.stdout = MagicMock()
+        mock_proc.returncode = None
+
+        with patch("agent_client_kernel.kernel.asyncio.create_subprocess_exec", new_callable=AsyncMock) as mock_exec:
+            mock_exec.return_value = mock_proc
+            with patch("agent_client_kernel.kernel.connect_to_agent") as mock_connect:
+                mock_connect.return_value = mock_conn
+
+                await kernel._start_agent()
+
+                # Verify both initialize and new_session were called in order
+                mock_conn.initialize.assert_called_once()
+                mock_conn.new_session.assert_called_once()
+
+                # Verify session_id was stored
+                assert kernel.state.session_id == "test-session-123"
+
+    @pytest.mark.asyncio
+    async def test_initialize_failure_stops_agent(self, kernel):
+        """Test that if initialize fails, the agent is stopped."""
+        mock_conn = AsyncMock()
+        mock_conn.initialize = AsyncMock(side_effect=Exception("Invalid params"))
+
+        mock_proc = MagicMock()
+        mock_proc.stdin = MagicMock()
+        mock_proc.stdout = MagicMock()
+        mock_proc.returncode = None
+        mock_proc.terminate = MagicMock()
+        mock_proc.kill = MagicMock()
+        mock_proc.wait = AsyncMock()
+
+        with patch("agent_client_kernel.kernel.asyncio.create_subprocess_exec", new_callable=AsyncMock) as mock_exec:
+            mock_exec.return_value = mock_proc
+            with patch("agent_client_kernel.kernel.connect_to_agent") as mock_connect:
+                mock_connect.return_value = mock_conn
+
+                with pytest.raises(Exception) as exc_info:
+                    await kernel._start_agent()
+
+                assert "Invalid params" in str(exc_info.value)
+
+                # Verify process was cleaned up
+                assert kernel._proc is None
+                assert kernel._conn is None

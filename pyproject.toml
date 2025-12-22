@@ -1,6 +1,6 @@
 [project]
 name = "agent-client-kernel"
-version = "0.4.1"
+version = "0.4.2"
 description = "A Jupyter Kernel implementing the Agent Client Protocol"
 authors = [
     { name = "Jim White", email = "jim@fovi.com" }

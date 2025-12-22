@@ -12,6 +12,10 @@ from acp.schema import (
     AgentMessageChunk,
     AvailableCommand,
     AvailableCommandsUpdate,
+    ClientCapabilities,
+    FileSystemCapability,
+    Implementation,
+    InitializeResponse,
     NewSessionResponse,
     PromptResponse,
     TextContentBlock,
@@ -78,9 +82,23 @@ class MockConnection:
     def __init__(self, session_id: str = "test-session"):
         self._session_id = session_id
         self._closed = False
+        self._initialized = False
+        self._init_params = {}
 
-    async def initialize(self, protocol_version: str) -> None:
-        pass
+    async def initialize(
+        self,
+        protocol_version: int,
+        client_capabilities: ClientCapabilities | None = None,
+        client_info: Implementation | None = None,
+    ) -> InitializeResponse:
+        """Mock initialize that records the parameters passed."""
+        self._initialized = True
+        self._init_params = {
+            "protocol_version": protocol_version,
+            "client_capabilities": client_capabilities,
+            "client_info": client_info,
+        }
+        return InitializeResponse(protocol_version=protocol_version)
 
     async def new_session(
         self,
