@@ -12,6 +12,7 @@ import asyncio.subprocess as aio_subprocess
 import logging
 import os
 import re
+import signal
 import sys
 import uuid
 from dataclasses import dataclass, field
@@ -678,6 +679,10 @@ class ACPKernel(Kernel):
 
         # Current parent header for proper cell association of async output
         self._current_parent: dict | None = None
+        
+        # Current running task for interrupt handling
+        self._current_task: asyncio.Task | None = None
+        self._interrupted = False
 
         # Agent configuration from environment
         self._agent_command = os.environ.get("ACP_AGENT_COMMAND", "codex-acp")
@@ -685,6 +690,45 @@ class ACPKernel(Kernel):
 
         # Magic command patterns
         self._magic_pattern = re.compile(r"^%(\w+)\s*(.*)?$", re.MULTILINE)
+        
+        # Set up signal handler for SIGINT (Ctrl+C / interrupt)
+        # This is called when the kernel receives an interrupt request
+        self._original_sigint = signal.getsignal(signal.SIGINT)
+        signal.signal(signal.SIGINT, self._handle_sigint)
+    
+    def _handle_sigint(self, signum, frame):
+        """Handle SIGINT signal (interrupt request)."""
+        self._log.info("Received SIGINT - interrupting current operation")
+        self._interrupted = True
+        
+        # Cancel the current task if running
+        if self._current_task and not self._current_task.done():
+            self._current_task.cancel()
+            
+        # Send stream message about interrupt (may not work during interrupt)
+        try:
+            if hasattr(self, 'iopub_socket') and hasattr(self, 'send_response'):
+                self.send_response(
+                    self.iopub_socket,
+                    "stream",
+                    {"name": "stderr", "text": "\n⚠️ Interrupted\n"},
+                )
+        except Exception:
+            pass
+    
+    async def comm_open(self, stream, ident, msg):
+        """Handle comm_open message - stub to prevent 'unknown message type' warning."""
+        # We don't use Jupyter comms/widgets, but some clients send these messages.
+        # Just acknowledge and ignore.
+        self._log.debug("comm_open received and ignored (no comm support)")
+    
+    async def comm_msg(self, stream, ident, msg):
+        """Handle comm_msg message - stub to prevent 'unknown message type' warning."""
+        self._log.debug("comm_msg received and ignored (no comm support)")
+    
+    async def comm_close(self, stream, ident, msg):
+        """Handle comm_close message - stub to prevent 'unknown message type' warning."""
+        self._log.debug("comm_close received and ignored (no comm support)")
 
     @property
     def is_connected(self) -> bool:
@@ -762,28 +806,48 @@ class ACPKernel(Kernel):
             raise
 
     async def _stop_agent(self) -> None:
-        """Stop the ACP agent process."""
-        if self._proc is None:
-            return
+        """Stop the ACP agent process and clean up all resources."""
+        self._log.info("Stopping agent and cleaning up resources")
+        
+        # First, terminate all managed terminals
+        for terminal_id, terminal in list(self.state.terminals.items()):
+            try:
+                if terminal.process.returncode is None:
+                    terminal.process.terminate()
+                    try:
+                        await asyncio.wait_for(terminal.process.wait(), timeout=1.0)
+                    except asyncio.TimeoutError:
+                        terminal.process.kill()
+            except Exception as e:
+                self._log.debug("Error terminating terminal %s: %s", terminal_id, e)
+        self.state.terminals.clear()
 
-        self._log.info("Stopping agent")
-
+        # Close ACP connection
         if self._conn is not None:
             try:
                 await self._conn.close()
-            except Exception:
-                pass
+            except Exception as e:
+                self._log.debug("Error closing connection: %s", e)
             self._conn = None
+        
+        self._client = None
 
-        if self._proc.returncode is None:
-            self._proc.terminate()
-            try:
-                await asyncio.wait_for(self._proc.wait(), timeout=5.0)
-            except asyncio.TimeoutError:
-                self._proc.kill()
-
-        self._proc = None
+        # Stop the agent process
+        if self._proc is not None:
+            if self._proc.returncode is None:
+                self._log.debug("Terminating agent process")
+                self._proc.terminate()
+                try:
+                    await asyncio.wait_for(self._proc.wait(), timeout=5.0)
+                except asyncio.TimeoutError:
+                    self._log.warning("Agent did not terminate gracefully, killing")
+                    self._proc.kill()
+                    await self._proc.wait()
+            self._proc = None
+        
+        # Reset session state
         self.state.session_id = None
+        self.state.tool_calls.clear()
 
     async def _restart_session(self) -> None:
         """Restart the agent session (e.g., after config change)."""
@@ -832,6 +896,9 @@ class ACPKernel(Kernel):
 
     async def _send_prompt(self, code: str) -> str:
         """Send a prompt to the agent and return the response."""
+        # Reset interrupt flag
+        self._interrupted = False
+        
         if not self.is_connected:
             await self._start_agent()
 
@@ -843,10 +910,13 @@ class ACPKernel(Kernel):
         self.state.tool_calls = {}
 
         try:
-            response = await self._conn.prompt(
+            # Create the prompt task so it can be cancelled on interrupt
+            prompt_coro = self._conn.prompt(
                 session_id=self.state.session_id,
                 prompt=[text_block(code)],
             )
+            self._current_task = asyncio.current_task()
+            response = await prompt_coro
 
             self._log.debug("Prompt completed with stopReason: %s", response.stop_reason)
 
@@ -1200,6 +1270,20 @@ Configuration:
                 "payload": [],
                 "user_expressions": {},
             }
+        
+        except asyncio.CancelledError:
+            # Handle interrupt/cancellation
+            self._log.info("Execution cancelled")
+            if not silent:
+                self.send_response(
+                    self.iopub_socket,
+                    "stream",
+                    {"name": "stderr", "text": "\n⚠️ Execution interrupted\n"},
+                )
+            return {
+                "status": "abort",
+                "execution_count": self.execution_count,
+            }
 
         except Exception as e:
             error_msg = f"Error: {e}\n\nMake sure the ACP agent is configured correctly.\nCurrent agent: {self._agent_command}"
@@ -1221,11 +1305,31 @@ Configuration:
 
     async def do_shutdown(self, restart: bool):
         """Shutdown the kernel."""
-        if self._proc is not None:
+        self._log.info("Kernel shutdown requested (restart=%s)", restart)
+        
+        # Cancel any running task
+        current_task = getattr(self, '_current_task', None)
+        if current_task and not current_task.done():
+            current_task.cancel()
             try:
-                await self._stop_agent()
-            except Exception as e:
-                self._log.error("Error stopping agent: %s", e)
+                await current_task
+            except asyncio.CancelledError:
+                pass
+        
+        # Stop the agent
+        try:
+            await self._stop_agent()
+        except Exception as e:
+            self._log.error("Error stopping agent during shutdown: %s", e)
+        
+        # Restore original signal handler
+        try:
+            original_sigint = getattr(self, '_original_sigint', None)
+            if original_sigint:
+                signal.signal(signal.SIGINT, original_sigint)
+        except Exception:
+            pass
+        
         return {"status": "ok", "restart": restart}
 
     def do_complete(self, code: str, cursor_pos: int):

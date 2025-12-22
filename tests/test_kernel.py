@@ -27,6 +27,11 @@ def kernel():
         k.execution_count = 1
         # Need to initialize the magic pattern
         k._magic_pattern = re.compile(r"^%(\w+)\s*(.*)?$", re.MULTILINE)
+        # Initialize interrupt handling attributes
+        k._current_task = None
+        k._interrupted = False
+        k._original_sigint = None
+        k._current_parent = None
         return k
 
 
