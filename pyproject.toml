@@ -1,6 +1,6 @@
 [project]
 name = "agent-client-kernel"
-version = "0.3.0"
+version = "0.4.1"
 description = "A Jupyter Kernel implementing the Agent Client Protocol"
 authors = [
     { name = "Jim White", email = "jim@fovi.com" }
@@ -23,7 +23,7 @@ classifiers = [
 dependencies = [
     "ipykernel>=7.0",
     "jupyter-client>=8.5",
-    "agent-client-protocol @ git+https://github.com/agentclientprotocol/python-sdk.git",
+    "agent-client-protocol>=0.7",
     "ipympl",
     "ipywidgets",
     "matplotlib",

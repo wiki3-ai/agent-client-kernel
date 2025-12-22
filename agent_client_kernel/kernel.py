@@ -854,46 +854,6 @@ class ACPKernel(Kernel):
         await self._stop_agent()
         await self._start_agent()
 
-    async def _resume_session(self) -> bool:
-        """
-        Resume the session with updated MCP servers.
-        
-        Uses the ACP resume_session method to update the session without
-        restarting. Returns True if successful, False if the agent doesn't
-        support resume_session (in which case a restart is needed).
-        """
-        if not self.is_connected or not self._conn or not self.state.session_id:
-            return False
-
-        # Build MCP servers list
-        mcp_servers = [
-            McpServerStdio(
-                name=server.name,
-                command=server.command,
-                args=server.args,
-                env=[EnvVariable(name=k, value=v) for k, v in server.env.items()],
-            )
-            for server in self.state.mcp_servers
-        ]
-
-        try:
-            self._log.info("Resuming session with %d MCP servers", len(mcp_servers))
-            for server in self.state.mcp_servers:
-                self._log.info("  MCP server: %s -> %s %s", server.name, server.command, server.args)
-
-            await self._conn.resume_session(
-                session_id=self.state.session_id,
-                cwd=self.state.cwd,
-                mcp_servers=mcp_servers,
-            )
-            self._log.info("Session resumed successfully")
-            return True
-        except RequestError as e:
-            if "Method not found" in str(e):
-                self._log.info("Agent does not support resume_session")
-                return False
-            raise
-
     async def _send_prompt(self, code: str) -> str:
         """Send a prompt to the agent and return the response."""
         # Reset interrupt flag
@@ -1076,11 +1036,8 @@ Configuration:
         action = "Updated" if updated else "Added"
         
         if self.is_connected:
-            # Try to use resume_session to apply changes without restart
-            if await self._resume_session():
-                return f"{action} MCP server '{name}'. Session updated."
-            else:
-                return f"{action} MCP server '{name}'. Run %agent session restart to apply."
+            # MCP servers require session restart to take effect
+            return f"{action} MCP server '{name}'. Run %agent session restart to apply."
         else:
             return f"{action} MCP server '{name}'. It will be available when the session starts."
 
@@ -1105,11 +1062,7 @@ Configuration:
             if server.name == name:
                 self.state.mcp_servers.pop(i)
                 if self.is_connected:
-                    # Try to use resume_session to apply changes without restart
-                    if await self._resume_session():
-                        return f"Removed MCP server '{name}'. Session updated."
-                    else:
-                        return f"Removed MCP server '{name}'. Run %agent session restart to apply."
+                    return f"Removed MCP server '{name}'. Run %agent session restart to apply."
                 return f"Removed MCP server '{name}'"
 
         return f"No MCP server named '{name}' found"
@@ -1119,11 +1072,7 @@ Configuration:
         count = len(self.state.mcp_servers)
         self.state.mcp_servers = []
         if count > 0 and self.is_connected:
-            # Try to use resume_session to apply changes without restart
-            if await self._resume_session():
-                return f"Removed {count} MCP server(s). Session updated."
-            else:
-                return f"Removed {count} MCP server(s). Run %agent session restart to apply."
+            return f"Removed {count} MCP server(s). Run %agent session restart to apply."
         return f"Removed {count} MCP server(s)"
 
     def _magic_agent_session(self, args: str) -> str:

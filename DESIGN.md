@@ -176,7 +176,7 @@ After interrupt, the agent connection may be in an undefined state. The agent pr
 
 ### Agent Restart
 
-When the session needs to be restarted (e.g., after config change):
+When the session needs to be restarted (e.g., after MCP server config change):
 
 ```python
 async def _restart_session(self) -> None:
@@ -184,7 +184,7 @@ async def _restart_session(self) -> None:
     await self._start_agent()
 ```
 
-For MCP server changes, we first try `resume_session` (if agent supports it) before falling back to full restart.
+MCP server changes require a full session restart via `%agent session restart`.
 
 ## MCP Server Management
 
