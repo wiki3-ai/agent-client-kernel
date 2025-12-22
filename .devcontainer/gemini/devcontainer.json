@@ -37,8 +37,10 @@
         "JUPYTER_PORT": "8888",
         "GRANT_SUDO": "yes",
         "ACP_AGENT_COMMAND": "gemini",
-        "ACP_AGENT_ARGS": "--experimental-acp --yolo"
+        "ACP_AGENT_ARGS": "--experimental-acp"
     }
+    // Beware of --yolo.  First thing it will inspect and make changes to code it can access.
+
     // Codespaces ports are private by default so skip the auth token.
     // Need to disable XSRF check for Jupyter MCP servers if auth token is disabled.
     // If you need auth or don't mind the token, then just `jupyter lab` will do the trick.
