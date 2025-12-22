@@ -220,11 +220,20 @@ class ACPClientImpl(Client):
             "mode": mode,
         })
 
+        # Display permission request to user
+        tool_title = tool_call.title if hasattr(tool_call, 'title') and tool_call.title else "action"
+        options_str = ", ".join(f"{o.name}" for o in options)
+        self._send_stream("stderr", f"\n🔐 Permission requested for: {tool_title}\n")
+        self._send_stream("stderr", f"   Options: {options_str}\n")
+        self._send_stream("stderr", f"   Mode: {mode}\n")
+
         if mode == "deny":
+            self._send_stream("stderr", "   ❌ Denied (mode=deny)\n")
             return RequestPermissionResponse(outcome=DeniedOutcome(outcome="cancelled"))
         elif mode == "manual":
             # TODO: Implement interactive prompting
             # For now, fall back to auto-approve
+            self._send_stream("stderr", "   ⚠️ Manual mode not implemented, auto-approving\n")
             pass
 
         # Auto mode: select first allow option
@@ -389,6 +398,19 @@ class ACPClientImpl(Client):
                 {"name": cmd.name, "description": cmd.description}
                 for cmd in (update.available_commands or [])
             ]
+            # Display available commands
+            if update.available_commands:
+                cmds = [cmd.name for cmd in update.available_commands]
+                self._send_stream("stderr", f"📜 Available commands: {', '.join(cmds)}\n")
+
+        elif isinstance(update, CurrentModeUpdate):
+            # Display mode change
+            mode_name = getattr(update, 'mode', None) or getattr(update, 'current_mode', None) or str(update)
+            self._send_stream("stderr", f"🔄 Mode: {mode_name}\n")
+
+        else:
+            # Catch-all for unknown update types - display them so nothing is hidden
+            self._send_stream("stderr", f"📨 {update_type}: {str(update)[:200]}\n")
 
     # Maximum size for file content in JSON-RPC responses (must fit in 64KB with JSON overhead)
     MAX_FILE_CONTENT_SIZE = 48 * 1024  # 48KB to leave room for JSON framing
