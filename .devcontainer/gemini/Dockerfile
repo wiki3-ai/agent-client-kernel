@@ -14,5 +14,6 @@ RUN npm install -g @google/gemini-cli@latest
 
 COPY --chown=jovyan:users . .
 
-RUN pip install --user -e . \
-    && python -m agent_client_kernel install --user
+RUN pip install --user -e .[dev]
+
+RUN python -m agent_client_kernel install --user
