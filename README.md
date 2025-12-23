@@ -6,7 +6,7 @@ This kernel allows you to interact with external ACP agents directly from Jupyte
 
 ## About
 
-This project implements a Jupyter kernel that serves as a client for coding agents via the Agent Client Protocol. The implementation uses [MetaKernel](https://github.com/Calysto/metakernel) as the base class, which provides built-in magics, shell commands, and other useful features.
+This project implements a Jupyter kernel that serves as a client for coding agents via the Agent Client Protocol and ships the `%agent` magic plus helper commands for managing sessions, permissions, and MCP services.
 
 The kernel spawns and communicates with external ACP agents (such as codex-acp) via stdio, allowing you to interact with AI coding assistants directly from your notebook.
 
@@ -15,7 +15,7 @@ The kernel spawns and communicates with external ACP agents (such as codex-acp) 
 - **ACP Client Implementation**: Full client-side ACP protocol support
 - **External Agent Integration**: Connects to any ACP-compatible agent
 - **Multiple Agent Support**: Pre-configured devcontainers for Codex, Gemini, Goose, Kimi, and Docker cagent
-- **Based on MetaKernel**: Built-in magics (help, shell, file operations, etc.)
+- **Agent-focused magics**: `%agent` exposes help, shell, and file-style helpers tailored to ACP workflows.
 - **Configurable**: Easily switch between different agents via environment variables
 - **Compatible with JupyterLab and Jupyter Notebook**
 
@@ -164,7 +164,6 @@ See the example notebooks in `examples/` for demonstrations:
 - ipykernel >= 4.0
 - jupyter-client >= 4.0  
 - agent-client-protocol >= 0.4.0
-- metakernel >= 0.30.0
 - An ACP-compatible agent (e.g., codex-acp)
 
 ## Uninstallation
