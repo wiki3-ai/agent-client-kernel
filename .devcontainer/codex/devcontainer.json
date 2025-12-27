@@ -43,5 +43,5 @@
     // Codespaces ports are private by default so skip the auth token.
     // Need to disable XSRF check for Jupyter MCP servers if auth token is disabled.
     // If you need auth or don't mind the token, then just `jupyter lab` will do the trick.
-    "postStartCommand": "echo jupyter lab --NotebookApp.token=''  --ServerApp.disable_check_xsrf=True"
+    "postStartCommand": "jupyter lab --NotebookApp.token=''  --ServerApp.disable_check_xsrf=True"
 }
