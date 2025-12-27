@@ -4,6 +4,16 @@ A Jupyter Kernel for Zed's Agent Client Protocol (ACP) https://agentclientprotoc
 
 This kernel allows you to interact with external ACP agents directly from Jupyter notebooks. It acts as an ACP client that connects to coding agents like [Codex](https://github.com/zed-industries/codex-acp), providing a seamless notebook interface for AI-powered coding assistance.
 
+## Try This Now
+
+This deep link will create a new (free!) [GitHub Codespace](https://docs.github.com/en/codespaces) (it will ask you first) for running the [Codex devcontainer](https://github.com/wiki3-ai/agent-client-kernel/tree/main/.devcontainer/codex):
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/wiki3-ai/agent-client-kernel?devcontainer_path=.devcontainer%2Fcodex%2Fdevcontainer.json)
+
+### QR to this GitHub Repo (https://github.com/wiki3-ai/agent-client-kernel)
+[<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/eaaa26a5-c841-41e8-9acb-d28e5bf0d5f9" />](https://github.com/wiki3-ai/agent-client-kernel).
+
+
 ## About
 
 This project implements a Jupyter kernel that serves as a client for coding agents via the Agent Client Protocol. The implementation uses [MetaKernel](https://github.com/Calysto/metakernel) as the base class, which provides built-in magics, shell commands, and other useful features.
