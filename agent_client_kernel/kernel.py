@@ -41,7 +41,7 @@ from acp.schema import (
     EmbeddedResourceContentBlock,
     EnvVariable,
     ImageContentBlock,
-    KillTerminalCommandResponse,
+    KillTerminalResponse,
     McpServerStdio,
     PermissionOption,
     ReadTextFileResponse,
@@ -491,7 +491,7 @@ class ACPClientImpl(Client):
         session_id: str,
         terminal_id: str,
         **kwargs: Any,
-    ) -> KillTerminalCommandResponse | None:
+    ) -> KillTerminalResponse | None:
         """Kill a terminal."""
         terminal = self._kernel.state.terminals.get(terminal_id)
         if terminal and terminal.process.returncode is None:
@@ -499,7 +499,7 @@ class ACPClientImpl(Client):
             await terminal.process.wait()
             terminal.exit_code = terminal.process.returncode
         
-        return KillTerminalCommandResponse()
+        return KillTerminalResponse()
 
     async def ext_method(self, method: str, params: dict[str, Any]) -> dict[str, Any]:
         """Handle extension methods."""
