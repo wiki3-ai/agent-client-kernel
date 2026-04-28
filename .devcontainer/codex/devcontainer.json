@@ -6,10 +6,10 @@
     },
     // "remoteUser": "root",
     "forwardPorts": [
-        8888
+        8899
     ],
     "portsAttributes": {
-        "8888": {
+        "8899": {
             "label": "Jupyter",
             "requireLocalPort": true
         }
@@ -34,7 +34,7 @@
       }
     },
     "containerEnv": {
-        "JUPYTER_PORT": "8888",
+        "JUPYTER_PORT": "8899",
         "GRANT_SUDO": "yes",
         "ACP_AGENT_COMMAND": "codex-acp",
         "ACP_AGENT_ARGS": ""
