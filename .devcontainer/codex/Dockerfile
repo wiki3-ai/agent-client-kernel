@@ -21,12 +21,23 @@ FROM quay.io/jupyter/minimal-notebook:latest
 
 ARG TARGETARCH
 
-# Install pinned ACP agent binaries (as root, into /usr/local/bin).
-USER root
-COPY .devcontainer/codex/agent-versions.json    /tmp/agent-versions.json
-COPY .devcontainer/codex/install-acp-agents.sh  /tmp/install-acp-agents.sh
+# Everything in this image is built as jovyan. The base image puts
+# ~/.local/bin on PATH for jovyan, so installing the ACP agents there is
+# equivalent to /usr/local/bin for our purposes and avoids any need for
+# root. Keeping the whole build under a single non-root user also prevents
+# accidentally creating root-owned files under /home/jovyan (notably
+# ~/.cache, which the base image's HOME=/home/jovyan would otherwise cause
+# tools like conda/pip/uv to populate as root).
+# This is the default user in the base image so no need to set it here.
+# USER jovyan
+
+# Install pinned ACP agent binaries into ~/.local/bin (jovyan-writable,
+# already on PATH in the base image).
+COPY --chown=jovyan:users .devcontainer/codex/agent-versions.json    /tmp/agent-versions.json
+COPY --chown=jovyan:users .devcontainer/codex/install-acp-agents.sh  /tmp/install-acp-agents.sh
 RUN chmod +x /tmp/install-acp-agents.sh && \
-    TARGETARCH="${TARGETARCH}" /tmp/install-acp-agents.sh /tmp/agent-versions.json /usr/local && \
+    mkdir -p "$HOME/.local/bin" && \
+    TARGETARCH="${TARGETARCH}" /tmp/install-acp-agents.sh /tmp/agent-versions.json "$HOME/.local" && \
     rm -f /tmp/agent-versions.json /tmp/install-acp-agents.sh && \
     codex --version && \
     (codex-acp --version 2>/dev/null || codex-acp --help >/dev/null)
@@ -34,21 +45,25 @@ RUN chmod +x /tmp/install-acp-agents.sh && \
 # graphviz is used by some example notebooks.
 RUN conda install -y -c conda-forge graphviz && conda clean -afy
 
-USER ${NB_UID}
-
 # Copy project files into jovyan's home (matches the original devcontainer layout).
-COPY --chown=${NB_UID}:${NB_GID} . /home/${NB_USER}/
-WORKDIR /home/${NB_USER}
+# Note: --chown does not expand ENV from the base image, so use literal user:group.
+COPY --chown=jovyan:users . /home/jovyan/
+WORKDIR /home/jovyan
 
 # Install uv and the project's locked Python dependencies into the conda
 # base environment for fast, reproducible installs.
 SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
 
+# Point uv's cache at a writable tmp location. We pass --no-cache to
+# `uv pip install` below, but `uv export` has no equivalent flag and will
+# otherwise try to initialize ~/.cache/uv.
+ENV UV_CACHE_DIR=/tmp/uv-cache
+
 RUN pip install --upgrade "uv>=0.9.15" && \
     uv export --no-hashes --frozen --format requirements-txt -o /tmp/requirements.lock.txt && \
     uv pip install --system --no-cache -r /tmp/requirements.lock.txt && \
     uv pip install --system --no-cache --no-deps -e . && \
-    rm -f /tmp/requirements.lock.txt
+    rm -rf /tmp/requirements.lock.txt /tmp/uv-cache
 
 # Install the kernel for the current user.
 RUN python -m agent_client_kernel install --user
