@@ -3,7 +3,8 @@ FROM quay.io/jupyter/minimal-notebook:latest
 USER root
 RUN apt-get update && sudo apt-get install -y \
     nodejs npm \
-    graphviz
+    graphviz \
+    bubblewrap
 
 # Install npm packages
 RUN npm install -g @openai/codex@latest @zed-industries/codex-acp@latest
