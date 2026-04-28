@@ -46,20 +46,20 @@ RUN mkdir -p "$HOME/.local/bin" && \
 # graphviz is used by some example notebooks.
 RUN conda install -y -c conda-forge graphviz && conda clean -afy
 
-# Install uv and the project's locked Python dependencies into the conda
-# base environment for fast, reproducible installs.
+# Install uv and the project (with deps from pyproject.toml) into the
+# conda base environment.
 SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
 
-# Point uv's cache at a writable tmp location. We pass --no-cache to
-# `uv pip install` below, but `uv export` has no equivalent flag and will
-# otherwise try to initialize ~/.cache/uv.
-ENV UV_CACHE_DIR=/tmp/uv-cache
+# Disable uv's on-disk cache: we don't want a cache baked into the image,
+# and disabling it avoids creating ~/.cache/uv at all.
+ENV UV_NO_CACHE=1
 
+# `pip install uv` is just bootstrap (the base image has pip but not uv).
+# After that we use `uv pip install -e .`, which resolves dependencies
+# directly from pyproject.toml. We don't pin to uv.lock here because
+# devcontainer rebuilds intentionally pick up upstream updates.
 RUN pip install --upgrade "uv>=0.9.15" && \
-    uv export --no-hashes --frozen --format requirements-txt -o /tmp/requirements.lock.txt && \
-    uv pip install --system --no-cache -r /tmp/requirements.lock.txt && \
-    uv pip install --system --no-cache --no-deps -e . && \
-    rm -rf /tmp/requirements.lock.txt /tmp/uv-cache
+    uv pip install --system -e .
 
 # Install the kernel for the current user.
 RUN python -m agent_client_kernel install --user

@@ -73,17 +73,21 @@ The kernel spawns a subprocess to run the agent which needs installation and ACP
    The Codex devcontainer installs them as native binaries downloaded
    directly from the upstream GitHub releases with SHA-256 verification
    (no Node.js / npm involved). The pinned versions and checksums live in
-   [`.devcontainer/codex/agent-versions.json`](.devcontainer/codex/agent-versions.json),
+   [`scripts/agent-versions.json`](scripts/agent-versions.json),
    and the install script
-   [`install-acp-agents.sh`](.devcontainer/codex/install-acp-agents.sh)
-   handles `linux/amd64` and `linux/arm64` automatically.
+   [`scripts/install-acp-agents.sh`](scripts/install-acp-agents.sh)
+   handles `linux/amd64` and `linux/arm64` automatically. The devcontainer
+   runs entirely as the non-root `jovyan` user and installs the binaries
+   into `~/.local/bin` (already on `PATH`), so no `sudo` or root-owned
+   files are involved.
 
    To install them outside a devcontainer:
 
    ```bash
    # Linux only. Set TARGETARCH=amd64 or arm64.
-   sudo TARGETARCH=amd64 .devcontainer/codex/install-acp-agents.sh \
-       .devcontainer/codex/agent-versions.json /usr/local
+   # Installs into ~/.local/bin (no sudo required).
+   TARGETARCH=amd64 scripts/install-acp-agents.sh \
+       scripts/agent-versions.json "$HOME/.local"
    ```
 
    To bump pinned versions for a release, run:
