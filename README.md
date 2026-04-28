@@ -52,13 +52,14 @@ This project provides multiple devcontainer configurations for different ACP age
 
 ### Manual Installation
 
-Alternatively, install the package, agent, and kernel:
+Alternatively, install the project from source. We use [uv](https://docs.astral.sh/uv/)
+for reproducible installs against `uv.lock`:
 
 ```bash
-pip install --upgrade uv jupyter-mcp-tools
+pip install --upgrade uv
 git submodule update --init --recursive
-pip install -e .
-python -m agent_client_kernel install --user
+uv sync --locked --extra dev      # or: uv pip install -e ".[dev]"
+uv run python -m agent_client_kernel install --user
 ```
 
 ## Configuration
@@ -67,26 +68,52 @@ The kernel spawns a subprocess to run the agent which needs installation and ACP
 
 ### Using Codex (Default)
 
-1. Install codex-acp:
+1. Install the `codex` and `codex-acp` binaries.
+
+   The Codex devcontainer installs them as native binaries downloaded
+   directly from the upstream GitHub releases with SHA-256 verification
+   (no Node.js / npm involved). The pinned versions and checksums live in
+   [`.devcontainer/codex/agent-versions.json`](.devcontainer/codex/agent-versions.json),
+   and the install script
+   [`install-acp-agents.sh`](.devcontainer/codex/install-acp-agents.sh)
+   handles `linux/amd64` and `linux/arm64` automatically.
+
+   To install them outside a devcontainer:
+
    ```bash
-   npm install -g @openai/codex@latest @zed-industries/codex-acp@latest
+   # Linux only. Set TARGETARCH=amd64 or arm64.
+   sudo TARGETARCH=amd64 .devcontainer/codex/install-acp-agents.sh \
+       .devcontainer/codex/agent-versions.json /usr/local
    ```
 
-2. Set your OpenAI API key:  This can be onitted and `codex` will prompt for this.
+   To bump pinned versions for a release, run:
+
+   ```bash
+   python scripts/update-agent-versions.py \
+       --set codex=<NEW_VERSION> --set codex-acp=<NEW_VERSION>
+   ```
+
+   This refetches the tarballs, recomputes SHA-256s, and rewrites the
+   manifest. Use `--check` (in CI) to verify pinned checksums still
+   match upstream without modifying anything.
+
+2. Set your OpenAI API key. This can be omitted and `codex` will prompt for it.
    ```bash
    export OPENAI_API_KEY=sk-...
    ```
 
-3. Authorize Codex
+3. Authorize Codex:
    ```bash
    codex
    ```
 
    It will prompt you through authentication and permission to run stuff.
 
-   I think only API auth works in Codespaces because OAuth tries to redirect thru localhost.
+   Only API-key auth currently works in Codespaces because OAuth tries
+   to redirect through localhost.
 
-   This is the error you get when trying to chat with the agent then you probably missed this step.
+   This is the error you get when trying to chat with the agent if you
+   missed this step:
    ```
    Error: Authentication required
 
@@ -94,9 +121,9 @@ The kernel spawns a subprocess to run the agent which needs installation and ACP
    Current agent: codex-acp
    ```
 
-4. Start Jupyter and use the "Agent Client Protocol" kernel
+4. Start Jupyter and use the "Agent Client Protocol" kernel:
    ```bash
-   start-noteboook.py
+   jupyter lab
    ```
 
 ### Using Other Agents
@@ -171,11 +198,23 @@ See the example notebooks in `examples/` for demonstrations:
 ## Requirements
 
 - Python >= 3.10
-- ipykernel >= 4.0
-- jupyter-client >= 4.0  
-- agent-client-protocol >= 0.4.0
-- metakernel >= 0.30.0
-- An ACP-compatible agent (e.g., codex-acp)
+- ipykernel >= 7.0
+- jupyter-client >= 8.5
+- agent-client-protocol (latest from
+  [python-sdk](https://github.com/agentclientprotocol/python-sdk); pinned in `uv.lock`)
+- An ACP-compatible agent (e.g., `codex-acp`)
+
+## Development
+
+```bash
+uv sync --locked --extra dev
+uv run pytest
+```
+
+The CI workflow (`.github/workflows/ci.yml`) runs the test suite on
+Python 3.10 / 3.11 / 3.12, verifies that the pinned ACP agent
+checksums still match upstream, and builds the multi-arch Codex
+devcontainer image.
 
 ## Uninstallation
 

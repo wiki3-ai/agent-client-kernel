@@ -1,9 +1,0 @@
-{
-  "name": "agent-client-kernel",
-  "private": true,
-  "description": "Pinned versions of npm-distributed ACP agent backends used by the devcontainer.",
-  "dependencies": {
-    "@openai/codex": "0.125.0",
-    "@zed-industries/codex-acp": "0.12.0"
-  }
-}
