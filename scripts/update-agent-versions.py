@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Update pinned ACP agent versions and SHA-256 checksums.
 
-Reads .devcontainer/codex/agent-versions.json, fetches the requested release
+Reads scripts/agent-versions.json, fetches the requested release
 tarballs from GitHub for every supported target triple, computes their
 SHA-256 checksums, and writes the manifest back in place.
 
@@ -36,7 +36,7 @@ import urllib.request
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-MANIFEST_PATH = REPO_ROOT / ".devcontainer" / "codex" / "agent-versions.json"
+MANIFEST_PATH = REPO_ROOT / "scripts" / "agent-versions.json"
 
 
 def _download(url: str) -> bytes:

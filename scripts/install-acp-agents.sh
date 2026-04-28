@@ -15,7 +15,7 @@
 
 set -euo pipefail
 
-manifest="${1:-/tmp/agent-versions.json}"
+manifest="${1:-scripts/agent-versions.json}"
 prefix="${2:-/usr/local}"
 
 if [[ ! -f "$manifest" ]]; then
