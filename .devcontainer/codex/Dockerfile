@@ -43,8 +43,10 @@ RUN mkdir -p "$HOME/.local/bin" && \
     "$HOME/.local/bin/codex" --version && \
     ("$HOME/.local/bin/codex-acp" --version 2>/dev/null || "$HOME/.local/bin/codex-acp" --help >/dev/null)
 
+# bubblewrap is needed by Codex for Linux sandboxing but we're not actually using it.
+# TODO: Use https://github.com/openai/codex/blob/main/.devcontainer/devcontainer.secure.json
 # graphviz is used by some example notebooks.
-RUN conda install -y -c conda-forge graphviz && conda clean -afy
+RUN conda install -y -c conda-forge bubblewrap graphviz && conda clean -afy
 
 # Install uv and the project (with deps from pyproject.toml) into the
 # conda base environment.
@@ -52,7 +54,7 @@ SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
 
 # Disable uv's on-disk cache: we don't want a cache baked into the image,
 # and disabling it avoids creating ~/.cache/uv at all.
-ENV UV_NO_CACHE=1
+# ENV UV_NO_CACHE=1
 
 # `pip install uv` is just bootstrap (the base image has pip but not uv).
 # After that we use `uv pip install -e .`, which resolves dependencies
