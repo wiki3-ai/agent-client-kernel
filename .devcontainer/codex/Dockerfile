@@ -31,24 +31,20 @@ ARG TARGETARCH
 # This is the default user in the base image so no need to set it here.
 # USER jovyan
 
-# Install pinned ACP agent binaries into ~/.local/bin (jovyan-writable,
-# already on PATH in the base image).
-COPY --chown=jovyan:users .devcontainer/codex/agent-versions.json    /tmp/agent-versions.json
-COPY --chown=jovyan:users .devcontainer/codex/install-acp-agents.sh  /tmp/install-acp-agents.sh
-RUN chmod +x /tmp/install-acp-agents.sh && \
-    mkdir -p "$HOME/.local/bin" && \
-    TARGETARCH="${TARGETARCH}" /tmp/install-acp-agents.sh /tmp/agent-versions.json "$HOME/.local" && \
-    rm -f /tmp/agent-versions.json /tmp/install-acp-agents.sh && \
-    codex --version && \
-    (codex-acp --version 2>/dev/null || codex-acp --help >/dev/null)
-
-# graphviz is used by some example notebooks.
-RUN conda install -y -c conda-forge graphviz && conda clean -afy
-
 # Copy project files into jovyan's home (matches the original devcontainer layout).
 # Note: --chown does not expand ENV from the base image, so use literal user:group.
 COPY --chown=jovyan:users . /home/jovyan/
 WORKDIR /home/jovyan
+
+# Install pinned ACP agent binaries into ~/.local/bin (jovyan-writable,
+# already on PATH in the base image).
+RUN mkdir -p "$HOME/.local/bin" && \
+    TARGETARCH="${TARGETARCH}" scripts/install-acp-agents.sh scripts/agent-versions.json "$HOME/.local" && \
+    "$HOME/.local/bin/codex" --version && \
+    ("$HOME/.local/bin/codex-acp" --version 2>/dev/null || "$HOME/.local/bin/codex-acp" --help >/dev/null)
+
+# graphviz is used by some example notebooks.
+RUN conda install -y -c conda-forge graphviz && conda clean -afy
 
 # Install uv and the project's locked Python dependencies into the conda
 # base environment for fast, reproducible installs.
