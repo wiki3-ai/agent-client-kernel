@@ -6,7 +6,7 @@
     },
     "runArgs": [
         "--cpus=4",
-        "--memory=8g"
+        "--memory=10g"
     ],
     // "remoteUser": "root",
     "forwardPorts": [
