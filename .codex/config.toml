@@ -1,17 +1,41 @@
-model = "qwen3.5-27b"
-# model = "google/gemma-4-26b-a4b"
-model_provider = "local_lmstudio"
+profile = "lmstudio-qwen35"
 
-# Default local provider used with `--oss`
-oss_provider = "lmstudio" # or "ollama"
+[profiles.lmstudio-qwen35]
+model = "qwen3.5-27b"
+model_provider = "local_lmstudio"
+model_catalog_json = "/home/jovyan/.codex/model-catalogs/local-lmstudio.json"
+
+# Tune these to the actual LM Studio model settings.
+model_context_window = 32768
+model_auto_compact_token_limit = 24000
+
+# Local non-OpenAI models usually should not receive OpenAI reasoning metadata.
+model_reasoning_summary = "none"
+model_supports_reasoning_summaries = false
 
 sandbox_mode = "danger-full-access"
+personality = "pragmatic"
 
-[model_providers.proxy]
-name = "OpenAI using LLM proxy"
-base_url = "http://proxy.example.com"
-env_key = "OPENAI_API_KEY"
+[profiles.lmstudio-gemma4]
+model = "google/gemma-4-26b-a4b"
+model_provider = "local_lmstudio"
+model_catalog_json = "/home/jovyan/.codex/model-catalogs/local-lmstudio.json"
+model_context_window = 32768
+model_auto_compact_token_limit = 24000
+model_reasoning_summary = "none"
+model_supports_reasoning_summaries = false
+sandbox_mode = "danger-full-access"
 
 [model_providers.local_lmstudio]
 name = "LM Studio"
 base_url = "http://192.168.64.1:1234/v1"
+wire_api = "responses"
+requires_openai_auth = false
+supports_websockets = false
+stream_idle_timeout_ms = 300000
+request_max_retries = 1
+stream_max_retries = 0
+
+[projects."/workspaces/agent-client-kernel"]
+trust_level = "trusted"
+
