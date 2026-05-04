@@ -26,6 +26,17 @@ model_reasoning_summary = "none"
 model_supports_reasoning_summaries = false
 sandbox_mode = "danger-full-access"
 
+
+[profiles.lmstudio-gemma4]
+model = "google/gemma-4-26b-a4b"
+model_provider = "local_lmstudio"
+model_catalog_json = "/home/jovyan/.codex/model-catalogs/local-lmstudio.json"
+model_context_window = 32768
+model_auto_compact_token_limit = 24000
+model_reasoning_summary = "none"
+model_supports_reasoning_summaries = false
+sandbox_mode = "danger-full-access"
+
 [model_providers.local_lmstudio]
 name = "LM Studio"
 base_url = "http://192.168.64.1:1234/v1"

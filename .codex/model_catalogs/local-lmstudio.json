@@ -40,6 +40,47 @@
       "auto_compact_token_limit": 24000,
       "effective_context_window_percent": 95,
       "experimental_supported_tools": []
+    },
+    {
+      "slug": "google/gemma-4-26b-a4b",
+      "display_name": "Gemma 4 26B A4B via LM Studio",
+      "description": "Local Gemma 4 model served by LM Studio.",
+      "default_reasoning_level": "low",
+      "supported_reasoning_levels": [
+        {
+          "effort": "low",
+          "description": "Minimal local-model reasoning control"
+        }
+      ],
+      "shell_type": "shell_command",
+      "visibility": "list",
+      "minimal_client_version": "0.0.1",
+      "supported_in_api": true,
+      "availability_nux": null,
+      "upgrade": null,
+      "priority": 101,
+      "base_instructions": "You are Codex, a coding agent. Use the provided tool-calling interface for tool use. Do not emit literal XML, markdown, or JSON tool-call text unless the user asks for text.",
+      "supports_reasoning_summaries": false,
+      "reasoning_summary_format": "none",
+      "default_reasoning_summary": "none",
+      "support_verbosity": false,
+      "default_verbosity": "low",
+      "apply_patch_tool_type": "freeform",
+      "web_search_tool_type": "text",
+      "input_modalities": [
+        "text"
+      ],
+      "supports_image_detail_original": false,
+      "truncation_policy": {
+        "mode": "tokens",
+        "limit": 10000
+      },
+      "supports_parallel_tool_calls": false,
+      "context_window": 32768,
+      "max_context_window": 32768,
+      "auto_compact_token_limit": 24000,
+      "effective_context_window_percent": 95,
+      "experimental_supported_tools": []
     }
   ]
 }
