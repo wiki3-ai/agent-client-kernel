@@ -4,6 +4,10 @@
         "dockerfile": "codex/Dockerfile",
         "context": ".."
     },
+    "runArgs": [
+        "--cpus=4",
+        "--memory=8g"
+    ],
     // "remoteUser": "root",
     "forwardPorts": [
         8888
