@@ -44,19 +44,48 @@ class TestSessionUpdate:
     @pytest.mark.asyncio
     async def test_agent_message_chunk_text(self, acp_client, mock_kernel):
         """Test handling text message chunks."""
-        chunk = make_text_chunk("Hello, world!")
+        # Include a newline so the line-buffered stream emits immediately.
+        chunk = make_text_chunk("Hello, world!\n")
 
         await acp_client.session_update(session_id="test", update=chunk)
 
         # Check text was accumulated
-        assert mock_kernel.state.response_text == "Hello, world!"
+        assert mock_kernel.state.response_text == "Hello, world!\n"
 
         # Check stream output was sent
         mock_kernel.send_response.assert_called_once()
         call_args = mock_kernel.send_response.call_args
         assert call_args[0][1] == "stream"
         assert call_args[0][2]["name"] == "stdout"
-        assert call_args[0][2]["text"] == "Hello, world!"
+        assert call_args[0][2]["text"] == "Hello, world!\n"
+
+    @pytest.mark.asyncio
+    async def test_agent_message_chunk_buffers_partial_line(self, acp_client, mock_kernel):
+        """Token-sized chunks without a newline are buffered, not sent per token."""
+        for tok in ["Hel", "lo,", " wor", "ld!"]:
+            await acp_client.session_update(session_id="test", update=make_text_chunk(tok))
+
+        # Nothing flushed yet because no newline arrived.
+        mock_kernel.send_response.assert_not_called()
+        assert mock_kernel.state.response_text == "Hello, world!"
+
+        # Force flush emits the buffered line as a single message.
+        acp_client._flush_streams()
+        mock_kernel.send_response.assert_called_once()
+        call_args = mock_kernel.send_response.call_args
+        assert call_args[0][2]["text"] == "Hello, world!\n"
+
+    @pytest.mark.asyncio
+    async def test_agent_message_chunk_flushes_on_newline(self, acp_client, mock_kernel):
+        """Multiple chunks coalesce into one stream message per line."""
+        for tok in ["line one", "\nline two\nlin", "e three\n"]:
+            await acp_client.session_update(session_id="test", update=make_text_chunk(tok))
+
+        # Each call to send_response carries one or more complete lines.
+        sent_texts = [c[0][2]["text"] for c in mock_kernel.send_response.call_args_list]
+        assert "".join(sent_texts) == "line one\nline two\nline three\n"
+        for text in sent_texts:
+            assert text.endswith("\n")
 
     @pytest.mark.asyncio
     async def test_agent_message_chunk_accumulates(self, acp_client, mock_kernel):
@@ -75,7 +104,7 @@ class TestSessionUpdate:
     @pytest.mark.asyncio
     async def test_agent_thought_chunk(self, acp_client, mock_kernel):
         """Test handling thought chunks."""
-        chunk = make_thought_chunk("thinking...")
+        chunk = make_thought_chunk("thinking...\n")
 
         await acp_client.session_update(session_id="test", update=chunk)
 

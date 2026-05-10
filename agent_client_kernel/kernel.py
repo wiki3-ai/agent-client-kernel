@@ -113,12 +113,20 @@ class ACPClientImpl(Client):
     def __init__(self, kernel: "ACPKernel") -> None:
         self._kernel = kernel
         self._log = logging.getLogger(f"{__name__}.ACPClient")
+        # Per-stream line buffers. Agents (especially LLM streaming) typically
+        # emit one token per AgentMessageChunk; without buffering each token
+        # becomes a separate "stream" output entry on the client and renders
+        # on its own line. We buffer per stream and flush on newline (and on
+        # stream switch / prompt completion) so the user sees normal lines.
+        self._stream_buffers: dict[str, str] = {"stdout": "", "stderr": ""}
 
-    def _send_stream(self, name: str, text: str) -> None:
-        """Send stream output to the currently active cell."""
+    def _send_stream_raw(self, name: str, text: str) -> None:
+        """Send a stream output message immediately, without buffering."""
+        if not text:
+            return
         # Use the kernel's current parent header for proper cell association
         parent = getattr(self._kernel, '_current_parent', None)
-        
+
         if parent is not None and hasattr(self._kernel, 'session'):
             # Use session.send with explicit parent for proper cell routing
             self._kernel.session.send(
@@ -134,6 +142,45 @@ class ACPClientImpl(Client):
                 "stream",
                 {"name": name, "text": text},
             )
+
+    def _send_stream(self, name: str, text: str) -> None:
+        """Append `text` to the named stream buffer and flush complete lines.
+
+        Switching streams flushes the *other* buffer first so output ordering
+        between stdout and stderr is preserved at line granularity.
+        """
+        if not text:
+            return
+        # Flush the other stream so interleaved output stays in order.
+        for other in ("stdout", "stderr"):
+            if other != name and self._stream_buffers.get(other):
+                pending = self._stream_buffers[other]
+                self._stream_buffers[other] = ""
+                # Force a newline on the flushed-other so it doesn't get
+                # concatenated with the new stream's text.
+                if not pending.endswith("\n"):
+                    pending += "\n"
+                self._send_stream_raw(other, pending)
+
+        buf = self._stream_buffers.get(name, "") + text
+        # Flush everything up to (and including) the last newline; keep the
+        # trailing partial line in the buffer.
+        last_nl = buf.rfind("\n")
+        if last_nl >= 0:
+            to_send = buf[: last_nl + 1]
+            buf = buf[last_nl + 1 :]
+            self._send_stream_raw(name, to_send)
+        self._stream_buffers[name] = buf
+
+    def _flush_streams(self) -> None:
+        """Flush any residual partial-line content on all stream buffers."""
+        for name in ("stdout", "stderr"):
+            pending = self._stream_buffers.get(name, "")
+            if pending:
+                self._stream_buffers[name] = ""
+                if not pending.endswith("\n"):
+                    pending += "\n"
+                self._send_stream_raw(name, pending)
 
     async def request_permission(
         self,
@@ -714,6 +761,11 @@ class ACPKernel(Kernel):
 
             self._log.debug("Prompt completed with stopReason: %s", response.stop_reason)
 
+            # Flush any partial line still sitting in the stream buffers so
+            # the final tokens of the agent's reply actually reach the cell.
+            if self._client is not None:
+                self._client._flush_streams()
+
             # Add newline after streaming output
             if self.state.response_text:
                 self.send_response(
@@ -730,6 +782,12 @@ class ACPKernel(Kernel):
             # The proper fix is for the agent to truncate large outputs before sending.
             if "chunk is longer than limit" in str(e) or "Separator is found" in str(e):
                 self._log.warning("Agent response exceeded stream buffer limit (1MB), restarting connection")
+                # Flush whatever was buffered before tearing down the conn.
+                if self._client is not None:
+                    try:
+                        self._client._flush_streams()
+                    except Exception:
+                        pass
                 # Clean up the broken connection
                 await self._stop_agent()
                 # Notify user about what happened - note that any streamed content before
