@@ -92,6 +92,7 @@ async def test_iopub_stream_emits_deltas_only_on_wire():
     """
     kernel, socket, session, parent_header = _make_real_session_kernel()
     client = ACPClientImpl(kernel)
+    client._stream_progress = True
 
     # Token stream that mirrors the user-reported reproduction:
     # an intro line, blank line, then a markdown table built up token by token.
@@ -156,6 +157,7 @@ async def test_iopub_stream_one_line_per_message():
     """
     kernel, socket, session, _ = _make_real_session_kernel()
     client = ACPClientImpl(kernel)
+    client._stream_progress = True
 
     for tok in ["foo", " bar\n", "baz", " qux\n", "trailing"]:
         await client.session_update(session_id="s", update=make_text_chunk(tok))
@@ -175,6 +177,42 @@ async def test_iopub_stream_one_line_per_message():
 
 
 @pytest.mark.asyncio
+async def test_iopub_stream_default_no_progressive_publishing():
+    """With progressive streaming OFF (the default), no stream message is
+    published mid-prompt; the entire response is emitted as a single
+    coalesced message at end-of-turn flush.
+    """
+    kernel, socket, session, _ = _make_real_session_kernel()
+    client = ACPClientImpl(kernel)  # default: _stream_progress is False
+
+    for tok in [
+        "Here are the example notebooks ",
+        "in your `examples/` directory:\n",
+        "\n",
+        "| Notebook | Size |\n",
+        "|----------|------|\n",
+        "| **a.ipynb** | 1 KB |\n",
+    ]:
+        await client.session_update(session_id="s", update=make_text_chunk(tok))
+
+    # Nothing on the wire yet.
+    assert _decode_stream_messages(socket, session) == []
+
+    client._flush_streams()
+    msgs = _decode_stream_messages(socket, session)
+    # Exactly one stream message carrying the full response.
+    assert len(msgs) == 1
+    assert msgs[0]["content"]["name"] == "stdout"
+    assert msgs[0]["content"]["text"] == (
+        "Here are the example notebooks in your `examples/` directory:\n"
+        "\n"
+        "| Notebook | Size |\n"
+        "|----------|------|\n"
+        "| **a.ipynb** | 1 KB |\n"
+    )
+
+
+@pytest.mark.asyncio
 async def test_iopub_parent_header_correct_across_async_tasks():
     """Parent header is preserved when chunks arrive from a different task.
 
@@ -188,6 +226,7 @@ async def test_iopub_parent_header_correct_across_async_tasks():
 
     kernel, socket, session, parent_header = _make_real_session_kernel()
     client = ACPClientImpl(kernel)
+    client._stream_progress = True
 
     async def deliver_chunks() -> None:
         # This coroutine is scheduled as a separate Task so it has its own

@@ -119,6 +119,16 @@ class ACPClientImpl(Client):
         # on its own line. We buffer per stream and flush on newline (and on
         # stream switch / prompt completion) so the user sees normal lines.
         self._stream_buffers: dict[str, str] = {"stdout": "", "stderr": ""}
+        # Progressive streaming of partial responses to the cell while the
+        # agent is still generating. Disabled by default because some
+        # frontends (notably JupyterLab + jupyter_server_nbmodel) currently
+        # render each progressive `stream` message as a cumulative rebuild,
+        # producing visible duplicate output. With it disabled the kernel
+        # only emits stream messages when the prompt completes.
+        # Override with ACP_STREAM_PROGRESS=1 (or true/yes/on).
+        self._stream_progress = os.environ.get(
+            "ACP_STREAM_PROGRESS", ""
+        ).strip().lower() in ("1", "true", "yes", "on")
 
     def _send_stream_raw(self, name: str, text: str) -> None:
         """Send a stream output message immediately, without buffering."""
@@ -148,9 +158,19 @@ class ACPClientImpl(Client):
 
         Switching streams flushes the *other* buffer first so output ordering
         between stdout and stderr is preserved at line granularity.
+
+        When ``self._stream_progress`` is False (the default), no message is
+        published mid-prompt: text accumulates in the buffer and is flushed
+        as a single message per stream by ``_flush_streams`` at end of turn.
         """
         if not text:
             return
+        if not self._stream_progress:
+            # No progressive streaming: just accumulate. End-of-turn flush
+            # in _flush_streams() will publish each buffer as one message.
+            self._stream_buffers[name] = self._stream_buffers.get(name, "") + text
+            return
+
         # Flush the other stream so interleaved output stays in order.
         for other in ("stdout", "stderr"):
             if other != name and self._stream_buffers.get(other):

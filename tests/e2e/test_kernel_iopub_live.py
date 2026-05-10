@@ -123,6 +123,9 @@ async def test_kernel_iopub_stream_no_duplication(tmp_path):
     env["ACP_AGENT_ARGS"] = str(agent_path)
     env["ACP_LOG_LEVEL"] = "WARNING"
     env["BROWSER"] = "/bin/true"
+    # Force progressive streaming on so the kernel publishes one stream
+    # message per line; the test verifies wire-level behavior of that mode.
+    env["ACP_STREAM_PROGRESS"] = "1"
 
     km = AsyncKernelManager(kernel_name="agentclient")
     try:
