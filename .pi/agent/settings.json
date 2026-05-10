@@ -1,0 +1,4 @@
+{
+  "defaultProvider": "lmstudio",
+  "defaultModel": "qwen/qwen3-coder-next"
+}

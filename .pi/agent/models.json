@@ -1,0 +1,17 @@
+{
+    "providers": {
+        "lmstudio": {
+            "baseUrl": "http://host.docker.internal:1234/v1",
+            "api": "openai-completions",
+            "apiKey": "lm-studio",
+            "models": [
+                {
+                    "id": "qwen/qwen3-coder-next",
+                    "input": [
+                        "text"
+                    ]
+                }
+            ]
+        }
+    }
+}
