@@ -6,16 +6,22 @@
   },
   "runArgs": [
     "--cpus=4",
-    "--memory=10g"
+    "--memory=8g"
   ],
   // "remoteUser": "root",
+  // Jupyter always listens on 8888 inside the container (it's the only
+  // thing in here, so that's always free). The host-side mapping is
+  // flexible: requireLocalPort=false lets VS Code pick a free local
+  // port whenever 8888 is busy on the host (e.g. Apple Container, or a
+  // sibling devcontainer).
   "forwardPorts": [
     8888
   ],
   "portsAttributes": {
     "8888": {
       "label": "JupyterLab",
-      "requireLocalPort": true
+      "requireLocalPort": false,
+      "onAutoForward": "openBrowser"
     }
   },
   "remoteEnv": {
@@ -44,8 +50,8 @@
     "ACP_AGENT_ARGS": "",
     "RESTARTABLE": "yes"
   },
+  // "postCreateCommand": "pre-commit install --install-hooks"
   // Codespaces ports are private by default so skip the auth token.
   // Need to disable XSRF check for Jupyter MCP servers if auth token is disabled.
-  // If you need auth or don't mind the token, then just `jupyter lab` will do the trick.
-  "postStartCommand": "start.sh jupyter lab --NotebookApp.token='' --ServerApp.disable_check_xsrf=True > /tmp/jupyter.log 2>&1 &"
+  "postStartCommand": "nohup start.sh jupyter lab --NotebookApp.token='' --ServerApp.disable_check_xsrf=True > /tmp/jupyter.log 2>&1 &"
 }
