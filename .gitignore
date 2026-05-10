@@ -53,3 +53,5 @@ env/
 ENV/
 .venv
 
+.jupyter/
+.jupyter_ystore.db
