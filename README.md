@@ -41,6 +41,7 @@ This project provides multiple devcontainer configurations for different ACP age
 - `.devcontainer/goose/` - Block's Goose agent (Apache 2.0)
 - `.devcontainer/kimi/` - MoonshotAI's Kimi CLI (Apache 2.0)
 - `.devcontainer/cagent/` - Docker's cagent (Apache 2.0)
+- `.devcontainer/pi/` - Pi coding agent via [pi-acp](https://github.com/svkozak/pi-acp) (MIT). Includes [pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) and ships with the Datalayer [jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server) preconfigured. Supports remote LLM API providers (Anthropic / OpenAI / Google / DeepSeek) and local providers (LM Studio / Ollama) — see `.pi/agent/models.json`.
 
 **To use a devcontainer:**
 1. Open the repository in GitHub Codespaces or VS Code with Dev Containers extension

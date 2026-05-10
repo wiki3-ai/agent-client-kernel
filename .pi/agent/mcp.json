@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "jupyter": {
+      "command": "uvx",
+      "args": ["jupyter-mcp-server@latest"],
+      "lifecycle": "lazy"
+    }
+  }
+}
