@@ -56,7 +56,16 @@
     // pi-acp option: let ACP clients send embedded resource blocks. The
     // kernel currently doesn't, but enabling this is harmless and matches
     // the recommended pi-acp setup.
-    "PI_ACP_ENABLE_EMBEDDED_CONTEXT": "true"
+    "PI_ACP_ENABLE_EMBEDDED_CONTEXT": "true",
+    // pi-mcp-adapter (auto-loaded as a pi extension) opens browser tabs on
+    // the host via $BROWSER / xdg-open for its MCP-UI sessions and OAuth
+    // helpers. In a Codespaces / VS Code remote container, $BROWSER is
+    // wired to a helper that opens a real tab on the user's machine, so
+    // any tool-call retry loop floods the host (and can OOM it). Force a
+    // no-op browser hook here. The explicit forwardPorts/openBrowser
+    // notification for port 8888 is independent of $BROWSER and still
+    // fires once when JupyterLab comes up.
+    "BROWSER": "/bin/true"
   },
   // Codespaces ports are private by default so skip the auth token.
   // Need to disable XSRF check for Jupyter MCP servers if auth token is disabled.
