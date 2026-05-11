@@ -32,26 +32,8 @@ def mock_kernel() -> MagicMock:
 
 @pytest.fixture
 def acp_client(mock_kernel: MagicMock) -> ACPClientImpl:
-    """Create an ACP client for testing.
-
-    Tests that exercise line-buffered progressive streaming behavior need
-    ``_stream_progress`` enabled (it defaults to off, behind the
-    ``ACP_STREAM_PROGRESS`` env flag, since the live JupyterLab renderer
-    duplicates progressive stream messages). Enabling it here keeps the
-    existing buffering tests meaningful; tests that want default (off)
-    behavior can flip the attribute back.
-    """
-    client = ACPClientImpl(mock_kernel)
-    client._stream_progress = True
-    return client
-
-
-@pytest.fixture
-def acp_client_no_progress(mock_kernel: MagicMock) -> ACPClientImpl:
-    """ACP client with the default (off) progressive-streaming behavior."""
-    client = ACPClientImpl(mock_kernel)
-    client._stream_progress = False
-    return client
+    """Create an ACP client for testing."""
+    return ACPClientImpl(mock_kernel)
 
 
 @pytest.fixture

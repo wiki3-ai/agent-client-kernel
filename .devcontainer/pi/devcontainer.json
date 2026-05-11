@@ -52,7 +52,7 @@
     "GRANT_SUDO": "yes",
     "ACP_AGENT_COMMAND": "/home/jovyan/.local/bin/pi-acp",
     "ACP_AGENT_ARGS": "",
-    "RESTARTABLE": "yes",
+    "RESTARTABLE": "false",
     // pi-acp option: let ACP clients send embedded resource blocks. The
     // kernel currently doesn't, but enabling this is harmless and matches
     // the recommended pi-acp setup.
