@@ -1,0 +1,156 @@
+You have **35 Jupyter notebooks** in total. Here areYou have **35 Jupyter notebooks** in total. Here are
+ the named ones (non-Untitled):
+
+**Example/You have **35 Jupyter notebooks** in total. Here are
+ the named ones (non-Untitled):
+
+**Example/
+Agent Notebooks:**
+- `batchYou have **35 Jupyter notebooks** in total. Here are
+ the named ones (non-Untitled):
+
+**Example/
+Agent Notebooks:**
+- `batch
+ pi.ipynb`
+- `broadway.ipynb`
+- `lmYou have **35 Jupyter notebooks** in total. Here are
+ the named ones (non-Untitled):
+
+**Example/
+Agent Notebooks:**
+- `batch
+ pi.ipynb`
+- `broadway.ipynb`
+- `lm
+studio agent.ipynb`
+- `pi testYou have **35 Jupyter notebooks** in total. Here are
+ the named ones (non-Untitled):
+
+**Example/
+Agent Notebooks:**
+- `batch
+ pi.ipynb`
+- `broadway.ipynb`
+- `lm
+studio agent.ipynb`
+- `pi test
+.ipynb` (and variations: test 2-6)You have **35 Jupyter notebooks** in total. Here are
+ the named ones (non-Untitled):
+
+**Example/
+Agent Notebooks:**
+- `batch
+ pi.ipynb`
+- `broadway.ipynb`
+- `lm
+studio agent.ipynb`
+- `pi test
+.ipynb` (and variations: test 2-6)
+- `sum agent.ipynb`
+- `You have **35 Jupyter notebooks** in total. Here are
+ the named ones (non-Untitled):
+
+**Example/
+Agent Notebooks:**
+- `batch
+ pi.ipynb`
+- `broadway.ipynb`
+- `lm
+studio agent.ipynb`
+- `pi test
+.ipynb` (and variations: test 2-6)
+- `sum agent.ipynb`
+- `
+sum.ipynb`
+- `weather agent.ipynb`
+
+**Test/You have **35 Jupyter notebooks** in total. Here are
+ the named ones (non-Untitled):
+
+**Example/
+Agent Notebooks:**
+- `batch
+ pi.ipynb`
+- `broadway.ipynb`
+- `lm
+studio agent.ipynb`
+- `pi test
+.ipynb` (and variations: test 2-6)
+- `sum agent.ipynb`
+- `
+sum.ipynb`
+- `weather agent.ipynb`
+
+**Test/
+Debug Notebooks:**
+- `jupyter mYou have **35 Jupyter notebooks** in total. Here are
+ the named ones (non-Untitled):
+
+**Example/
+Agent Notebooks:**
+- `batch
+ pi.ipynb`
+- `broadway.ipynb`
+- `lm
+studio agent.ipynb`
+- `pi test
+.ipynb` (and variations: test 2-6)
+- `sum agent.ipynb`
+- `
+sum.ipynb`
+- `weather agent.ipynb`
+
+**Test/
+Debug Notebooks:**
+- `jupyter m
+cp fail.ipynb`
+
+The rest are 22Untitled notebooksYou have **35 Jupyter notebooks** in total. Here are
+ the named ones (non-Untitled):
+
+**Example/
+Agent Notebooks:**
+- `batch
+ pi.ipynb`
+- `broadway.ipynb`
+- `lm
+studio agent.ipynb`
+- `pi test
+.ipynb` (and variations: test 2-6)
+- `sum agent.ipynb`
+- `
+sum.ipynb`
+- `weather agent.ipynb`
+
+**Test/
+Debug Notebooks:**
+- `jupyter m
+cp fail.ipynb`
+
+The rest are 22Untitled notebooks
+ (Untitled.ipynb through UntYou have **35 Jupyter notebooks** in total. Here are
+ the named ones (non-Untitled):
+
+**Example/
+Agent Notebooks:**
+- `batch
+ pi.ipynb`
+- `broadway.ipynb`
+- `lm
+studio agent.ipynb`
+- `pi test
+.ipynb` (and variations: test 2-6)
+- `sum agent.ipynb`
+- `
+sum.ipynb`
+- `weather agent.ipynb`
+
+**Test/
+Debug Notebooks:**
+- `jupyter m
+cp fail.ipynb`
+
+The rest are 22Untitled notebooks
+ (Untitled.ipynb through Unt
+itled21.ipynb).

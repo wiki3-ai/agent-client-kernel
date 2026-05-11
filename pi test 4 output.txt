@@ -1,0 +1,410 @@
+Here are the example notebooks in your `./examples/`Here are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|Here are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII artHere are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usageHere are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-clientHere are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with catHere are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **Here are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **
+configuration_demo.ipynb** | Configuration options demo |
+| **Here are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **
+configuration_demo.ipynb** | Configuration options demo |
+| **
+function_plotter.ipynb** | Interactive function plotting withHere are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **
+configuration_demo.ipynb** | Configuration options demo |
+| **
+function_plotter.ipynb** | Interactive function plotting with
+ matplotlib |
+| **jupyter-mcp.ipynb** | UsingHere are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **
+configuration_demo.ipynb** | Configuration options demo |
+| **
+function_plotter.ipynb** | Interactive function plotting with
+ matplotlib |
+| **jupyter-mcp.ipynb** | Using
+ MCP tools in Jupyter notebooks |
+| **matplotlibHere are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **
+configuration_demo.ipynb** | Configuration options demo |
+| **
+function_plotter.ipynb** | Interactive function plotting with
+ matplotlib |
+| **jupyter-mcp.ipynb** | Using
+ MCP tools in Jupyter notebooks |
+| **matplotlib
+_functions.ipynb** | Advanced matplotlib examples with functions |
+| **rubHere are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **
+configuration_demo.ipynb** | Configuration options demo |
+| **
+function_plotter.ipynb** | Interactive function plotting with
+ matplotlib |
+| **jupyter-mcp.ipynb** | Using
+ MCP tools in Jupyter notebooks |
+| **matplotlib
+_functions.ipynb** | Advanced matplotlib examples with functions |
+| **rub
+iks_cube_combinatorics.ipynb** |Here are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **
+configuration_demo.ipynb** | Configuration options demo |
+| **
+function_plotter.ipynb** | Interactive function plotting with
+ matplotlib |
+| **jupyter-mcp.ipynb** | Using
+ MCP tools in Jupyter notebooks |
+| **matplotlib
+_functions.ipynb** | Advanced matplotlib examples with functions |
+| **rub
+iks_cube_combinatorics.ipynb** |
+ Rubik's cube math/combinatoricsHere are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **
+configuration_demo.ipynb** | Configuration options demo |
+| **
+function_plotter.ipynb** | Interactive function plotting with
+ matplotlib |
+| **jupyter-mcp.ipynb** | Using
+ MCP tools in Jupyter notebooks |
+| **matplotlib
+_functions.ipynb** | Advanced matplotlib examples with functions |
+| **rub
+iks_cube_combinatorics.ipynb** |
+ Rubik's cube math/combinatorics
+ |
+| **sum_squares.ipynb** | SimpleHere are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **
+configuration_demo.ipynb** | Configuration options demo |
+| **
+function_plotter.ipynb** | Interactive function plotting with
+ matplotlib |
+| **jupyter-mcp.ipynb** | Using
+ MCP tools in Jupyter notebooks |
+| **matplotlib
+_functions.ipynb** | Advanced matplotlib examples with functions |
+| **rub
+iks_cube_combinatorics.ipynb** |
+ Rubik's cube math/combinatorics
+ |
+| **sum_squares.ipynb** | Simple
+ sum of squares example |
+| **tigerHere are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **
+configuration_demo.ipynb** | Configuration options demo |
+| **
+function_plotter.ipynb** | Interactive function plotting with
+ matplotlib |
+| **jupyter-mcp.ipynb** | Using
+ MCP tools in Jupyter notebooks |
+| **matplotlib
+_functions.ipynb** | Advanced matplotlib examples with functions |
+| **rub
+iks_cube_combinatorics.ipynb** |
+ Rubik's cube math/combinatorics
+ |
+| **sum_squares.ipynb** | Simple
+ sum of squares example |
+| **tiger
+_run.ipynb** | Tiger-related examples (likely agent跑了)Here are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **
+configuration_demo.ipynb** | Configuration options demo |
+| **
+function_plotter.ipynb** | Interactive function plotting with
+ matplotlib |
+| **jupyter-mcp.ipynb** | Using
+ MCP tools in Jupyter notebooks |
+| **matplotlib
+_functions.ipynb** | Advanced matplotlib examples with functions |
+| **rub
+iks_cube_combinatorics.ipynb** |
+ Rubik's cube math/combinatorics
+ |
+| **sum_squares.ipynb** | Simple
+ sum of squares example |
+| **tiger
+_run.ipynb** | Tiger-related examples (likely agent跑了)
+ |
+| **weather_map.ipynb** | Weather data visualizationHere are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **
+configuration_demo.ipynb** | Configuration options demo |
+| **
+function_plotter.ipynb** | Interactive function plotting with
+ matplotlib |
+| **jupyter-mcp.ipynb** | Using
+ MCP tools in Jupyter notebooks |
+| **matplotlib
+_functions.ipynb** | Advanced matplotlib examples with functions |
+| **rub
+iks_cube_combinatorics.ipynb** |
+ Rubik's cube math/combinatorics
+ |
+| **sum_squares.ipynb** | Simple
+ sum of squares example |
+| **tiger
+_run.ipynb** | Tiger-related examples (likely agent跑了)
+ |
+| **weather_map.ipynb** | Weather data visualization
+ on maps |
+
+The PNG files (`linear_function.png`, `quHere are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **
+configuration_demo.ipynb** | Configuration options demo |
+| **
+function_plotter.ipynb** | Interactive function plotting with
+ matplotlib |
+| **jupyter-mcp.ipynb** | Using
+ MCP tools in Jupyter notebooks |
+| **matplotlib
+_functions.ipynb** | Advanced matplotlib examples with functions |
+| **rub
+iks_cube_combinatorics.ipynb** |
+ Rubik's cube math/combinatorics
+ |
+| **sum_squares.ipynb** | Simple
+ sum of squares example |
+| **tiger
+_run.ipynb** | Tiger-related examples (likely agent跑了)
+ |
+| **weather_map.ipynb** | Weather data visualization
+ on maps |
+
+The PNG files (`linear_function.png`, `qu
+adratic_function.png`, `trig_functions.png`) appear toHere are the example notebooks in your `./examples/`
+ directory:
+
+| Notebook | Description |
+|----------|
+-------------|
+| **ASCII ART.ipynb** | Create ASCII art
+ with pi and Jupyter |
+| **basic_usage
+.ipynb** | Basic usage guide for the agent-client
+ kernel |
+| **cat.ipynb** | Use pi with cat
+ images (likely multimodal examples) |
+| **
+configuration_demo.ipynb** | Configuration options demo |
+| **
+function_plotter.ipynb** | Interactive function plotting with
+ matplotlib |
+| **jupyter-mcp.ipynb** | Using
+ MCP tools in Jupyter notebooks |
+| **matplotlib
+_functions.ipynb** | Advanced matplotlib examples with functions |
+| **rub
+iks_cube_combinatorics.ipynb** |
+ Rubik's cube math/combinatorics
+ |
+| **sum_squares.ipynb** | Simple
+ sum of squares example |
+| **tiger
+_run.ipynb** | Tiger-related examples (likely agent跑了)
+ |
+| **weather_map.ipynb** | Weather data visualization
+ on maps |
+
+The PNG files (`linear_function.png`, `qu
+adratic_function.png`, `trig_functions.png`) appear to
+ be generated outputs from the plotting notebooks.
+ 

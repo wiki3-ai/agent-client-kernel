@@ -1,0 +1,420 @@
+Here are the example notebooks in your `/workspaces/Here are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excludingHere are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|Here are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII artHere are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ipHere are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guideHere are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | CatHere are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `Here are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `
+configuration_demo.ipynb` | Configuration demonstration |
+| `Here are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `
+configuration_demo.ipynb` | Configuration demonstration |
+| `
+function_plotter.ipynb` | Function plotting exampleHere are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `
+configuration_demo.ipynb` | Configuration demonstration |
+| `
+function_plotter.ipynb` | Function plotting example
+ (large file ~3Here are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `
+configuration_demo.ipynb` | Configuration demonstration |
+| `
+function_plotter.ipynb` | Function plotting example
+ (large file ~3
+94KB) |
+| `jupyter-mcp.ipynb` |Here are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `
+configuration_demo.ipynb` | Configuration demonstration |
+| `
+function_plotter.ipynb` | Function plotting example
+ (large file ~3
+94KB) |
+| `jupyter-mcp.ipynb` |
+ Jupyter MCP integration example |
+| `matplotlibHere are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `
+configuration_demo.ipynb` | Configuration demonstration |
+| `
+function_plotter.ipynb` | Function plotting example
+ (large file ~3
+94KB) |
+| `jupyter-mcp.ipynb` |
+ Jupyter MCP integration example |
+| `matplotlib
+_functions.ipynb` | Matplotlib functions plotting (Here are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `
+configuration_demo.ipynb` | Configuration demonstration |
+| `
+function_plotter.ipynb` | Function plotting example
+ (large file ~3
+94KB) |
+| `jupyter-mcp.ipynb` |
+ Jupyter MCP integration example |
+| `matplotlib
+_functions.ipynb` | Matplotlib functions plotting (
+very large ~461KB) |
+| `rubiks_cubeHere are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `
+configuration_demo.ipynb` | Configuration demonstration |
+| `
+function_plotter.ipynb` | Function plotting example
+ (large file ~3
+94KB) |
+| `jupyter-mcp.ipynb` |
+ Jupyter MCP integration example |
+| `matplotlib
+_functions.ipynb` | Matplotlib functions plotting (
+very large ~461KB) |
+| `rubiks_cube
+_combinatorics.ipynb` | Rubik's cubeHere are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `
+configuration_demo.ipynb` | Configuration demonstration |
+| `
+function_plotter.ipynb` | Function plotting example
+ (large file ~3
+94KB) |
+| `jupyter-mcp.ipynb` |
+ Jupyter MCP integration example |
+| `matplotlib
+_functions.ipynb` | Matplotlib functions plotting (
+very large ~461KB) |
+| `rubiks_cube
+_combinatorics.ipynb` | Rubik's cube
+ combinatorics calculations |
+| `sum_sHere are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `
+configuration_demo.ipynb` | Configuration demonstration |
+| `
+function_plotter.ipynb` | Function plotting example
+ (large file ~3
+94KB) |
+| `jupyter-mcp.ipynb` |
+ Jupyter MCP integration example |
+| `matplotlib
+_functions.ipynb` | Matplotlib functions plotting (
+very large ~461KB) |
+| `rubiks_cube
+_combinatorics.ipynb` | Rubik's cube
+ combinatorics calculations |
+| `sum_s
+quares.ipynb` | Sum of squares example (smallHere are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `
+configuration_demo.ipynb` | Configuration demonstration |
+| `
+function_plotter.ipynb` | Function plotting example
+ (large file ~3
+94KB) |
+| `jupyter-mcp.ipynb` |
+ Jupyter MCP integration example |
+| `matplotlib
+_functions.ipynb` | Matplotlib functions plotting (
+very large ~461KB) |
+| `rubiks_cube
+_combinatorics.ipynb` | Rubik's cube
+ combinatorics calculations |
+| `sum_s
+quares.ipynb` | Sum of squares example (small
+) |
+| `tiger_run.ipynb` | Tiger run agentHere are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `
+configuration_demo.ipynb` | Configuration demonstration |
+| `
+function_plotter.ipynb` | Function plotting example
+ (large file ~3
+94KB) |
+| `jupyter-mcp.ipynb` |
+ Jupyter MCP integration example |
+| `matplotlib
+_functions.ipynb` | Matplotlib functions plotting (
+very large ~461KB) |
+| `rubiks_cube
+_combinatorics.ipynb` | Rubik's cube
+ combinatorics calculations |
+| `sum_s
+quares.ipynb` | Sum of squares example (small
+) |
+| `tiger_run.ipynb` | Tiger run agent
+ example |
+| `weather_map.ipynb` | Weather mappingHere are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `
+configuration_demo.ipynb` | Configuration demonstration |
+| `
+function_plotter.ipynb` | Function plotting example
+ (large file ~3
+94KB) |
+| `jupyter-mcp.ipynb` |
+ Jupyter MCP integration example |
+| `matplotlib
+_functions.ipynb` | Matplotlib functions plotting (
+very large ~461KB) |
+| `rubiks_cube
+_combinatorics.ipynb` | Rubik's cube
+ combinatorics calculations |
+| `sum_s
+quares.ipynb` | Sum of squares example (small
+) |
+| `tiger_run.ipynb` | Tiger run agent
+ example |
+| `weather_map.ipynb` | Weather mapping
+ example |
+
+Would you like me to show the content of anyHere are the example notebooks in your `/workspaces/
+agent-client-kernel/examples/` directory (excluding
+ checkpoints):
+
+| Notebook | Description |
+|----------|
+-------------|
+| `ASCII ART.ipynb` | ASCII art
+ generation example |
+| `basic_usage.ip
+ynb` | Basic usage guide
+ (24KB) |
+| `cat.ipynb` | Cat
+-related example (35KB) |
+| `
+configuration_demo.ipynb` | Configuration demonstration |
+| `
+function_plotter.ipynb` | Function plotting example
+ (large file ~3
+94KB) |
+| `jupyter-mcp.ipynb` |
+ Jupyter MCP integration example |
+| `matplotlib
+_functions.ipynb` | Matplotlib functions plotting (
+very large ~461KB) |
+| `rubiks_cube
+_combinatorics.ipynb` | Rubik's cube
+ combinatorics calculations |
+| `sum_s
+quares.ipynb` | Sum of squares example (small
+) |
+| `tiger_run.ipynb` | Tiger run agent
+ example |
+| `weather_map.ipynb` | Weather mapping
+ example |
+
+Would you like me to show the content of any
+ specific notebook?

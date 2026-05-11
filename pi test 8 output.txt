@@ -1,0 +1,252 @@
+Here are the example notebooks in the `/workspaces/agentHere are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |Here are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |
+|----------|-------------|
+| `basic_usage.ipHere are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |
+|----------|-------------|
+| `basic_usage.ip
+ynb` | Basic usage guide |
+| `configurationHere are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |
+|----------|-------------|
+| `basic_usage.ip
+ynb` | Basic usage guide |
+| `configuration
+_demo.ipynb` | Configuration demonstration |
+| `jHere are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |
+|----------|-------------|
+| `basic_usage.ip
+ynb` | Basic usage guide |
+| `configuration
+_demo.ipynb` | Configuration demonstration |
+| `j
+upyter-mcp.ipynb` | Jupyter MCP integration |
+| `matplotlibHere are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |
+|----------|-------------|
+| `basic_usage.ip
+ynb` | Basic usage guide |
+| `configuration
+_demo.ipynb` | Configuration demonstration |
+| `j
+upyter-mcp.ipynb` | Jupyter MCP integration |
+| `matplotlib
+_functions.ipynb` | Using matplotlib with functions |
+| `functionHere are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |
+|----------|-------------|
+| `basic_usage.ip
+ynb` | Basic usage guide |
+| `configuration
+_demo.ipynb` | Configuration demonstration |
+| `j
+upyter-mcp.ipynb` | Jupyter MCP integration |
+| `matplotlib
+_functions.ipynb` | Using matplotlib with functions |
+| `function
+_plotter.ipynb` | Function plotting example |
+| `Here are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |
+|----------|-------------|
+| `basic_usage.ip
+ynb` | Basic usage guide |
+| `configuration
+_demo.ipynb` | Configuration demonstration |
+| `j
+upyter-mcp.ipynb` | Jupyter MCP integration |
+| `matplotlib
+_functions.ipynb` | Using matplotlib with functions |
+| `function
+_plotter.ipynb` | Function plotting example |
+| `
+ASCII ART.ipynb` | ASCII art generation |
+|Here are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |
+|----------|-------------|
+| `basic_usage.ip
+ynb` | Basic usage guide |
+| `configuration
+_demo.ipynb` | Configuration demonstration |
+| `j
+upyter-mcp.ipynb` | Jupyter MCP integration |
+| `matplotlib
+_functions.ipynb` | Using matplotlib with functions |
+| `function
+_plotter.ipynb` | Function plotting example |
+| `
+ASCII ART.ipynb` | ASCII art generation |
+|
+ `cat.ipynb` | Cat-related example |
+| `sumHere are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |
+|----------|-------------|
+| `basic_usage.ip
+ynb` | Basic usage guide |
+| `configuration
+_demo.ipynb` | Configuration demonstration |
+| `j
+upyter-mcp.ipynb` | Jupyter MCP integration |
+| `matplotlib
+_functions.ipynb` | Using matplotlib with functions |
+| `function
+_plotter.ipynb` | Function plotting example |
+| `
+ASCII ART.ipynb` | ASCII art generation |
+|
+ `cat.ipynb` | Cat-related example |
+| `sum
+_squares.ipynb` | Sum of squares calculationHere are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |
+|----------|-------------|
+| `basic_usage.ip
+ynb` | Basic usage guide |
+| `configuration
+_demo.ipynb` | Configuration demonstration |
+| `j
+upyter-mcp.ipynb` | Jupyter MCP integration |
+| `matplotlib
+_functions.ipynb` | Using matplotlib with functions |
+| `function
+_plotter.ipynb` | Function plotting example |
+| `
+ASCII ART.ipynb` | ASCII art generation |
+|
+ `cat.ipynb` | Cat-related example |
+| `sum
+_squares.ipynb` | Sum of squares calculation
+ |
+| `rubiks_cube_combinatorics.ipynHere are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |
+|----------|-------------|
+| `basic_usage.ip
+ynb` | Basic usage guide |
+| `configuration
+_demo.ipynb` | Configuration demonstration |
+| `j
+upyter-mcp.ipynb` | Jupyter MCP integration |
+| `matplotlib
+_functions.ipynb` | Using matplotlib with functions |
+| `function
+_plotter.ipynb` | Function plotting example |
+| `
+ASCII ART.ipynb` | ASCII art generation |
+|
+ `cat.ipynb` | Cat-related example |
+| `sum
+_squares.ipynb` | Sum of squares calculation
+ |
+| `rubiks_cube_combinatorics.ipyn
+b` | Rubik's cube combinatorics |
+| `tHere are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |
+|----------|-------------|
+| `basic_usage.ip
+ynb` | Basic usage guide |
+| `configuration
+_demo.ipynb` | Configuration demonstration |
+| `j
+upyter-mcp.ipynb` | Jupyter MCP integration |
+| `matplotlib
+_functions.ipynb` | Using matplotlib with functions |
+| `function
+_plotter.ipynb` | Function plotting example |
+| `
+ASCII ART.ipynb` | ASCII art generation |
+|
+ `cat.ipynb` | Cat-related example |
+| `sum
+_squares.ipynb` | Sum of squares calculation
+ |
+| `rubiks_cube_combinatorics.ipyn
+b` | Rubik's cube combinatorics |
+| `t
+iger_run.ipynb` | Tiger run example |
+| `Here are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |
+|----------|-------------|
+| `basic_usage.ip
+ynb` | Basic usage guide |
+| `configuration
+_demo.ipynb` | Configuration demonstration |
+| `j
+upyter-mcp.ipynb` | Jupyter MCP integration |
+| `matplotlib
+_functions.ipynb` | Using matplotlib with functions |
+| `function
+_plotter.ipynb` | Function plotting example |
+| `
+ASCII ART.ipynb` | ASCII art generation |
+|
+ `cat.ipynb` | Cat-related example |
+| `sum
+_squares.ipynb` | Sum of squares calculation
+ |
+| `rubiks_cube_combinatorics.ipyn
+b` | Rubik's cube combinatorics |
+| `t
+iger_run.ipynb` | Tiger run example |
+| `
+weather_map.ipynb` | Weather map visualization |
+
+Would you like me toHere are the example notebooks in the `/workspaces/agent
+-client-kernel/examples` directory:
+
+| Notebook | Description |
+|----------|-------------|
+| `basic_usage.ip
+ynb` | Basic usage guide |
+| `configuration
+_demo.ipynb` | Configuration demonstration |
+| `j
+upyter-mcp.ipynb` | Jupyter MCP integration |
+| `matplotlib
+_functions.ipynb` | Using matplotlib with functions |
+| `function
+_plotter.ipynb` | Function plotting example |
+| `
+ASCII ART.ipynb` | ASCII art generation |
+|
+ `cat.ipynb` | Cat-related example |
+| `sum
+_squares.ipynb` | Sum of squares calculation
+ |
+| `rubiks_cube_combinatorics.ipyn
+b` | Rubik's cube combinatorics |
+| `t
+iger_run.ipynb` | Tiger run example |
+| `
+weather_map.ipynb` | Weather map visualization |
+
+Would you like me to
+ describe any specific notebook in more detail?
+ 

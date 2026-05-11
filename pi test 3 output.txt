@@ -1,0 +1,28700 @@
+pi v0.74.0
+---
+
+## Extensions
+- npm:pi-mcp-adapter
+  - index.ts
+I
+'ll
+ help
+ you
+ find
+ the
+ example
+ notebooks
+ in
+ this
+ project
+.
+ Let
+ me
+ search
+ for
+ them
+.
+
+🔧 bash (pending)
+✅ Tool 750798926 completed
+LetLet
+ meLet
+ me
+ getLet
+ me
+ get
+ aLet
+ me
+ get
+ a
+ cleanerLet
+ me
+ get
+ a
+ cleaner
+ viewLet
+ me
+ get
+ a
+ cleaner
+ view
+ ofLet
+ me
+ get
+ a
+ cleaner
+ view
+ of
+ theLet
+ me
+ get
+ a
+ cleaner
+ view
+ of
+ the
+ exampleLet
+ me
+ get
+ a
+ cleaner
+ view
+ of
+ the
+ example
+ notebooksLet
+ me
+ get
+ a
+ cleaner
+ view
+ of
+ the
+ example
+ notebooks
+ inLet
+ me
+ get
+ a
+ cleaner
+ view
+ of
+ the
+ example
+ notebooks
+ in
+ theLet
+ me
+ get
+ a
+ cleaner
+ view
+ of
+ the
+ example
+ notebooks
+ in
+ the
+ `Let
+ me
+ get
+ a
+ cleaner
+ view
+ of
+ the
+ example
+ notebooks
+ in
+ the
+ `
+examplesLet
+ me
+ get
+ a
+ cleaner
+ view
+ of
+ the
+ example
+ notebooks
+ in
+ the
+ `
+examples
+/Let
+ me
+ get
+ a
+ cleaner
+ view
+ of
+ the
+ example
+ notebooks
+ in
+ the
+ `
+examples
+/
+`Let
+ me
+ get
+ a
+ cleaner
+ view
+ of
+ the
+ example
+ notebooks
+ in
+ the
+ `
+examples
+/
+`
+ directoryLet
+ me
+ get
+ a
+ cleaner
+ view
+ of
+ the
+ example
+ notebooks
+ in
+ the
+ `
+examples
+/
+`
+ directory
+ (Let
+ me
+ get
+ a
+ cleaner
+ view
+ of
+ the
+ example
+ notebooks
+ in
+ the
+ `
+examples
+/
+`
+ directory
+ (
+excludingLet
+ me
+ get
+ a
+ cleaner
+ view
+ of
+ the
+ example
+ notebooks
+ in
+ the
+ `
+examples
+/
+`
+ directory
+ (
+excluding
+ checkpointsLet
+ me
+ get
+ a
+ cleaner
+ view
+ of
+ the
+ example
+ notebooks
+ in
+ the
+ `
+examples
+/
+`
+ directory
+ (
+excluding
+ checkpoints
+):
+
+🔧 bash (pending)
+🔧 bash (pending)
+✅ Tool 526210650 completed
+HereHere
+ areHere
+ are
+ theHere
+ are
+ the
+ exampleHere
+ are
+ the
+ example
+ notebooksHere
+ are
+ the
+ example
+ notebooks
+ inHere
+ are
+ the
+ example
+ notebooks
+ in
+ theHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+workHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spacesHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agentHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-clientHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-kHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernelHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examplesHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directoryHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCIIHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ARTHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ipHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+ynHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+bHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KBHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basicHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usageHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ipHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+ynHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+bHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KBHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+catHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ipHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+ynHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+bHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KBHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configurationHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demoHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ipHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+ynHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+bHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KBHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+functionHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plotHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+terHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ipHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+ynHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+bHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KBHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+largeHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebookHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+jHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyterHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-mHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cpHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ipHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+ynHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+bHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KBHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlibHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functionsHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ipHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+ynHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+bHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KBHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+largHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+estHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebookHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rubHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iksHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cubeHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_combHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inatorHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+icsHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ipHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+ynHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+bHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KBHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sumHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_sHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quaresHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ipHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+ynHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+bHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KBHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+tHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+igerHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_runHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ipHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+ynHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+bHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KBHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weatherHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_mapHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ipHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+ynHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+bHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KBHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+ThereHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ areHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ exampleHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooksHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ totalHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ rangingHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ fromHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simpleHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demosHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sumHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_sHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quaresHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ jHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyterHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-mHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cpHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cp
+)Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cp
+)
+ toHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cp
+)
+ to
+ moreHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cp
+)
+ to
+ more
+ complexHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cp
+)
+ to
+ more
+ complex
+ examplesHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cp
+)
+ to
+ more
+ complex
+ examples
+ (Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cp
+)
+ to
+ more
+ complex
+ examples
+ (
+functionHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cp
+)
+ to
+ more
+ complex
+ examples
+ (
+function
+_plotHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cp
+)
+ to
+ more
+ complex
+ examples
+ (
+function
+_plot
+terHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cp
+)
+ to
+ more
+ complex
+ examples
+ (
+function
+_plot
+ter
+,Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cp
+)
+ to
+ more
+ complex
+ examples
+ (
+function
+_plot
+ter
+,
+ matplotlibHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cp
+)
+ to
+ more
+ complex
+ examples
+ (
+function
+_plot
+ter
+,
+ matplotlib
+_functionsHere
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cp
+)
+ to
+ more
+ complex
+ examples
+ (
+function
+_plot
+ter
+,
+ matplotlib
+_functions
+).Here
+ are
+ the
+ example
+ notebooks
+ in
+ the
+ `/
+work
+spaces
+/
+agent
+-client
+-k
+ernel
+/examples
+/
+`
+ directory
+:
+
+1
+.
+ **
+ASCII
+ ART
+.ip
+yn
+b
+**
+ -
+ 4
+.
+1
+ KB
+
+2
+.
+ **
+basic
+_usage
+.ip
+yn
+b
+**
+ -
+ 2
+4
+ KB
+
+3
+.
+ **
+cat
+.ip
+yn
+b
+**
+ -
+ 3
+4
+.
+8
+ KB
+
+4
+.
+ **
+configuration
+_demo
+.ip
+yn
+b
+**
+ -
+ 6
+ KB
+
+5
+.
+ **
+function
+_plot
+ter
+.ip
+yn
+b
+**
+ -
+ 3
+9
+3
+.
+6
+ KB
+ (
+large
+ notebook
+)
+6
+.
+ **
+j
+upyter
+-m
+cp
+.ip
+yn
+b
+**
+ -
+ 6
+.
+8
+ KB
+
+7
+.
+ **
+matplotlib
+_functions
+.ip
+yn
+b
+**
+ -
+ 4
+6
+1
+ KB
+ (
+larg
+est
+ notebook
+)
+8
+.
+ **
+rub
+iks
+_cube
+_comb
+inator
+ics
+.ip
+yn
+b
+**
+ -
+ 2
+2
+.
+7
+ KB
+
+9
+.
+ **
+sum
+_s
+quares
+.ip
+yn
+b
+**
+ -
+ 1
+ KB
+
+1
+0
+.
+ **
+t
+iger
+_run
+.ip
+yn
+b
+**
+ -
+ 4
+5
+.
+5
+ KB
+
+1
+1
+.
+ **
+weather
+_map
+.ip
+yn
+b
+**
+ -
+ 1
+2
+.
+4
+ KB
+
+
+There
+ are
+ 1
+1
+ example
+ notebooks
+ total
+,
+ ranging
+ from
+ simple
+ demos
+ (
+sum
+_s
+quares
+,
+ j
+upyter
+-m
+cp
+)
+ to
+ more
+ complex
+ examples
+ (
+function
+_plot
+ter
+,
+ matplotlib
+_functions
+).
