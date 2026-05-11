@@ -43,20 +43,44 @@ class TestSessionUpdate:
 
     @pytest.mark.asyncio
     async def test_agent_message_chunk_text(self, acp_client, mock_kernel):
-        """Test handling text message chunks."""
-        chunk = make_text_chunk("Hello, world!")
+        """Each chunk is forwarded to the stream as-is.
+
+        In real kernel runs ipykernel's OutStream / IOPubThread coalesces
+        successive writes into batched ``stream`` messages on iopub. In
+        these unit tests sys.stdout isn't an OutStream, so the client
+        falls back to ``send_response`` once per chunk.
+        """
+        chunk = make_text_chunk("Hello, world!\n")
 
         await acp_client.session_update(session_id="test", update=chunk)
 
-        # Check text was accumulated
-        assert mock_kernel.state.response_text == "Hello, world!"
+        assert mock_kernel.state.response_text == "Hello, world!\n"
 
-        # Check stream output was sent
         mock_kernel.send_response.assert_called_once()
         call_args = mock_kernel.send_response.call_args
         assert call_args[0][1] == "stream"
         assert call_args[0][2]["name"] == "stdout"
-        assert call_args[0][2]["text"] == "Hello, world!"
+        assert call_args[0][2]["text"] == "Hello, world!\n"
+
+    @pytest.mark.asyncio
+    async def test_agent_message_chunk_each_chunk_forwarded(
+        self, acp_client, mock_kernel
+    ):
+        """Token-sized chunks are forwarded as-is (no client-side buffering).
+
+        ipykernel's OutStream owns batching at the wire level; the kernel
+        bridge must not second-guess it.
+        """
+        for tok in ["Hel", "lo,", " wor", "ld!"]:
+            await acp_client.session_update(
+                session_id="test", update=make_text_chunk(tok)
+            )
+
+        sent_texts = [
+            c[0][2]["text"] for c in mock_kernel.send_response.call_args_list
+        ]
+        assert sent_texts == ["Hel", "lo,", " wor", "ld!"]
+        assert mock_kernel.state.response_text == "Hello, world!"
 
     @pytest.mark.asyncio
     async def test_agent_message_chunk_accumulates(self, acp_client, mock_kernel):
@@ -75,7 +99,7 @@ class TestSessionUpdate:
     @pytest.mark.asyncio
     async def test_agent_thought_chunk(self, acp_client, mock_kernel):
         """Test handling thought chunks."""
-        chunk = make_thought_chunk("thinking...")
+        chunk = make_thought_chunk("thinking...\n")
 
         await acp_client.session_update(session_id="test", update=chunk)
 

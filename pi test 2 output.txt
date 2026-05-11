@@ -1,0 +1,161 @@
+pi v0.74.0
+---
+
+## Extensions
+- npm:pi-mcp-adapter
+  - index.ts
+🔧 bash (pending)
+✅ Tool 242733843 completed
+Let me look for example notebooks in a more specific way - checking if there's an examples directory or documentation:
+
+🔧 bash (pending)
+🔧 bash (pending)
+✅ Tool 997515855 completed
+🔧 bash (pending)
+✅ Tool 997515855 completed
+
+🔧 bash (pending)
+🔧 bash (pending)
+✅ Tool 997515855 completed
+
+🔧 bash (pending)
+✅ Tool 407387039 completed
+Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |
+|----------|-------------|Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |
+|----------|-------------|
+| `ASCII ART.ipynb` | ASCII art generation example |Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |
+|----------|-------------|
+| `ASCII ART.ipynb` | ASCII art generation example |
+| `basic_usage.ipynb` | Basic usage guide |Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |
+|----------|-------------|
+| `ASCII ART.ipynb` | ASCII art generation example |
+| `basic_usage.ipynb` | Basic usage guide |
+| `cat.ipynb` | Cat-related example (likely image/gen) |Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |
+|----------|-------------|
+| `ASCII ART.ipynb` | ASCII art generation example |
+| `basic_usage.ipynb` | Basic usage guide |
+| `cat.ipynb` | Cat-related example (likely image/gen) |
+| `configuration_demo.ipynb` | Configuration demonstration |Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |
+|----------|-------------|
+| `ASCII ART.ipynb` | ASCII art generation example |
+| `basic_usage.ipynb` | Basic usage guide |
+| `cat.ipynb` | Cat-related example (likely image/gen) |
+| `configuration_demo.ipynb` | Configuration demonstration |
+| `function_plotter.ipynb` | Function plotting (large file ~394KB) |Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |
+|----------|-------------|
+| `ASCII ART.ipynb` | ASCII art generation example |
+| `basic_usage.ipynb` | Basic usage guide |
+| `cat.ipynb` | Cat-related example (likely image/gen) |
+| `configuration_demo.ipynb` | Configuration demonstration |
+| `function_plotter.ipynb` | Function plotting (large file ~394KB) |
+| `jupyter-mcp.ipynb` | Jupyter MCP integration example |Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |
+|----------|-------------|
+| `ASCII ART.ipynb` | ASCII art generation example |
+| `basic_usage.ipynb` | Basic usage guide |
+| `cat.ipynb` | Cat-related example (likely image/gen) |
+| `configuration_demo.ipynb` | Configuration demonstration |
+| `function_plotter.ipynb` | Function plotting (large file ~394KB) |
+| `jupyter-mcp.ipynb` | Jupyter MCP integration example |
+| `matplotlib_functions.ipynb` | Matplotlib functions example (very large ~461KB) |Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |
+|----------|-------------|
+| `ASCII ART.ipynb` | ASCII art generation example |
+| `basic_usage.ipynb` | Basic usage guide |
+| `cat.ipynb` | Cat-related example (likely image/gen) |
+| `configuration_demo.ipynb` | Configuration demonstration |
+| `function_plotter.ipynb` | Function plotting (large file ~394KB) |
+| `jupyter-mcp.ipynb` | Jupyter MCP integration example |
+| `matplotlib_functions.ipynb` | Matplotlib functions example (very large ~461KB) |
+| `rubiks_cube_combinatorics.ipynb` | Rubik's cube combinatorics |Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |
+|----------|-------------|
+| `ASCII ART.ipynb` | ASCII art generation example |
+| `basic_usage.ipynb` | Basic usage guide |
+| `cat.ipynb` | Cat-related example (likely image/gen) |
+| `configuration_demo.ipynb` | Configuration demonstration |
+| `function_plotter.ipynb` | Function plotting (large file ~394KB) |
+| `jupyter-mcp.ipynb` | Jupyter MCP integration example |
+| `matplotlib_functions.ipynb` | Matplotlib functions example (very large ~461KB) |
+| `rubiks_cube_combinatorics.ipynb` | Rubik's cube combinatorics |
+| `sum_squares.ipynb` | Simple sum/squares example |Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |
+|----------|-------------|
+| `ASCII ART.ipynb` | ASCII art generation example |
+| `basic_usage.ipynb` | Basic usage guide |
+| `cat.ipynb` | Cat-related example (likely image/gen) |
+| `configuration_demo.ipynb` | Configuration demonstration |
+| `function_plotter.ipynb` | Function plotting (large file ~394KB) |
+| `jupyter-mcp.ipynb` | Jupyter MCP integration example |
+| `matplotlib_functions.ipynb` | Matplotlib functions example (very large ~461KB) |
+| `rubiks_cube_combinatorics.ipynb` | Rubik's cube combinatorics |
+| `sum_squares.ipynb` | Simple sum/squares example |
+| `tiger_run.ipynb` | Tiger run example (large ~46KB) |Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |
+|----------|-------------|
+| `ASCII ART.ipynb` | ASCII art generation example |
+| `basic_usage.ipynb` | Basic usage guide |
+| `cat.ipynb` | Cat-related example (likely image/gen) |
+| `configuration_demo.ipynb` | Configuration demonstration |
+| `function_plotter.ipynb` | Function plotting (large file ~394KB) |
+| `jupyter-mcp.ipynb` | Jupyter MCP integration example |
+| `matplotlib_functions.ipynb` | Matplotlib functions example (very large ~461KB) |
+| `rubiks_cube_combinatorics.ipynb` | Rubik's cube combinatorics |
+| `sum_squares.ipynb` | Simple sum/squares example |
+| `tiger_run.ipynb` | Tiger run example (large ~46KB) |
+| `weather_map.ipynb` | Weather map visualization |
+Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |
+|----------|-------------|
+| `ASCII ART.ipynb` | ASCII art generation example |
+| `basic_usage.ipynb` | Basic usage guide |
+| `cat.ipynb` | Cat-related example (likely image/gen) |
+| `configuration_demo.ipynb` | Configuration demonstration |
+| `function_plotter.ipynb` | Function plotting (large file ~394KB) |
+| `jupyter-mcp.ipynb` | Jupyter MCP integration example |
+| `matplotlib_functions.ipynb` | Matplotlib functions example (very large ~461KB) |
+| `rubiks_cube_combinatorics.ipynb` | Rubik's cube combinatorics |
+| `sum_squares.ipynb` | Simple sum/squares example |
+| `tiger_run.ipynb` | Tiger run example (large ~46KB) |
+| `weather_map.ipynb` | Weather map visualization |
+
+The examples include various types of notebooks demonstrating different features like basic usage, MCP integration, plotting with matplotlib, and specialized applications like weather mapping and rubik's cube math.Here are the example notebooks in `/workspaces/agent-client-kernel/examples/`:
+
+| Notebook | Description |
+|----------|-------------|
+| `ASCII ART.ipynb` | ASCII art generation example |
+| `basic_usage.ipynb` | Basic usage guide |
+| `cat.ipynb` | Cat-related example (likely image/gen) |
+| `configuration_demo.ipynb` | Configuration demonstration |
+| `function_plotter.ipynb` | Function plotting (large file ~394KB) |
+| `jupyter-mcp.ipynb` | Jupyter MCP integration example |
+| `matplotlib_functions.ipynb` | Matplotlib functions example (very large ~461KB) |
+| `rubiks_cube_combinatorics.ipynb` | Rubik's cube combinatorics |
+| `sum_squares.ipynb` | Simple sum/squares example |
+| `tiger_run.ipynb` | Tiger run example (large ~46KB) |
+| `weather_map.ipynb` | Weather map visualization |
+
+The examples include various types of notebooks demonstrating different features like basic usage, MCP integration, plotting with matplotlib, and specialized applications like weather mapping and rubik's cube math.

@@ -72,6 +72,40 @@ logger = logging.getLogger(__name__)
 # e.g., ACP_DEBUG_UPDATES="AgentMessageChunk,ToolCallStart" or "all" for everything
 DEBUG_UPDATES = os.environ.get("ACP_DEBUG_UPDATES", "").split(",") if os.environ.get("ACP_DEBUG_UPDATES") else []
 
+# Firehose trace: when set to a path, every inbound session_update and every
+# outbound _send_stream write is appended verbatim. Use this to diagnose
+# duplication / streaming issues end-to-end. e.g. ACP_TRACE=/tmp/acp.trace
+#
+# If unset, defaults to /tmp/acp.trace so we always have a debug breadcrumb
+# while this is being investigated.
+_ACP_TRACE_PATH = os.environ.get("ACP_TRACE", "/tmp/acp.trace").strip()
+_ACP_TRACE_FILE = None
+if _ACP_TRACE_PATH:
+    try:
+        _ACP_TRACE_FILE = open(_ACP_TRACE_PATH, "a", buffering=1, encoding="utf-8")
+    except OSError as _e:
+        logger.warning("ACP_TRACE could not open %s: %s", _ACP_TRACE_PATH, _e)
+    else:
+        try:
+            import time as _t_time
+            _ACP_TRACE_FILE.write(
+                f'{{"t": {_t_time.time()}, "tag": "kernel_import", '
+                f'"pid": {os.getpid()}, "path": "{_ACP_TRACE_PATH}"}}\n'
+            )
+        except Exception:
+            pass
+
+
+def _trace(tag: str, **fields: Any) -> None:
+    if _ACP_TRACE_FILE is None:
+        return
+    try:
+        import json as _json, time as _time
+        rec = {"t": _time.time(), "tag": tag, **fields}
+        _ACP_TRACE_FILE.write(_json.dumps(rec, default=repr, ensure_ascii=False) + "\n")
+    except Exception:
+        pass
+
 
 @dataclass
 class MCPServer:
@@ -115,25 +149,83 @@ class ACPClientImpl(Client):
         self._log = logging.getLogger(f"{__name__}.ACPClient")
 
     def _send_stream(self, name: str, text: str) -> None:
-        """Send stream output to the currently active cell."""
-        # Use the kernel's current parent header for proper cell association
-        parent = getattr(self._kernel, '_current_parent', None)
-        
-        if parent is not None and hasattr(self._kernel, 'session'):
-            # Use session.send with explicit parent for proper cell routing
-            self._kernel.session.send(
-                self._kernel.iopub_socket,
-                "stream",
-                {"name": name, "text": text},
-                parent=parent,
-            )
+        """Forward a chunk to the kernel's stdout/stderr OutStream.
+
+        ipykernel replaces ``sys.stdout`` / ``sys.stderr`` with
+        ``ipykernel.iostream.OutStream`` instances that batch writes via
+        the IOPubThread on a short timer (~50ms) and emit a single
+        coalesced ``stream`` iopub message per batch — that is how every
+        other kernel produces smooth token-by-token streaming without
+        rendering one cell-output entry per token.
+
+        The wrinkle here: ACP chunks are delivered by the ACP reader
+        asyncio task, which was created during ``_start_agent`` and runs
+        in a different context from ``do_execute``. ipykernel sets the
+        OutStream parent header per-execute, but it does so on the
+        execute task's context, which the reader task doesn't share. We
+        therefore call ``set_parent`` on each OutStream right before
+        writing, using the parent header we save in ``do_execute`` on
+        ``self._kernel._current_parent``. This is cheap and idempotent;
+        ipykernel itself will reset it after the cell completes.
+
+        Unit tests with a mock kernel don't run inside ipykernel's stdio
+        redirection, so we fall back to ``send_response`` once per chunk
+        for them — existing assertions keep working.
+        """
+        if not text:
+            return
+        try:
+            from ipykernel.iostream import OutStream
+        except ImportError:
+            OutStream = None  # type: ignore[assignment]
+
+        # Trace every write at the OutStream level so we can see the actual
+        # instance identity, the parent it's bound to, and what its internal
+        # buffer looks like when we hand it bytes.
+        if OutStream is not None and isinstance(sys.stdout, OutStream):
+            try:
+                ph = getattr(sys.stdout, "parent_header", None)
+                _trace(
+                    "send_stream",
+                    name=name,
+                    len=len(text),
+                    text=text,
+                    out_id=id(sys.stdout),
+                    err_id=id(sys.stderr),
+                    out_parent_msg_id=(ph or {}).get("msg_id") if isinstance(ph, dict) else None,
+                    saved_parent_msg_id=(
+                        ((getattr(self._kernel, "_current_parent", None) or {}).get("header") or {}).get("msg_id")
+                    ),
+                    n_buffers=len(getattr(sys.stdout, "_buffers", {}) or {}),
+                )
+            except Exception:
+                pass
         else:
-            # Fallback to send_response (may not route to correct cell)
-            self._kernel.send_response(
-                self._kernel.iopub_socket,
-                "stream",
-                {"name": name, "text": text},
-            )
+            _trace("send_stream", name=name, len=len(text), text=text, no_outstream=True)
+
+        if (
+            OutStream is not None
+            and isinstance(sys.stdout, OutStream)
+            and isinstance(sys.stderr, OutStream)
+        ):
+            parent = getattr(self._kernel, "_current_parent", None)
+            if parent is not None:
+                try:
+                    sys.stdout.set_parent(parent)
+                    sys.stderr.set_parent(parent)
+                except Exception:
+                    pass
+            target = sys.stdout if name == "stdout" else sys.stderr
+            target.write(text)
+            return
+
+        # Fallback for unit tests that pass a mock kernel.
+        self._kernel.send_response(
+            self._kernel.iopub_socket,
+            "stream",
+            {"name": name, "text": text},
+        )
+
 
     async def request_permission(
         self,
@@ -225,7 +317,28 @@ class ACPClientImpl(Client):
     ) -> None:
         """Handle session updates from the agent."""
         update_type = type(update).__name__
-        
+
+        # Firehose trace of every inbound update.
+        if _ACP_TRACE_FILE is not None:
+            try:
+                content = getattr(update, "content", None)
+                ctext = None
+                if isinstance(content, TextContentBlock):
+                    ctext = content.text
+                elif isinstance(content, list):
+                    ctext = [
+                        c.text for c in content
+                        if isinstance(c, TextContentBlock)
+                    ] or None
+                _trace(
+                    "session_update",
+                    type=update_type,
+                    text=ctext,
+                    repr=repr(update)[:500],
+                )
+            except Exception:
+                pass
+
         # Only log at DEBUG level if filtering is enabled and type matches
         if self._should_log_update(update_type):
             summary = self._get_update_summary(update)
@@ -235,7 +348,6 @@ class ACPClientImpl(Client):
             content = update.content
             if isinstance(content, TextContentBlock):
                 self._kernel.state.response_text += content.text
-                # Stream output to notebook
                 self._send_stream("stdout", content.text)
             elif isinstance(content, ImageContentBlock):
                 self._kernel.state.response_text += "[image]"
@@ -714,13 +826,11 @@ class ACPKernel(Kernel):
 
             self._log.debug("Prompt completed with stopReason: %s", response.stop_reason)
 
-            # Add newline after streaming output
-            if self.state.response_text:
-                self.send_response(
-                    self.iopub_socket,
-                    "stream",
-                    {"name": "stdout", "text": "\n"},
-                )
+            # Add a trailing newline after the agent's reply so the next
+            # prompt's output starts on its own line.
+            if self.state.response_text and not self.state.response_text.endswith("\n"):
+                if self._client is not None:
+                    self._client._send_stream("stdout", "\n")
 
             return self.state.response_text
 
@@ -1028,6 +1138,83 @@ Configuration:
         except AttributeError:
             # In test environments, get_parent() may not work
             self._current_parent = None
+
+        # Trace OutStream identity at execute entry; install a one-time hook
+        # on the OutStream so we see exactly what each flushed iopub stream
+        # message contains.
+        try:
+            from ipykernel.iostream import OutStream
+            if isinstance(sys.stdout, OutStream):
+                _trace(
+                    "do_execute_entry",
+                    out_id=id(sys.stdout),
+                    err_id=id(sys.stderr),
+                    out_parent=getattr(sys.stdout, "parent_header", None),
+                    saved_parent_msg_id=(
+                        ((self._current_parent or {}).get("header") or {}).get("msg_id")
+                    ),
+                    n_buffers=len(getattr(sys.stdout, "_buffers", {}) or {}),
+                )
+                if not getattr(self, "_acp_hook_installed", False):
+                    # Wrap session.send so we observe every iopub message
+                    # actually leaving the kernel. Hooks via register_hook
+                    # don't fire because they're stored in a thread-local
+                    # that's empty on the IOPubThread that does the flush.
+                    try:
+                        sess = sys.stdout.session
+                        _orig_send = sess.send
+
+                        def _traced_send(stream, msg_or_type, content=None,
+                                         parent=None, ident=None, buffers=None,
+                                         track=False, header=None, metadata=None,
+                                         **kwargs):
+                            try:
+                                # OutStream._flush calls session.send with a
+                                # pre-built message dict as msg_or_type, where
+                                # the type lives in msg_or_type["msg_type"]
+                                # or msg_or_type["header"]["msg_type"].
+                                mt = None
+                                msg_content = content
+                                msg_parent = parent
+                                if isinstance(msg_or_type, dict):
+                                    mt = msg_or_type.get("msg_type")
+                                    if not mt:
+                                        mt = (msg_or_type.get("header") or {}).get("msg_type")
+                                    if msg_content is None:
+                                        msg_content = msg_or_type.get("content")
+                                    if msg_parent is None:
+                                        msg_parent = msg_or_type.get("parent_header")
+                                elif isinstance(msg_or_type, str):
+                                    mt = msg_or_type
+                                if mt == "stream" and isinstance(msg_content, dict):
+                                    ph = msg_parent
+                                    if isinstance(ph, dict) and "header" in ph:
+                                        ph = ph["header"]
+                                    _trace(
+                                        "iopub_stream",
+                                        name=msg_content.get("name"),
+                                        text=msg_content.get("text"),
+                                        len=len(msg_content.get("text") or ""),
+                                        parent_msg_id=(ph or {}).get("msg_id") if isinstance(ph, dict) else None,
+                                    )
+                                else:
+                                    _trace("iopub_other", msg_type=mt)
+                            except Exception as _ee:
+                                _trace("iopub_trace_error", error=repr(_ee))
+                            return _orig_send(
+                                stream, msg_or_type, content=content,
+                                parent=parent, ident=ident, buffers=buffers,
+                                track=track, header=header, metadata=metadata,
+                                **kwargs,
+                            )
+
+                        sess.send = _traced_send
+                        self._acp_hook_installed = True
+                        _trace("hook_installed", method="session.send")
+                    except Exception as _e:
+                        _trace("hook_install_failed", error=repr(_e))
+        except Exception as _e:
+            _trace("do_execute_entry_failed", error=repr(_e))
 
         code = code.strip()
         if not code:

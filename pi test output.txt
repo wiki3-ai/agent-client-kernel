@@ -1,0 +1,249 @@
+
+Code
+
+
+Agent Client Protocol
+what example notebooks do we have?
+pi v0.74.0
+---
+
+## Extensions
+- npm:pi-mcp-adapter
+  - index.ts
+I'll search for example notebooks in your project.
+
+🔧 bash (pending)
+✅ Tool 121072002 completed
+Let me show you the example notebooks specifically in the `examples/` directory:
+
+🔧 bash (pending)
+🔧 bash (pending)
+✅ Tool 192991343 completed
+Here are the example notebooks in your `examples/` directory:
+Here are the example notebooks in your `examples/` directory:
+
+| Notebook | Size |Here are the example notebooks in your `examples/` directory:
+
+| Notebook | Size |
+|----------|------|Here are the example notebooks in your `examples/` directory:
+
+| Notebook | Size |
+|----------|------|
+| **ASCII ART.ipynb** | 4.1 KB |Here are the example notebooks in your `examples/` directory:
+
+| Notebook | Size |
+|----------|------|
+| **ASCII ART.ipynb** | 4.1 KB |
+| **basic_usage.ipynb** | 24 KB |Here are the example notebooks in your `examples/` directory:
+
+| Notebook | Size |
+|----------|------|
+| **ASCII ART.ipynb** | 4.1 KB |
+| **basic_usage.ipynb** | 24 KB |
+| **cat.ipynb** | 34.8 KB |Here are the example notebooks in your `examples/` directory:
+
+| Notebook | Size |
+|----------|------|
+| **ASCII ART.ipynb** | 4.1 KB |
+| **basic_usage.ipynb** | 24 KB |
+| **cat.ipynb** | 34.8 KB |
+| **configuration_demo.ipynb** | 6 KB |Here are the example notebooks in your `examples/` directory:
+
+| Notebook | Size |
+|----------|------|
+| **ASCII ART.ipynb** | 4.1 KB |
+| **basic_usage.ipynb** | 24 KB |
+| **cat.ipynb** | 34.8 KB |
+| **configuration_demo.ipynb** | 6 KB |
+| **function_plotter.ipynb** | 393.6 KB (largest) |Here are the example notebooks in your `examples/` directory:
+
+| Notebook | Size |
+|----------|------|
+| **ASCII ART.ipynb** | 4.1 KB |
+| **basic_usage.ipynb** | 24 KB |
+| **cat.ipynb** | 34.8 KB |
+| **configuration_demo.ipynb** | 6 KB |
+| **function_plotter.ipynb** | 393.6 KB (largest) |
+| **jupyter-mcp.ipynb** | 6.8 KB |Here are the example notebooks in your `examples/` directory:
+
+| Notebook | Size |
+|----------|------|
+| **ASCII ART.ipynb** | 4.1 KB |
+| **basic_usage.ipynb** | 24 KB |
+| **cat.ipynb** | 34.8 KB |
+| **configuration_demo.ipynb** | 6 KB |
+| **function_plotter.ipynb** | 393.6 KB (largest) |
+| **jupyter-mcp.ipynb** | 6.8 KB |
+| **sum_squares.ipynb** | 1 KB (smallest) |Here are the example notebooks in your `examples/` directory:
+
+| Notebook | Size |
+|----------|------|
+| **ASCII ART.ipynb** | 4.1 KB |
+| **basic_usage.ipynb** | 24 KB |
+| **cat.ipynb** | 34.8 KB |
+| **configuration_demo.ipynb** | 6 KB |
+| **function_plotter.ipynb** | 393.6 KB (largest) |
+| **jupyter-mcp.ipynb** | 6.8 KB |
+| **sum_squares.ipynb** | 1 KB (smallest) |
+| **tiger_run.ipynb** | 45.5 KB |Here are the example notebooks in your `examples/` directory:
+
+| Notebook | Size |
+|----------|------|
+| **ASCII ART.ipynb** | 4.1 KB |
+| **basic_usage.ipynb** | 24 KB |
+| **cat.ipynb** | 34.8 KB |
+| **configuration_demo.ipynb** | 6 KB |
+| **function_plotter.ipynb** | 393.6 KB (largest) |
+| **jupyter-mcp.ipynb** | 6.8 KB |
+| **sum_squares.ipynb** | 1 KB (smallest) |
+| **tiger_run.ipynb** | 45.5 KB |
+| **weather_map.ipynb** | 12.4 KB |
+Here are the example notebooks in your `examples/` directory:
+
+| Notebook | Size |
+|----------|------|
+| **ASCII ART.ipynb** | 4.1 KB |
+| **basic_usage.ipynb** | 24 KB |
+| **cat.ipynb** | 34.8 KB |
+| **configuration_demo.ipynb** | 6 KB |
+| **function_plotter.ipynb** | 393.6 KB (largest) |
+| **jupyter-mcp.ipynb** | 6.8 KB |
+| **sum_squares.ipynb** | 1 KB (smallest) |
+| **tiger_run.ipynb** | 45.5 KB |
+| **weather_map.ipynb** | 12.4 KB |
+
+Would you like me to show details about any specific notebook?Here are the example notebooks in your `examples/` directory:
+
+| Notebook | Size |
+|----------|------|
+| **ASCII ART.ipynb** | 4.1 KB |
+| **basic_usage.ipynb** | 24 KB |
+| **cat.ipynb** | 34.8 KB |
+| **configuration_demo.ipynb** | 6 KB |
+| **function_plotter.ipynb** | 393.6 KB (largest) |
+| **jupyter-mcp.ipynb** | 6.8 KB |
+| **sum_squares.ipynb** | 1 KB (smallest) |
+| **tiger_run.ipynb** | 45.5 KB |
+| **weather_map.ipynb** | 12.4 KB |
+
+Would you like me to show details about any specific notebook?
+
+
+
+
+
+
+use the jupyter mcp to make the list
+
+🔧 mcp (pending)
+✅ Tool 322905020 completed
+
+🔧 mcp (pending)
+✅ Tool 183672519 completed
+
+🔧 mcp (pending)
+✅ Tool 420403912 completed
+Connected to the jupyter MCP server. Let me list the available notebooks:
+
+🔧 mcp (pending)
+✅ Tool 966192769 completed
+🔧 mcp (pending)
+✅ Tool 966192769 completed
+
+🔧 mcp (pending)
+🔧 mcp (pending)
+✅ Tool 966192769 completed
+
+🔧 mcp (pending)
+✅ Tool 827346091 completed
+Here are the example notebooks listed via Jupyter MCP:
+Here are the example notebooks listed via Jupyter MCP:
+
+| Notebook | Size | Last Modified |Here are the example notebooks listed via Jupyter MCP:
+
+| Notebook | Size | Last Modified |
+|----------|------|---------------|Here are the example notebooks listed via Jupyter MCP:
+
+| Notebook | Size | Last Modified |
+|----------|------|---------------|
+| `ASCII ART.ipynb` | 4.0 KB | 2026-04-30 05:59:47 |Here are the example notebooks listed via Jupyter MCP:
+
+| Notebook | Size | Last Modified |
+|----------|------|---------------|
+| `ASCII ART.ipynb` | 4.0 KB | 2026-04-30 05:59:47 |
+| `basic_usage.ipynb` | 23.5 KB | 2026-04-27 22:33:55 |Here are the example notebooks listed via Jupyter MCP:
+
+| Notebook | Size | Last Modified |
+|----------|------|---------------|
+| `ASCII ART.ipynb` | 4.0 KB | 2026-04-30 05:59:47 |
+| `basic_usage.ipynb` | 23.5 KB | 2026-04-27 22:33:55 |
+| `cat.ipynb` | 34.0 KB | 2026-04-30 05:59:48 |Here are the example notebooks listed via Jupyter MCP:
+
+| Notebook | Size | Last Modified |
+|----------|------|---------------|
+| `ASCII ART.ipynb` | 4.0 KB | 2026-04-30 05:59:47 |
+| `basic_usage.ipynb` | 23.5 KB | 2026-04-27 22:33:55 |
+| `cat.ipynb` | 34.0 KB | 2026-04-30 05:59:48 |
+| `configuration_demo.ipynb` | 5.8 KB | 2026-04-27 22:33:55 |Here are the example notebooks listed via Jupyter MCP:
+
+| Notebook | Size | Last Modified |
+|----------|------|---------------|
+| `ASCII ART.ipynb` | 4.0 KB | 2026-04-30 05:59:47 |
+| `basic_usage.ipynb` | 23.5 KB | 2026-04-27 22:33:55 |
+| `cat.ipynb` | 34.0 KB | 2026-04-30 05:59:48 |
+| `configuration_demo.ipynb` | 5.8 KB | 2026-04-27 22:33:55 |
+| `function_plotter.ipynb` | 384.4 KB | 2026-04-28 22:03:22 |Here are the example notebooks listed via Jupyter MCP:
+
+| Notebook | Size | Last Modified |
+|----------|------|---------------|
+| `ASCII ART.ipynb` | 4.0 KB | 2026-04-30 05:59:47 |
+| `basic_usage.ipynb` | 23.5 KB | 2026-04-27 22:33:55 |
+| `cat.ipynb` | 34.0 KB | 2026-04-30 05:59:48 |
+| `configuration_demo.ipynb` | 5.8 KB | 2026-04-27 22:33:55 |
+| `function_plotter.ipynb` | 384.4 KB | 2026-04-28 22:03:22 |
+| `jupyter-mcp.ipynb` | 6.6 KB | 2026-04-27 22:33:55 |Here are the example notebooks listed via Jupyter MCP:
+
+| Notebook | Size | Last Modified |
+|----------|------|---------------|
+| `ASCII ART.ipynb` | 4.0 KB | 2026-04-30 05:59:47 |
+| `basic_usage.ipynb` | 23.5 KB | 2026-04-27 22:33:55 |
+| `cat.ipynb` | 34.0 KB | 2026-04-30 05:59:48 |
+| `configuration_demo.ipynb` | 5.8 KB | 2026-04-27 22:33:55 |
+| `function_plotter.ipynb` | 384.4 KB | 2026-04-28 22:03:22 |
+| `jupyter-mcp.ipynb` | 6.6 KB | 2026-04-27 22:33:55 |
+| `sum_squares.ipynb` | 987 B | 2026-04-28 22:03:08 |Here are the example notebooks listed via Jupyter MCP:
+
+| Notebook | Size | Last Modified |
+|----------|------|---------------|
+| `ASCII ART.ipynb` | 4.0 KB | 2026-04-30 05:59:47 |
+| `basic_usage.ipynb` | 23.5 KB | 2026-04-27 22:33:55 |
+| `cat.ipynb` | 34.0 KB | 2026-04-30 05:59:48 |
+| `configuration_demo.ipynb` | 5.8 KB | 2026-04-27 22:33:55 |
+| `function_plotter.ipynb` | 384.4 KB | 2026-04-28 22:03:22 |
+| `jupyter-mcp.ipynb` | 6.6 KB | 2026-04-27 22:33:55 |
+| `sum_squares.ipynb` | 987 B | 2026-04-28 22:03:08 |
+| `tiger_run.ipynb` | 44.4 KB | 2026-04-30 05:59:45 |Here are the example notebooks listed via Jupyter MCP:
+
+| Notebook | Size | Last Modified |
+|----------|------|---------------|
+| `ASCII ART.ipynb` | 4.0 KB | 2026-04-30 05:59:47 |
+| `basic_usage.ipynb` | 23.5 KB | 2026-04-27 22:33:55 |
+| `cat.ipynb` | 34.0 KB | 2026-04-30 05:59:48 |
+| `configuration_demo.ipynb` | 5.8 KB | 2026-04-27 22:33:55 |
+| `function_plotter.ipynb` | 384.4 KB | 2026-04-28 22:03:22 |
+| `jupyter-mcp.ipynb` | 6.6 KB | 2026-04-27 22:33:55 |
+| `sum_squares.ipynb` | 987 B | 2026-04-28 22:03:08 |
+| `tiger_run.ipynb` | 44.4 KB | 2026-04-30 05:59:45 |
+| `weather_map.ipynb` | 12.1 KB | 2026-04-30 05:59:46 |Here are the example notebooks listed via Jupyter MCP:
+
+| Notebook | Size | Last Modified |
+|----------|------|---------------|
+| `ASCII ART.ipynb` | 4.0 KB | 2026-04-30 05:59:47 |
+| `basic_usage.ipynb` | 23.5 KB | 2026-04-27 22:33:55 |
+| `cat.ipynb` | 34.0 KB | 2026-04-30 05:59:48 |
+| `configuration_demo.ipynb` | 5.8 KB | 2026-04-27 22:33:55 |
+| `function_plotter.ipynb` | 384.4 KB | 2026-04-28 22:03:22 |
+| `jupyter-mcp.ipynb` | 6.6 KB | 2026-04-27 22:33:55 |
+| `sum_squares.ipynb` | 987 B | 2026-04-28 22:03:08 |
+| `tiger_run.ipynb` | 44.4 KB | 2026-04-30 05:59:45 |
+| `weather_map.ipynb` | 12.1 KB | 2026-04-30 05:59:46 |

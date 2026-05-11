@@ -28,6 +28,9 @@ dependencies = [
     "ipywidgets",
     "matplotlib",
     "jupyter-mcp-tools",
+    # Required so that jupyter_server_nbmodel can write cell outputs back into
+    # the YDoc when clients (e.g. VS Code) execute via the nbmodel REST API.
+    # Without it, kernels run fine on iopub but cells show no output.
     "jupyter-collaboration",
     "jupyter-mcp-server",
 ]
