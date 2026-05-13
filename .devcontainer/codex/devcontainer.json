@@ -43,9 +43,9 @@
     "ACP_AGENT_COMMAND": "/home/jovyan/.local/bin/codex-acp",
     "ACP_AGENT_ARGS": "",
     "RESTARTABLE": "yes"
-  },
+  }
   // Codespaces ports are private by default so skip the auth token.
   // Need to disable XSRF check for Jupyter MCP servers if auth token is disabled.
   // If you need auth or don't mind the token, then just `jupyter lab` will do the trick.
-  "postStartCommand": "start.sh jupyter lab --NotebookApp.token='' --ServerApp.disable_check_xsrf=True > /tmp/jupyter.log 2>&1 &"
+  // "postStartCommand": "start.sh jupyter lab --NotebookApp.token='' --ServerApp.disable_check_xsrf=True > /tmp/jupyter.log 2>&1 &"
 }

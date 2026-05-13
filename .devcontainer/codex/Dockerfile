@@ -46,7 +46,7 @@ RUN mkdir -p "$HOME/.local/bin" && \
 # bubblewrap is needed by Codex for Linux sandboxing but we're not actually using it.
 # TODO: Use https://github.com/openai/codex/blob/main/.devcontainer/devcontainer.secure.json
 # graphviz is used by some example notebooks.
-RUN conda install -y -c conda-forge bubblewrap graphviz && conda clean -afy
+RUN conda install -y -c conda-forge bubblewrap graphviz nodejs && conda clean -afy
 
 # Install uv and the project (with deps from pyproject.toml) into the
 # conda base environment.

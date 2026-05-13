@@ -11,13 +11,7 @@ Usage:
 
     # Set a new version for one or more agents (release_tag is inferred from
     # the existing template unless --tag is given):
-    python scripts/update-agent-versions.py \\
-        --set codex=0.130.0 \\
-        --set codex-acp=0.13.0
-
-    # Set explicit release tags too (rarely needed):
-    python scripts/update-agent-versions.py \\
-        --set codex=0.130.0 --tag codex=rust-v0.130.0
+    python scripts/update-agent-versions.py --set codex=0.130.0 --set codex-acp=0.14.0
 
     # Just check that pinned checksums still match upstream (CI-friendly):
     python scripts/update-agent-versions.py --check

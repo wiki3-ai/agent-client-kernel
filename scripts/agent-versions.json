@@ -2,25 +2,25 @@
   "$schema_doc": "Pinned native-binary versions and SHA-256 checksums for ACP agents installed by the Codex devcontainer. Update with scripts/update-agent-versions.py.",
   "agents": {
     "codex": {
-      "version": "0.128.0",
-      "release_tag": "rust-v0.128.0",
+      "version": "0.130.0",
+      "release_tag": "rust-v0.130.0",
       "url_template": "https://github.com/openai/codex/releases/download/{tag}/codex-{target}.tar.gz",
       "extracted_binary": "codex-{target}",
       "install_as": "codex",
       "sha256": {
-        "aarch64-unknown-linux-musl": "3161b4d5304feaf7befbb0fcb41bf9a7ee40e31ba7e3ef36d40a00aa3ba6cbd0",
-        "x86_64-unknown-linux-musl": "886b85e6118c0b43234437ca007fbe923611a53b103d00e0d3ae74aefb20e23a"
+        "aarch64-unknown-linux-musl": "1d7e00f2c22c3016b5bcb71c61010947b022a90e2901bc6baafe82256492c767",
+        "x86_64-unknown-linux-musl": "16779e7b7857508a768a36d7d4e084eec336ec23946ed70a9b09489b8f861190"
       }
     },
     "codex-acp": {
-      "version": "0.13.0",
-      "release_tag": "v0.13.0",
+      "version": "0.14.0",
+      "release_tag": "v0.14.0",
       "url_template": "https://github.com/zed-industries/codex-acp/releases/download/{tag}/codex-acp-{version}-{target}.tar.gz",
       "extracted_binary": "codex-acp",
       "install_as": "codex-acp",
       "sha256": {
-        "aarch64-unknown-linux-musl": "8537a53533197e4ae1fad5bb7645958768b5ba66430352cbc7416bce9ad30e12",
-        "x86_64-unknown-linux-musl": "8ddbd3c314c117fa30f555386d752948186e3294f1379b45d42e188386a956fd"
+        "aarch64-unknown-linux-musl": "18908961d97993458cb616bb39f8956dbb1bc327932493f0da068a2f23d617c3",
+        "x86_64-unknown-linux-musl": "dddc0dc7a6cf0fe98279a2eadfeeedca4e6e482c5fa71d468fd4cf8d89a6f53e"
       }
     }
   },
