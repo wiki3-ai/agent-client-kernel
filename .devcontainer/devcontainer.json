@@ -53,5 +53,5 @@
   // "postCreateCommand": "pre-commit install --install-hooks"
   // Codespaces ports are private by default so skip the auth token.
   // Need to disable XSRF check for Jupyter MCP servers if auth token is disabled.
-  // "postStartCommand": "nohup start.sh jupyter lab --NotebookApp.token='' --ServerApp.disable_check_xsrf=True > /tmp/jupyter.log 2>&1 &"
+  // "postStartCommand": "nohup start.sh jupyter lab --IdentityProvider.token='' --ServerApp.disable_check_xsrf=True > /tmp/jupyter.log 2>&1 &"
 }

@@ -27,6 +27,8 @@ dependencies = [
     "ipympl",
     "ipywidgets",
     "matplotlib",
+    "jupyter-collaboration",
+    "jupyter-collaboration-ui",
     "jupyter-mcp-tools",
     "jupyter-mcp-server",
     "jupyter-ai"

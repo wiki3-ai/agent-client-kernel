@@ -42,8 +42,20 @@
     "GRANT_SUDO": "yes",
     "ACP_AGENT_COMMAND": "/home/jovyan/.local/bin/codex-acp",
     "ACP_AGENT_ARGS": "",
-    "RESTARTABLE": "yes"
-  }
+    "RESTARTABLE": "yes",
+    // LM Studio request shim. Codex >= 0.130 wraps MCP tools in a
+    // "namespace" envelope that LM Studio rejects. The shim flattens
+    // them. Only used by providers whose base_url points at it
+    // (see ~/.codex/config.toml -> [model_providers.local_lmstudio]).
+    // Set to "off" to disable; OpenAI/Anthropic traffic bypasses it
+    // anyway, so leaving it on is safe.
+    "ACP_LMSTUDIO_SHIM": "auto",
+    "ACP_LMSTUDIO_SHIM_TARGET": "http://192.168.64.1:1234",
+    "ACP_LMSTUDIO_SHIM_PORT": "18234"
+  },
+  // Start the LM Studio shim each time the container starts.
+  // Idempotent: bails out if port 18234 is already in use.
+  "postStartCommand": "bash /home/jovyan/scripts/start-lmstudio-shim.sh"
   // Codespaces ports are private by default so skip the auth token.
   // Need to disable XSRF check for Jupyter MCP servers if auth token is disabled.
   // If you need auth or don't mind the token, then just `jupyter lab` will do the trick.
