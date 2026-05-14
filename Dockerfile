@@ -17,7 +17,7 @@ WORKDIR /home/jovyan
 
 RUN cd /home/jovyan/agent-client-kernel \
     && pip install --upgrade pip \
-    && pip install --upgrade uv jupyter-mcp-tools \
+    && pip install --upgrade uv \
     && git submodule update --init --recursive \
     && pip install -e . \
     && python -m agent_client_kernel install --user

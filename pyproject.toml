@@ -27,10 +27,14 @@ dependencies = [
     "ipympl",
     "ipywidgets",
     "matplotlib",
-    "jupyter-mcp-tools",
-    "jupyter-mcp-server",
     "jupyter-ai"
 ]
+
+# Note: jupyter-mcp-server is intentionally NOT a runtime dependency.
+# Codex launches it standalone via `uvx jupyter-mcp-server@latest` (see
+# AGENTS.md), and installing it into the kernel env enables the
+# jupyter_server_nbmodel server extension globally, which hijacks cell
+# execution in JupyterLab and breaks both this kernel and python3.
 
 # conda install -c conda-forge ipympl
 
