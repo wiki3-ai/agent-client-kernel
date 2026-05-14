@@ -30,8 +30,16 @@ Run it standalone via ``scripts/lmstudio-shim.py`` or
 
 Environment variables:
 
-    ACP_LMSTUDIO_SHIM_TARGET (alias SHIM_TARGET)  upstream LM Studio base URL
-                                                  (default http://192.168.64.1:1234)
+    ACP_LMSTUDIO_SHIM_TARGET (alias SHIM_TARGET)  explicit upstream LM Studio
+                                                  base URL override, e.g.
+                                                  http://host.docker.internal:1234.
+    HOST_GATEWAY_IP                               host gateway IP/hostname,
+                                                  injected by the container
+                                                  host. Falls back to
+                                                  host.docker.internal. Used to
+                                                  build the upstream URL
+                                                  ``http://${HOST_GATEWAY_IP}:1234``
+                                                  when SHIM_TARGET is unset.
     ACP_LMSTUDIO_SHIM_PORT   (alias SHIM_PORT)    local port (default 18234)
 """
 
@@ -49,14 +57,21 @@ from typing import Optional
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_TARGET = "http://192.168.64.1:1234"
 DEFAULT_PORT = 18234
+DEFAULT_HOST_GATEWAY = "host.docker.internal"
+DEFAULT_UPSTREAM_PORT = 1234
 
 
-def _env_target() -> str:
-    return os.environ.get("ACP_LMSTUDIO_SHIM_TARGET") or os.environ.get(
-        "SHIM_TARGET", DEFAULT_TARGET
+def _env_target() -> Optional[str]:
+    explicit = os.environ.get("ACP_LMSTUDIO_SHIM_TARGET") or os.environ.get(
+        "SHIM_TARGET"
     )
+    if explicit:
+        return explicit
+    host = os.environ.get("HOST_GATEWAY_IP") or DEFAULT_HOST_GATEWAY
+    if not host:
+        return None
+    return f"http://{host}:{DEFAULT_UPSTREAM_PORT}"
 
 
 def _env_port() -> int:
@@ -191,8 +206,19 @@ class _ThreadedServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
 def serve_forever(
     target: Optional[str] = None, port: Optional[int] = None
 ) -> None:
-    """Run the shim synchronously until interrupted."""
+    """Run the shim synchronously until interrupted.
+
+    ``target`` must be provided explicitly or via the
+    ``ACP_LMSTUDIO_SHIM_TARGET`` env var. There is no hardcoded fallback
+    so users can't accidentally proxy to someone else's machine.
+    """
     target = target or _env_target()
+    if not target:
+        raise SystemExit(
+            "lmstudio-shim: no upstream target configured. Set "
+            "HOST_GATEWAY_IP or ACP_LMSTUDIO_SHIM_TARGET "
+            "(e.g. http://host.docker.internal:1234), or pass --target."
+        )
     port = port or _env_port()
     server = _ThreadedServer(("127.0.0.1", port), _make_handler(target))
     sys.stderr.write(
@@ -207,3 +233,59 @@ def serve_forever(
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(message)s")
     serve_forever()
+
+
+# -- in-process launcher used by the kernel ---------------------------------
+
+_BACKGROUND_THREAD: "threading.Thread | None" = None
+
+
+def _port_in_use(port: int) -> bool:
+    import socket as _socket
+
+    with _socket.socket(_socket.AF_INET, _socket.SOCK_STREAM) as sock:
+        sock.settimeout(0.2)
+        try:
+            sock.connect(("127.0.0.1", port))
+        except OSError:
+            return False
+        return True
+
+
+def ensure_running() -> Optional[str]:
+    """Start the shim in a background daemon thread if it isn't already.
+
+    Returns the upstream target URL the shim is forwarding to, or ``None``
+    if the shim was suppressed (``ACP_LMSTUDIO_SHIM=off``) or could not be
+    started. Idempotent across calls within the same process and silently
+    no-ops if some other process is already listening on the port.
+    """
+    import threading
+
+    global _BACKGROUND_THREAD
+
+    if os.environ.get("ACP_LMSTUDIO_SHIM", "auto").lower() == "off":
+        return None
+
+    target = _env_target()
+    if not target:
+        return None
+
+    port = _env_port()
+    if _BACKGROUND_THREAD is not None and _BACKGROUND_THREAD.is_alive():
+        return target
+    if _port_in_use(port):
+        return target
+
+    def _run() -> None:
+        try:
+            serve_forever(target=target, port=port)
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("lmstudio-shim background thread exited: %s", exc)
+
+    thread = threading.Thread(
+        target=_run, name="lmstudio-shim", daemon=True
+    )
+    thread.start()
+    _BACKGROUND_THREAD = thread
+    return target

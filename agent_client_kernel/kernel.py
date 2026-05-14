@@ -560,6 +560,20 @@ class ACPKernel(Kernel):
         if self._proc is not None:
             return
 
+        # Bring up the LM Studio request shim if it isn't already. Safe
+        # no-op when the shim is disabled or unused by the configured
+        # model provider; see agent_client_kernel.lmstudio_shim for the
+        # selection rules. Done here (not at module import) so test
+        # imports don't bind ports.
+        try:
+            from . import lmstudio_shim
+
+            target = lmstudio_shim.ensure_running()
+            if target:
+                self._log.info("LM Studio shim active -> %s", target)
+        except Exception as exc:  # noqa: BLE001
+            self._log.warning("LM Studio shim failed to start: %s", exc)
+
         self._log.info("Starting agent: %s %s", self._agent_command, " ".join(self._agent_args))
 
         try:

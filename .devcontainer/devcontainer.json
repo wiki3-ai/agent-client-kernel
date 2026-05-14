@@ -50,6 +50,12 @@
     "ACP_AGENT_ARGS": "",
     "RESTARTABLE": "yes"
   }
+  // The LM Studio request shim (flattens Codex 0.130+ "namespace" MCP
+  // tool envelopes that LM Studio rejects) is started by the kernel
+  // itself when an agent is launched; no devcontainer wiring required.
+  // To disable: ACP_LMSTUDIO_SHIM=off. To override upstream:
+  // HOST_GATEWAY_IP=... or ACP_LMSTUDIO_SHIM_TARGET=...
+  //
   // "postCreateCommand": "pre-commit install --install-hooks"
   // Codespaces ports are private by default so skip the auth token.
   // Need to disable XSRF check for Jupyter MCP servers if auth token is disabled.
