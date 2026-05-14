@@ -21,7 +21,12 @@
     "8888": {
       "label": "JupyterLab",
       "requireLocalPort": false,
-      "onAutoForward": "openBrowser"
+      // `openBrowser` re-fires whenever VS Code re-detects the forward
+      // (e.g. a Jupyter URL printed by `ps aux`, `jupyter notebook
+      // list`, `curl localhost:8888`, or a Ctrl-C restart), which can
+      // open a dozen tabs in a single Codex session. `notify` lets us
+      // click through once and keeps the cascade off.
+      "onAutoForward": "notify"
     }
   },
   "remoteEnv": {
@@ -62,6 +67,9 @@
   // Codespaces ports are private by default so skip the auth token.
   // Need to disable XSRF check for Jupyter MCP servers if auth token is disabled.
   // start.sh runs the before-notebook.d hooks (including the LM Studio
-  // shim) and then launches Jupyter Lab.
-  // "postStartCommand": "nohup start.sh jupyter lab --IdentityProvider.token='' --ServerApp.disable_check_xsrf=True > /tmp/jupyter.log 2>&1 &"
+  // shim) and then launches Jupyter Lab. `--no-browser` keeps Jupyter
+  // itself from invoking webbrowser.open() (which in a devcontainer
+  // goes through VS Code's URL handler and opens a host tab every
+  // restart).
+  // "postStartCommand": "nohup start.sh jupyter lab --no-browser --IdentityProvider.token='' --ServerApp.disable_check_xsrf=True > /tmp/jupyter.log 2>&1 &"
 }
