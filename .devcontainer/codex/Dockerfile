@@ -65,3 +65,11 @@ RUN pip install --upgrade "uv>=0.9.15" && \
 
 # Install the kernel for the current user.
 RUN python -m agent_client_kernel install --user
+
+# Install Codex user-level config. Codex 0.130+ refuses to honour
+# `profile`, `profiles`, and `model_providers` from project-local config,
+# so the LM Studio provider definition has to live in ~/.codex/config.toml.
+# .codex/user-config.toml in the repo is the source of truth; project-local
+# overrides (mcp_servers, model_catalog_json, sandbox_mode, trust) remain in
+# .codex/config.toml and are merged in by Codex at load time.
+RUN cp /home/jovyan/.codex/user-config.toml /home/jovyan/.codex/config.toml

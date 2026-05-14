@@ -115,6 +115,12 @@ def flatten_tools(payload: dict) -> dict:
 
 def _make_handler(target: str) -> type[http.server.BaseHTTPRequestHandler]:
     class Handler(http.server.BaseHTTPRequestHandler):
+        # Speak HTTP/1.1 so the base class auto-handles Expect: 100-continue
+        # (Codex sends Expect on large Responses-API POSTs and aborts the
+        # send if it never sees a 100). We still close the connection after
+        # each response to keep the proxy logic simple.
+        protocol_version = "HTTP/1.1"
+
         def _proxy(self, method: str) -> None:
             length = int(self.headers.get("Content-Length", "0") or 0)
             body = self.rfile.read(length) if length else b""
@@ -153,6 +159,8 @@ def _make_handler(target: str) -> type[http.server.BaseHTTPRequestHandler]:
                     ):
                         continue
                     self.send_header(key, value)
+                # Force close: each request gets a fresh upstream connection.
+                self.send_header("Connection", "close")
                 self.end_headers()
                 while True:
                     chunk = upstream.read(8192)
