@@ -215,6 +215,40 @@ uv sync --locked --extra dev
 uv run pytest
 ```
 
+The default `pytest` run executes unit tests only. Heavyweight
+end-to-end tests are tagged with the `live_e2e` marker and skipped
+unless their service-specific env var is set, so they are safe to
+leave in the suite.
+
+### Live end-to-end tests
+
+[`tests/e2e/test_golden_notebook_e2e.py`](tests/e2e/test_golden_notebook_e2e.py)
+drives Codex against the real LM Studio + `lmstudio_shim` + Jupyter
+Lab + `jupyter-mcp-server` stack and asserts that the agent can build
+a multi-cell `golden.ipynb` through the MCP tools. It is the
+regression test for the failure documented in
+[docs/golden-notebook-newlines-postmortem.md](docs/golden-notebook-newlines-postmortem.md).
+Prerequisites:
+
+- LM Studio reachable from inside the container (the in-container
+  `lmstudio_shim` listening on `127.0.0.1:18234` forwards to it).
+- Jupyter Lab running on `127.0.0.1:8888` with `jupyter-collaboration`
+  installed (verify with `curl -I
+  http://127.0.0.1:8888/api/collaboration/session/_probe.ipynb` —
+  anything but 404 is fine).
+- `~/.codex/config.toml` configured for the `local_lmstudio` provider
+  (the devcontainer default).
+
+Run it explicitly with:
+
+```bash
+ACK_GOLDEN_E2E=1 uv run pytest -m live_e2e -v -s
+```
+
+Each pre-flight check skips with a clear reason if the corresponding
+service is missing, so it is safe to wire into CI matrices that may
+not have a GPU host attached.
+
 The CI workflow (`.github/workflows/ci.yml`) runs the test suite on
 Python 3.10 / 3.11 / 3.12, verifies that the pinned ACP agent
 checksums still match upstream, and builds the multi-arch Codex

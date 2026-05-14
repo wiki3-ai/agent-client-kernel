@@ -81,3 +81,6 @@ testpaths = ["tests"]
 filterwarnings = [
     "ignore::DeprecationWarning",
 ]
+markers = [
+    "live_e2e: end-to-end test against a live stack (LM Studio + lmstudio_shim + Jupyter Lab with jupyter-collaboration + Codex). Skipped unless ACK_GOLDEN_E2E=1.",
+]

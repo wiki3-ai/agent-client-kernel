@@ -32,10 +32,13 @@ from pathlib import Path
 import pytest
 
 
-pytestmark = pytest.mark.skipif(
-    os.environ.get("ACK_GOLDEN_E2E") != "1",
-    reason="set ACK_GOLDEN_E2E=1 to run the golden-notebook e2e test",
-)
+pytestmark = [
+    pytest.mark.live_e2e,
+    pytest.mark.skipif(
+        os.environ.get("ACK_GOLDEN_E2E") != "1",
+        reason="set ACK_GOLDEN_E2E=1 to run the golden-notebook e2e test",
+    ),
+]
 
 
 PROMPT = (
