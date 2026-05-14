@@ -125,6 +125,44 @@ def test_hook_file_exists_and_is_executable() -> None:
     assert contents.startswith("#!/usr/bin/env bash"), "hook missing shebang"
 
 
+def test_hook_is_safe_to_source() -> None:
+    """Regression: start.sh's run-hooks.sh *sources* .sh files.
+
+    The hook must therefore not call ``exit`` or leave ``set -e``/``set -u``
+    active in the parent shell — otherwise start.sh aborts before exec'ing
+    Jupyter Lab. Simulate the sourcing path and assert the parent shell
+    survives, runs subsequent commands, and has no lingering strict-mode
+    options.
+    """
+    shim_port = _free_port()
+    env = _hook_env(
+        ACP_LMSTUDIO_SHIM="off",  # shortest path through the hook
+        ACP_LMSTUDIO_SHIM_PORT=str(shim_port),
+    )
+    # Probe `$-` *after* sourcing to confirm no `e`/`u` flags leaked into
+    # the parent shell, and emit a sentinel to prove control returned.
+    script = f"source {HOOK}\necho POST_SOURCE_FLAGS=$-\necho SENTINEL_OK\n"
+    result = subprocess.run(
+        ["bash", "-c", script],
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=10,
+    )
+    assert result.returncode == 0, result.stderr
+    assert "SENTINEL_OK" in result.stdout, (
+        f"sourcing the hook killed the parent shell; stdout={result.stdout!r} "
+        f"stderr={result.stderr!r}"
+    )
+    flags_line = next(
+        (ln for ln in result.stdout.splitlines() if ln.startswith("POST_SOURCE_FLAGS=")),
+        "",
+    )
+    flags = flags_line.split("=", 1)[1] if "=" in flags_line else ""
+    assert "e" not in flags, f"hook left `set -e` active in parent: $-={flags!r}"
+    assert "u" not in flags, f"hook left `set -u` active in parent: $-={flags!r}"
+
+
 def test_hook_respects_shim_off() -> None:
     """ACP_LMSTUDIO_SHIM=off must skip startup entirely (no child process)."""
     shim_port = _free_port()

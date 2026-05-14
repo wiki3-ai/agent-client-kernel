@@ -45,11 +45,10 @@
   },
   "containerEnv": {
     "JUPYTER_PORT": "8888",
-    "GRANT_SUDO": "yes",
     "ACP_AGENT_COMMAND": "/home/jovyan/.local/bin/codex-acp",
     "ACP_AGENT_ARGS": "",
     "RESTARTABLE": "yes"
-  }
+  },
   // The LM Studio request shim (workaround for LM Studio bug-tracker
   // #1810/#1812, where the Responses endpoint rejects Codex 0.130+
   // "namespace" MCP tool envelopes) is started by start.sh via the
@@ -60,8 +59,9 @@
   // To disable: ACP_LMSTUDIO_SHIM=off. To override upstream:
   // HOST_GATEWAY_IP=... or ACP_LMSTUDIO_SHIM_TARGET=...
   //
-  // "postCreateCommand": "pre-commit install --install-hooks"
   // Codespaces ports are private by default so skip the auth token.
   // Need to disable XSRF check for Jupyter MCP servers if auth token is disabled.
+  // start.sh runs the before-notebook.d hooks (including the LM Studio
+  // shim) and then launches Jupyter Lab.
   // "postStartCommand": "nohup start.sh jupyter lab --IdentityProvider.token='' --ServerApp.disable_check_xsrf=True > /tmp/jupyter.log 2>&1 &"
 }
