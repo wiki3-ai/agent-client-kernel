@@ -27,14 +27,24 @@ dependencies = [
     "ipympl",
     "ipywidgets",
     "matplotlib",
-    "jupyter-ai"
+    "jupyter-ai",
+    # Required by the standalone `uvx jupyter-mcp-server` process so its
+    # cell-mutation tools (insert_cell, overwrite_cell_source, ...) can
+    # reach the YDoc collaboration endpoint at
+    # /api/collaboration/session/<path>. Without it every MCP cell-write
+    # 404s and the agent falls back to hand-rolling nbformat JSON, which
+    # frequently produces malformed (single-line) cells.
+    "jupyter-collaboration",
 ]
 
 # Note: jupyter-mcp-server is intentionally NOT a runtime dependency.
 # Codex launches it standalone via `uvx jupyter-mcp-server@latest` (see
-# AGENTS.md), and installing it into the kernel env enables the
-# jupyter_server_nbmodel server extension globally, which hijacks cell
-# execution in JupyterLab and breaks both this kernel and python3.
+# AGENTS.md). Do NOT add jupyter-mcp-server or jupyter-mcp-tools here:
+# they pull in the Datalayer alpha `jupyter-server-nbmodel` server
+# extension, which hijacks cell execution in JupyterLab and breaks both
+# this kernel and python3. The official `jupyter-collaboration` package
+# above provides the YDoc endpoint the MCP server needs without that
+# side effect.
 
 # conda install -c conda-forge ipympl
 
