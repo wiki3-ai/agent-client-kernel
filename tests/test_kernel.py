@@ -264,3 +264,46 @@ class TestSessionState:
         """Test custom cwd."""
         state = SessionState(cwd="/custom/path")
         assert state.cwd == "/custom/path"
+
+
+class TestStartAgentShimWiring:
+    """``_start_agent`` must bring up the LM Studio request shim.
+
+    Regression for the failure where ``codex`` could not reach
+    ``http://127.0.0.1:18234`` because nothing had started the shim. The
+    kernel owns shim lifecycle, so every agent spawn must call
+    ``lmstudio_shim.ensure_running`` before exec'ing the agent binary.
+    """
+
+    @pytest.mark.asyncio
+    async def test_start_agent_invokes_ensure_running(self, kernel):
+        # Abort the spawn right after ensure_running so we don't actually
+        # try to launch codex-acp.
+        sentinel = RuntimeError("stop before subprocess")
+        with patch(
+            "agent_client_kernel.lmstudio_shim.ensure_running",
+            return_value="http://stub:1234",
+        ) as ensure_running, patch(
+            "agent_client_kernel.kernel.asyncio.create_subprocess_exec",
+            side_effect=sentinel,
+        ), patch.object(kernel, "_stop_agent", new=AsyncMock()):
+            with pytest.raises(RuntimeError, match="stop before subprocess"):
+                await kernel._start_agent()
+            ensure_running.assert_called_once_with()
+
+    @pytest.mark.asyncio
+    async def test_start_agent_tolerates_shim_failure(self, kernel):
+        """If ``ensure_running`` raises, agent startup must still proceed."""
+        sentinel = RuntimeError("stop before subprocess")
+        with patch(
+            "agent_client_kernel.lmstudio_shim.ensure_running",
+            side_effect=OSError("port bind failed"),
+        ) as ensure_running, patch(
+            "agent_client_kernel.kernel.asyncio.create_subprocess_exec",
+            side_effect=sentinel,
+        ), patch.object(kernel, "_stop_agent", new=AsyncMock()):
+            # The shim failure must be swallowed; only the create_subprocess_exec
+            # failure should surface.
+            with pytest.raises(RuntimeError, match="stop before subprocess"):
+                await kernel._start_agent()
+            ensure_running.assert_called_once_with()

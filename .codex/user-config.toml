@@ -7,6 +7,14 @@
 
 profile = "lmstudio-qwen3-coder"
 
+[mcp_servers.jupyter]
+command = "uvx"
+args = ["jupyter-mcp-server@latest"]
+# uvx may need to download/build the package on first invocation; the
+# 30s default trips on cold caches. Bump generously — Codex only waits
+# this long once at startup.
+startup_timeout_sec = 180
+
 [profiles.lmstudio-qwen3-coder]
 model = "qwen/qwen3-coder-next"
 model_provider = "local_lmstudio"

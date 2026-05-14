@@ -73,3 +73,14 @@ RUN python -m agent_client_kernel install --user
 # overrides (mcp_servers, model_catalog_json, sandbox_mode, trust) remain in
 # .codex/config.toml and are merged in by Codex at load time.
 RUN cp /home/jovyan/.codex/user-config.toml /home/jovyan/.codex/config.toml
+
+# Install the LM Studio request shim as a Jupyter Docker Stacks
+# before-notebook.d hook. start.sh's run-hooks.sh executes anything in
+# /usr/local/bin/before-notebook.d/ right before launching the server, so
+# the shim is up by the time any notebook/agent/codex invocation needs it
+# — independent of Jupyter, the kernel, or whether `codex` is run from a
+# shell. Follows the upstream pattern (e.g. tensorflow-notebook's
+# 20tensorboard-proxy-env.sh): plain COPY --chown into the hook dir.
+COPY --chown="${NB_UID}:${NB_GID}" \
+    .devcontainer/codex/before-notebook.d/10-lmstudio-shim.sh \
+    /usr/local/bin/before-notebook.d/

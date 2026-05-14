@@ -50,9 +50,13 @@
     "ACP_AGENT_ARGS": "",
     "RESTARTABLE": "yes"
   }
-  // The LM Studio request shim (flattens Codex 0.130+ "namespace" MCP
-  // tool envelopes that LM Studio rejects) is started by the kernel
-  // itself when an agent is launched; no devcontainer wiring required.
+  // The LM Studio request shim (workaround for LM Studio bug-tracker
+  // #1810/#1812, where the Responses endpoint rejects Codex 0.130+
+  // "namespace" MCP tool envelopes) is started by start.sh via the
+  // before-notebook.d hook installed by codex/Dockerfile, so it's up
+  // before any agent (kernel-spawned, codex-acp, or shell codex) needs
+  // it. The kernel also calls ensure_running() defensively at agent
+  // launch in case the hook didn't fire.
   // To disable: ACP_LMSTUDIO_SHIM=off. To override upstream:
   // HOST_GATEWAY_IP=... or ACP_LMSTUDIO_SHIM_TARGET=...
   //

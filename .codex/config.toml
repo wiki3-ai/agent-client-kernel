@@ -14,9 +14,5 @@ model_reasoning_summary = "none"
 
 sandbox_mode = "danger-full-access"
 
-[mcp_servers.jupyter]
-command = "uvx"
-args = ["jupyter-mcp-server@latest"]
-
 [projects."/workspaces/agent-client-kernel"]
 trust_level = "trusted"
