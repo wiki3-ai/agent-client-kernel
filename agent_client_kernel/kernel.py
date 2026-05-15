@@ -18,6 +18,12 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
+try:
+    # Python 3.11+
+    import tomllib  # type: ignore[import-not-found]
+except ModuleNotFoundError:  # pragma: no cover - py3.10 fallback
+    import tomli as tomllib  # type: ignore[no-redef]
+
 from ipykernel.kernelbase import Kernel
 
 from acp import (
@@ -75,11 +81,24 @@ DEBUG_UPDATES = os.environ.get("ACP_DEBUG_UPDATES", "").split(",") if os.environ
 
 @dataclass
 class MCPServer:
-    """Configuration for an MCP server."""
+    """Configuration for an MCP server.
+
+    `source` indicates where the entry came from so we can keep
+    `state.mcp_servers` (user-added) separate from servers picked up from
+    Codex's own config file, while still presenting a single merged view
+    to the user and to the agent.
+    """
     name: str
     command: str
     args: list[str] = field(default_factory=list)
     env: dict[str, str] = field(default_factory=dict)
+    # Where the entry originated. "user" means added in-kernel via
+    # %agent mcp add; "codex-global" / "codex-project" come from
+    # ~/.codex/config.toml or ./.codex/config.toml respectively.
+    source: str = "user"
+    # Disabling lets a user suppress a preconfigured server for one
+    # session without editing the config file.
+    enabled: bool = True
 
 
 @dataclass
@@ -99,6 +118,15 @@ class SessionState:
     session_id: str | None = None
     cwd: str = field(default_factory=os.getcwd)
     mcp_servers: list[MCPServer] = field(default_factory=list)
+    # When True, do not merge ~/.codex/config.toml or ./.codex/config.toml
+    # MCP servers into the session.  Toggled via
+    # %agent mcp ignore-codex-config on|off.
+    ignore_codex_config: bool = False
+    # Names of preconfigured (codex-global / codex-project) servers that
+    # the user has explicitly disabled for this session.  Persists across
+    # config reloads so disable-by-name keeps working even if the user
+    # restarts the session.
+    disabled_preconfigured: set[str] = field(default_factory=set)
     permission_mode: str = "auto"  # auto, manual, deny
     permission_history: list[dict[str, Any]] = field(default_factory=list)
     response_text: str = ""
@@ -271,10 +299,25 @@ class ACPClientImpl(Client):
             self._send_stream("stderr", plan_text)
 
         elif isinstance(update, AvailableCommandsUpdate):
-            self._kernel.state.available_commands = [
-                {"name": cmd.name, "description": cmd.description}
-                for cmd in (update.available_commands or [])
-            ]
+            # Each notification replaces the full list.  We capture name +
+            # description + a flat `input_hint` so the kernel can show
+            # users what to type and so `do_complete` can offer them.
+            new_cmds: list[dict[str, Any]] = []
+            for cmd in (update.available_commands or []):
+                hint: str | None = None
+                inp = getattr(cmd, "input", None)
+                if inp is not None:
+                    # ACP UnstructuredCommandInput has a `hint` field;
+                    # other input shapes may not.  Be permissive.
+                    hint = getattr(inp, "hint", None)
+                new_cmds.append(
+                    {
+                        "name": cmd.name,
+                        "description": cmd.description,
+                        "input_hint": hint,
+                    }
+                )
+            self._kernel.state.available_commands = new_cmds
 
     # Maximum size for file content in JSON-RPC responses (must fit in 64KB with JSON overhead)
     MAX_FILE_CONTENT_SIZE = 48 * 1024  # 48KB to leave room for JSON framing
@@ -555,6 +598,147 @@ class ACPKernel(Kernel):
         """Check if connected to an agent."""
         return self._conn is not None and self._proc is not None and self._proc.returncode is None
 
+    # ------------------------------------------------------------------
+    # MCP-server discovery & merging.
+    #
+    # The kernel has two sources of MCP servers:
+    #   * `state.mcp_servers` — added in-kernel via %agent mcp add.
+    #   * `~/.codex/config.toml` / `./.codex/config.toml` — read by
+    #     `codex-acp` itself at startup.  We parse the same files so
+    #     `%agent mcp list` can honestly report what the session will
+    #     have, and so the user can disable a preconfigured server for
+    #     one notebook without editing global config.
+    #
+    # `_merged_mcp_servers()` is the single source of truth fed to
+    # `new_session` / `resume_session`.
+    # ------------------------------------------------------------------
+
+    def _codex_config_paths(self) -> list[tuple[Path, str]]:
+        """Return (path, source) tuples for known Codex config files."""
+        codex_home = Path(
+            os.environ.get("CODEX_HOME") or (Path.home() / ".codex")
+        ).expanduser()
+        return [
+            (codex_home / "config.toml", "codex-global"),
+            (Path(self.state.cwd) / ".codex" / "config.toml", "codex-project"),
+        ]
+
+    def _parse_codex_config(self, path: Path, source: str) -> list[MCPServer]:
+        """Parse a Codex config file and return its MCP-server entries."""
+        try:
+            with path.open("rb") as fh:
+                data = tomllib.load(fh)
+        except (OSError, tomllib.TOMLDecodeError) as e:
+            self._log.warning("Could not read %s: %s", path, e)
+            return []
+
+        servers: list[MCPServer] = []
+        for name, entry in (data.get("mcp_servers") or {}).items():
+            if not isinstance(entry, dict):
+                continue
+            command = entry.get("command")
+            if not command:
+                continue
+            args = list(entry.get("args") or [])
+            env_block = entry.get("env") or {}
+            env = {str(k): str(v) for k, v in env_block.items()} if isinstance(env_block, dict) else {}
+            servers.append(
+                MCPServer(
+                    name=name,
+                    command=str(command),
+                    args=[str(a) for a in args],
+                    env=env,
+                    source=source,
+                    # `enabled` for preconfigured servers is derived at
+                    # merge time from `state.disabled_preconfigured`,
+                    # so leave the default here.
+                )
+            )
+        return servers
+
+    def _load_codex_mcp_servers(self) -> list[MCPServer]:
+        """Load MCP servers from Codex config files.
+
+        Tests can stub this by setting ``self._codex_mcp_cache = []``.
+        """
+        cached = getattr(self, "_codex_mcp_cache", None)
+        if cached is not None:
+            return cached
+        if self.state.ignore_codex_config:
+            return []
+        servers: list[MCPServer] = []
+        for path, source in self._codex_config_paths():
+            if path.exists():
+                servers.extend(self._parse_codex_config(path, source))
+        return servers
+
+    def _merged_mcp_servers(self) -> list[MCPServer]:
+        """Return the full MCP-server list for this session.
+
+        User entries take precedence over codex-project, which takes
+        precedence over codex-global, when names collide.  Disabled
+        entries are kept in the result so `%agent mcp list` can show
+        them — callers building an ACP `new_session` request must
+        filter on ``enabled``.
+        """
+        codex_servers = self._load_codex_mcp_servers()
+        by_name: dict[str, MCPServer] = {}
+        # Precedence: codex-global < codex-project < user
+        order = {"codex-global": 0, "codex-project": 1, "user": 2}
+        for s in codex_servers + list(self.state.mcp_servers):
+            existing = by_name.get(s.name)
+            if existing is None or order.get(s.source, 0) >= order.get(existing.source, 0):
+                by_name[s.name] = s
+        # Apply per-session disable overlay for preconfigured entries.
+        # User entries carry their own `enabled` flag.  We don't mutate
+        # the cached server objects — return a fresh copy so toggling
+        # `disabled_preconfigured` between calls is reflected cleanly.
+        result = []
+        for s in by_name.values():
+            if s.source != "user":
+                result.append(
+                    MCPServer(
+                        name=s.name,
+                        command=s.command,
+                        args=s.args,
+                        env=s.env,
+                        source=s.source,
+                        enabled=s.name not in self.state.disabled_preconfigured,
+                    )
+                )
+            else:
+                result.append(s)
+        return result
+
+    def _active_mcp_servers(self) -> list[MCPServer]:
+        """Merged list filtered to enabled entries."""
+        return [s for s in self._merged_mcp_servers() if s.enabled]
+
+    def _announce_mcp_servers(self, servers: list[MCPServer]) -> None:
+        """Print a one-line summary of the MCP servers wired into the session.
+
+        This is intentionally cheap — we don't probe each server's
+        ``tools/list`` here (that would slow every session start) but
+        we *do* surface their names and sources so the user knows what
+        the agent has access to.  This is the cheap version of the
+        "MCP health probe" in
+        ``docs/mcp-config-and-slash-commands.md``.
+        """
+        try:
+            if not servers:
+                msg = "mcp: no servers configured\n"
+            else:
+                parts = [f"{s.name} [{s.source}]" for s in servers]
+                msg = f"mcp: {len(servers)} server(s): {', '.join(parts)}\n"
+            self.send_response(
+                self.iopub_socket,
+                "stream",
+                {"name": "stderr", "text": msg},
+            )
+        except Exception:
+            # Don't let an iopub hiccup fail session start.
+            pass
+
     async def _start_agent(self) -> None:
         """Start the ACP agent process."""
         if self._proc is not None:
@@ -614,7 +798,11 @@ class ACPKernel(Kernel):
             # Initialize the agent
             await self._conn.initialize(protocol_version=PROTOCOL_VERSION)
 
-            # Create a new session with MCP servers
+            # Create a new session with MCP servers.  The active list
+            # merges user-added entries with whatever's in
+            # ~/.codex/config.toml (and the project-local equivalent),
+            # minus anything the user has explicitly disabled.
+            active_servers = self._active_mcp_servers()
             mcp_servers = [
                 McpServerStdio(
                     name=server.name,
@@ -622,17 +810,21 @@ class ACPKernel(Kernel):
                     args=server.args,
                     env=[EnvVariable(name=k, value=v) for k, v in server.env.items()],
                 )
-                for server in self.state.mcp_servers
+                for server in active_servers
             ]
 
             self._log.info("Creating session with %d MCP servers", len(mcp_servers))
-            for server in self.state.mcp_servers:
-                self._log.info("  MCP server: %s -> %s %s", server.name, server.command, server.args)
+            for server in active_servers:
+                self._log.info(
+                    "  MCP server: %s (%s) -> %s %s",
+                    server.name, server.source, server.command, server.args,
+                )
 
             session = await self._conn.new_session(mcp_servers=mcp_servers, cwd=self.state.cwd)
             self.state.session_id = session.session_id
 
             self._log.info("Agent started with session ID: %s", self.state.session_id)
+            self._announce_mcp_servers(active_servers)
 
         except Exception as e:
             self._log.error("Failed to start agent: %s", e)
@@ -679,7 +871,8 @@ class ACPKernel(Kernel):
         if not self.is_connected or not self._conn or not self.state.session_id:
             return False
 
-        # Build MCP servers list
+        # Build MCP servers list using the merged & enabled view.
+        active_servers = self._active_mcp_servers()
         mcp_servers = [
             McpServerStdio(
                 name=server.name,
@@ -687,13 +880,16 @@ class ACPKernel(Kernel):
                 args=server.args,
                 env=[EnvVariable(name=k, value=v) for k, v in server.env.items()],
             )
-            for server in self.state.mcp_servers
+            for server in active_servers
         ]
 
         try:
             self._log.info("Resuming session with %d MCP servers", len(mcp_servers))
-            for server in self.state.mcp_servers:
-                self._log.info("  MCP server: %s -> %s %s", server.name, server.command, server.args)
+            for server in active_servers:
+                self._log.info(
+                    "  MCP server: %s (%s) -> %s %s",
+                    server.name, server.source, server.command, server.args,
+                )
 
             await self._conn.resume_session(
                 session_id=self.state.session_id,
@@ -818,23 +1014,30 @@ class ACPKernel(Kernel):
         return """Agent Client Protocol Kernel Commands
 
 MCP Server Configuration:
-  %agent mcp add NAME COMMAND [ARGS...]  - Add an MCP server
-  %agent mcp list                         - List configured MCP servers
-  %agent mcp remove NAME                  - Remove an MCP server
-  %agent mcp clear                        - Remove all MCP servers
+  %agent mcp add NAME COMMAND [ARGS...]   - Add an MCP server
+  %agent mcp list                          - List configured MCP servers
+  %agent mcp remove NAME                   - Remove a user-added MCP server
+  %agent mcp disable NAME                  - Disable a server for this session
+  %agent mcp enable NAME                   - Re-enable a disabled server
+  %agent mcp clear                         - Remove all user-added servers
+  %agent mcp ignore-codex-config on|off    - Skip merging ~/.codex/config.toml
+
+Slash Commands (advertised by the agent):
+  %agent commands                          - List slash commands the agent supports
+  /name [args]                             - Invoke a slash command directly
 
 Session Management:
-  %agent session new [CWD]               - Create new session
-  %agent session info                    - Show session information
-  %agent session restart                 - Restart session
+  %agent session new [CWD]                 - Create new session
+  %agent session info                      - Show session information
+  %agent session restart                   - Restart session
 
 Permission Configuration:
-  %agent permissions [auto|manual|deny]  - Set permission mode
-  %agent permissions history             - View permission history
+  %agent permissions [auto|manual|deny]    - Set permission mode
+  %agent permissions history               - View permission history
 
 Configuration:
-  %agent config                          - Show current configuration
-  %agent env                             - Show environment variables
+  %agent config                            - Show current configuration
+  %agent env                               - Show environment variables
 """
 
     async def _magic_agent_mcp(self, args: str) -> str:
@@ -854,6 +1057,12 @@ Configuration:
             return await self._magic_agent_mcp_remove(action_args)
         elif action == "clear":
             return await self._magic_agent_mcp_clear(action_args)
+        elif action == "disable":
+            return await self._magic_agent_mcp_disable(action_args)
+        elif action == "enable":
+            return await self._magic_agent_mcp_enable(action_args)
+        elif action == "ignore-codex-config":
+            return await self._magic_agent_mcp_ignore_codex_config(action_args)
 
         return f"Unknown mcp action: {action}"
 
@@ -893,18 +1102,34 @@ Configuration:
             return f"{action} MCP server '{name}'. It will be available when the session starts."
 
     def _magic_agent_mcp_list(self, args: str) -> str:
-        """List MCP servers."""
-        if not self.state.mcp_servers:
+        """List MCP servers from all sources, with origin and enabled state."""
+        merged = self._merged_mcp_servers()
+        if not merged:
             return "No MCP servers configured"
 
+        # Stable display order: by source (user first), then name.
+        order = {"user": 0, "codex-project": 1, "codex-global": 2}
+        merged.sort(key=lambda s: (order.get(s.source, 99), s.name))
+
         lines = ["Configured MCP servers:"]
-        for server in self.state.mcp_servers:
-            args_str = " ".join(server.args) if server.args else "(no args)"
-            lines.append(f"  - {server.name}: {server.command} {args_str}")
+        for server in merged:
+            args_str = " ".join(server.args) if server.args else ""
+            state = "" if server.enabled else " (disabled)"
+            tail = f" {args_str}".rstrip()
+            lines.append(
+                f"  - {server.name} [{server.source}{state}]: {server.command}{tail}"
+            )
+        if self.state.ignore_codex_config:
+            lines.append("")
+            lines.append("(ignore-codex-config is ON; codex-* entries are not loaded)")
         return "\n".join(lines)
 
     async def _magic_agent_mcp_remove(self, args: str) -> str:
-        """Remove an MCP server."""
+        """Remove a user-added MCP server.
+
+        Preconfigured servers (codex-global / codex-project) cannot be
+        removed via this command — use ``%agent mcp disable NAME``.
+        """
         if not args:
             return "Usage: %agent mcp remove NAME"
 
@@ -920,7 +1145,71 @@ Configuration:
                         return f"Removed MCP server '{name}'. Run %agent session restart to apply."
                 return f"Removed MCP server '{name}'"
 
+        # Not in user state — see if it's preconfigured.
+        for server in self._merged_mcp_servers():
+            if server.name == name:
+                return (
+                    f"'{name}' is preconfigured ({server.source}); "
+                    f"use '%agent mcp disable {name}' to skip it for this session."
+                )
         return f"No MCP server named '{name}' found"
+
+    async def _magic_agent_mcp_disable(self, args: str) -> str:
+        """Disable an MCP server for this session (any source)."""
+        name = args.strip()
+        if not name:
+            return "Usage: %agent mcp disable NAME"
+        found = None
+        for s in self._merged_mcp_servers():
+            if s.name == name:
+                found = s
+                break
+        if found is None:
+            return f"No MCP server named '{name}' found"
+        if found.source == "user":
+            for s in self.state.mcp_servers:
+                if s.name == name:
+                    s.enabled = False
+                    break
+        else:
+            self.state.disabled_preconfigured.add(name)
+        if self.is_connected and await self._resume_session():
+            return f"Disabled MCP server '{name}'. Session updated."
+        return f"Disabled MCP server '{name}'. Run %agent session restart to apply."
+
+    async def _magic_agent_mcp_enable(self, args: str) -> str:
+        """Re-enable a previously disabled MCP server."""
+        name = args.strip()
+        if not name:
+            return "Usage: %agent mcp enable NAME"
+        changed = False
+        for s in self.state.mcp_servers:
+            if s.name == name and not s.enabled:
+                s.enabled = True
+                changed = True
+                break
+        if name in self.state.disabled_preconfigured:
+            self.state.disabled_preconfigured.discard(name)
+            changed = True
+        if not changed:
+            return f"MCP server '{name}' is not disabled (or does not exist)"
+        if self.is_connected and await self._resume_session():
+            return f"Enabled MCP server '{name}'. Session updated."
+        return f"Enabled MCP server '{name}'. Run %agent session restart to apply."
+
+    async def _magic_agent_mcp_ignore_codex_config(self, args: str) -> str:
+        """Toggle merging of ~/.codex/config.toml entries."""
+        val = args.strip().lower()
+        if val not in ("on", "off"):
+            current = "on" if self.state.ignore_codex_config else "off"
+            return (
+                f"ignore-codex-config is {current}\n"
+                "Usage: %agent mcp ignore-codex-config on|off"
+            )
+        self.state.ignore_codex_config = (val == "on")
+        if self.is_connected and await self._resume_session():
+            return f"ignore-codex-config set to {val}. Session updated."
+        return f"ignore-codex-config set to {val}. Run %agent session restart to apply."
 
     async def _magic_agent_mcp_clear(self, args: str) -> str:
         """Clear all MCP servers."""
@@ -933,6 +1222,29 @@ Configuration:
             else:
                 return f"Removed {count} MCP server(s). Run %agent session restart to apply."
         return f"Removed {count} MCP server(s)"
+
+    def _magic_agent_commands(self, args: str) -> str:
+        """List slash commands the agent has advertised.
+
+        Populated from ACP ``AvailableCommandsUpdate`` notifications.
+        Cells beginning with ``/`` are dispatched directly by
+        ``do_execute``; this magic is for inspection.
+        """
+        cmds = self.state.available_commands
+        if not cmds:
+            return (
+                "No slash commands advertised by the agent yet.\n"
+                "(Some agents advertise them only after the first prompt.)"
+            )
+        lines = ["Available slash commands:"]
+        for cmd in cmds:
+            hint = cmd.get("input_hint")
+            hint_str = f" {hint}" if hint else ""
+            desc = cmd.get("description") or ""
+            lines.append(f"  /{cmd['name']}{hint_str}")
+            if desc:
+                lines.append(f"      {desc}")
+        return "\n".join(lines)
 
     def _magic_agent_session(self, args: str) -> str:
         """Handle %agent session subcommand."""
@@ -965,16 +1277,22 @@ Configuration:
 
     def _magic_agent_session_info(self, args: str) -> str:
         """Show session information."""
+        merged = self._merged_mcp_servers()
+        active = [s for s in merged if s.enabled]
         lines = ["Session Information:"]
         lines.append(f"  Session ID: {self.state.session_id or '(not started)'}")
         lines.append(f"  Working Directory: {self.state.cwd}")
         lines.append(f"  Agent: {self._agent_command}")
         lines.append(f"  Connected: {self.is_connected}")
         lines.append(f"  Permission Mode: {self.state.permission_mode}")
-        lines.append(f"  MCP Servers: {len(self.state.mcp_servers)}")
+        lines.append(
+            f"  MCP Servers: {len(active)} active / {len(merged)} total"
+        )
+        if self.state.ignore_codex_config:
+            lines.append("  (ignore-codex-config: on)")
 
         if self.state.available_commands:
-            lines.append("\n  Available Commands:")
+            lines.append("\n  Slash Commands:")
             for cmd in self.state.available_commands:
                 lines.append(f"    /{cmd['name']}: {cmd.get('description', '')}")
 
@@ -1068,6 +1386,30 @@ Configuration:
                 "user_expressions": {},
             }
 
+        # Cells that look like `/command ...` are dispatched as slash
+        # commands.  We forward the literal text via session/prompt —
+        # the agent already advertised which slashes it understands via
+        # AvailableCommandsUpdate, so anything not in that list is
+        # likely a typo or simply a chat message; either way the agent
+        # is the right place to handle it.  We add a brief stderr hint
+        # when the slash isn't in the advertised list so users notice.
+        if code.startswith("/") and not silent:
+            first_token = code.split(None, 1)[0].lstrip("/")
+            known = {c["name"] for c in self.state.available_commands}
+            if known and first_token not in known:
+                self.send_response(
+                    self.iopub_socket,
+                    "stream",
+                    {
+                        "name": "stderr",
+                        "text": (
+                            f"warning: '/{first_token}' is not in the agent's "
+                            f"advertised slash-command list "
+                            f"(see %agent commands).\n"
+                        ),
+                    },
+                )
+
         # Send to agent
         try:
             result = await self._send_prompt(code)
@@ -1108,19 +1450,38 @@ Configuration:
 
     def do_complete(self, code: str, cursor_pos: int):
         """Handle code completion."""
-        # Basic completion for magic commands
         text = code[:cursor_pos]
-        
-        completions = []
+
+        completions: list[str] = []
+        cursor_start = cursor_pos
+
         if text.startswith("%agent "):
-            subtext = text[7:]
-            subcommands = ["mcp", "session", "permissions", "config", "env"]
-            completions = [s for s in subcommands if s.startswith(subtext)]
+            subcommand_prefix = text[7:]
+            top_subs = ["mcp", "session", "permissions", "config", "env", "commands"]
+            mcp_subs = ["add", "list", "remove", "clear", "disable", "enable", "ignore-codex-config"]
+
+            parts = subcommand_prefix.split(None, 1)
+            if len(parts) <= 1 and not subcommand_prefix.endswith(" "):
+                # Completing the top-level subcommand
+                completions = [s for s in top_subs if s.startswith(subcommand_prefix)]
+                cursor_start = cursor_pos - len(subcommand_prefix)
+            elif parts and parts[0] == "mcp":
+                rest = parts[1] if len(parts) > 1 else ""
+                rest_parts = rest.split(None, 1)
+                if len(rest_parts) <= 1 and not rest.endswith(" "):
+                    completions = [s for s in mcp_subs if s.startswith(rest)]
+                    cursor_start = cursor_pos - len(rest)
+        elif text.startswith("/"):
+            # Slash-command completion from the agent's advertised list.
+            prefix = text[1:]
+            names = [c["name"] for c in self.state.available_commands]
+            completions = [f"/{n}" for n in names if n.startswith(prefix)]
+            cursor_start = cursor_pos - len(text)
 
         return {
             "status": "ok",
             "matches": completions,
-            "cursor_start": cursor_pos - len(text.split()[-1]) if text else cursor_pos,
+            "cursor_start": cursor_start,
             "cursor_end": cursor_pos,
             "metadata": {},
         }

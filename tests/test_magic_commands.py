@@ -28,6 +28,8 @@ def kernel():
         k.execution_count = 0
         # Need to initialize the magic pattern
         k._magic_pattern = re.compile(r"^%(\w+)\s*(.*)?$", re.MULTILINE)
+        # Hermetic: don't pick up host's ~/.codex/config.toml.
+        k._codex_mcp_cache = []
         # Mock async methods that would require connection
         k._resume_session = AsyncMock(return_value=False)  # Simulate agent not supporting resume
         k._restart_session = AsyncMock()
@@ -149,6 +151,133 @@ class TestMCPMagic:
 
         is_magic, result = await kernel._handle_magic("%agent mcp add nameonly")
         assert "Usage:" in result
+
+
+class TestMCPSourcesAndDisable:
+    """Coverage for MCP source merging, disable/enable, and codex-config integration."""
+
+    @pytest.mark.asyncio
+    async def test_list_shows_source_tag(self, kernel):
+        await kernel._handle_magic("%agent mcp add myserver mycmd")
+        _, result = await kernel._handle_magic("%agent mcp list")
+        assert "[user]" in result
+        assert "myserver" in result
+
+    @pytest.mark.asyncio
+    async def test_codex_global_merge(self, kernel):
+        """Servers from ~/.codex/config.toml appear in the merged view."""
+        kernel._codex_mcp_cache = [
+            MCPServer(
+                name="jupyter",
+                command="uvx",
+                args=["jupyter-mcp-server@latest"],
+                source="codex-global",
+            )
+        ]
+        _, result = await kernel._handle_magic("%agent mcp list")
+        assert "jupyter" in result
+        assert "[codex-global]" in result
+
+    @pytest.mark.asyncio
+    async def test_user_overrides_codex_global(self, kernel):
+        kernel._codex_mcp_cache = [
+            MCPServer(name="dup", command="from-codex", source="codex-global")
+        ]
+        await kernel._handle_magic("%agent mcp add dup from-user")
+        active = kernel._active_mcp_servers()
+        assert len(active) == 1
+        assert active[0].command == "from-user"
+        assert active[0].source == "user"
+
+    @pytest.mark.asyncio
+    async def test_remove_refuses_preconfigured(self, kernel):
+        kernel._codex_mcp_cache = [
+            MCPServer(name="jupyter", command="uvx", source="codex-global")
+        ]
+        _, result = await kernel._handle_magic("%agent mcp remove jupyter")
+        assert "preconfigured" in result
+        assert "disable" in result
+        # And it should still appear in the merged view.
+        _, listing = await kernel._handle_magic("%agent mcp list")
+        assert "jupyter" in listing
+
+    @pytest.mark.asyncio
+    async def test_disable_then_enable_preconfigured(self, kernel):
+        kernel._codex_mcp_cache = [
+            MCPServer(name="jupyter", command="uvx", source="codex-global")
+        ]
+        _, result = await kernel._handle_magic("%agent mcp disable jupyter")
+        assert "Disabled MCP server 'jupyter'" in result
+        assert "jupyter" in kernel.state.disabled_preconfigured
+        # Active list filters it out.
+        assert kernel._active_mcp_servers() == []
+        # Merged view still shows it, marked disabled.
+        _, listing = await kernel._handle_magic("%agent mcp list")
+        assert "disabled" in listing
+
+        _, result = await kernel._handle_magic("%agent mcp enable jupyter")
+        assert "Enabled MCP server 'jupyter'" in result
+        assert "jupyter" not in kernel.state.disabled_preconfigured
+        assert len(kernel._active_mcp_servers()) == 1
+
+    @pytest.mark.asyncio
+    async def test_disable_user_server(self, kernel):
+        await kernel._handle_magic("%agent mcp add me cmd")
+        _, result = await kernel._handle_magic("%agent mcp disable me")
+        assert "Disabled" in result
+        # User entry is still in state but with enabled=False.
+        assert kernel.state.mcp_servers[0].enabled is False
+        assert kernel._active_mcp_servers() == []
+
+    @pytest.mark.asyncio
+    async def test_ignore_codex_config_toggle(self, kernel):
+        kernel._codex_mcp_cache = [
+            MCPServer(name="jupyter", command="uvx", source="codex-global")
+        ]
+        _, result = await kernel._handle_magic("%agent mcp ignore-codex-config on")
+        assert "on" in result.lower()
+        assert kernel.state.ignore_codex_config is True
+        # Even though cache has an entry, _load_codex_mcp_servers
+        # returns [] when ignore is on (cache is bypassed).  Since we
+        # set the cache directly, the implementation honors the
+        # ignore flag by re-checking:
+        kernel._codex_mcp_cache = None  # force reload
+        # And with no real config to load, merged becomes empty:
+        _, listing = await kernel._handle_magic("%agent mcp list")
+        assert "No MCP servers configured" in listing
+
+
+class TestSlashCommands:
+    """Coverage for AvailableCommandsUpdate handling and %agent commands."""
+
+    @pytest.mark.asyncio
+    async def test_commands_empty(self, kernel):
+        _, result = await kernel._handle_magic("%agent commands")
+        assert "No slash commands" in result
+
+    @pytest.mark.asyncio
+    async def test_commands_listing(self, kernel):
+        kernel.state.available_commands = [
+            {"name": "mcp", "description": "Manage MCP servers", "input_hint": None},
+            {"name": "init", "description": "Initialise the project", "input_hint": "<path>"},
+        ]
+        _, result = await kernel._handle_magic("%agent commands")
+        assert "/mcp" in result
+        assert "/init <path>" in result
+        assert "Manage MCP servers" in result
+
+    def test_complete_slash_commands(self, kernel):
+        kernel.state.available_commands = [
+            {"name": "mcp", "description": "", "input_hint": None},
+            {"name": "init", "description": "", "input_hint": None},
+        ]
+        out = kernel.do_complete("/m", 2)
+        assert "/mcp" in out["matches"]
+        assert "/init" not in out["matches"]
+
+    def test_complete_mcp_subcommand(self, kernel):
+        out = kernel.do_complete("%agent mcp dis", len("%agent mcp dis"))
+        assert "disable" in out["matches"]
 
 
 class TestSessionMagic:

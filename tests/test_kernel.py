@@ -27,6 +27,8 @@ def kernel():
         k.execution_count = 1
         # Need to initialize the magic pattern
         k._magic_pattern = re.compile(r"^%(\w+)\s*(.*)?$", re.MULTILINE)
+        # Hermetic: don't pick up host's ~/.codex/config.toml.
+        k._codex_mcp_cache = []
         return k
 
 
