@@ -1,56 +1,85 @@
-# Agent guidance
+# Repository Guidelines
 
-## Jupyter MCP server
+## Project Structure
 
-The `jupyter` MCP server (datalayer/jupyter-mcp-server, started by Codex via
-`uvx jupyter-mcp-server@latest`) is configured and connected. Use its tools
-directly when the user asks anything notebook-related — listing, reading,
-writing, executing cells, etc.
+```
+agent-client-kernel/
+├── agent_client_kernel/    # Core kernel implementation
+│   ├── __init__.py
+│   ├── __main__.py         # Entry point (kernel installation)
+│   ├── kernel.py           # Main ACPKernel class
+│   └── lmstudio_shim.py    # LM Studio integration shim
+├── tests/                  # Test suite (unit + e2e)
+│   ├── conftest.py
+│   ├── test_*.py          # Unit tests (pytest)
+│   └── e2e/               # End-to-end integration tests
+├── examples/              # Usage example notebooks
+├── docs/                  # Documentation and postmortems
+├── scripts/               # Build/installation utilities
+│   ├── agent-versions.json
+│   └── install-acp-agents.sh
+├── .devcontainer/         # VS Code devcontainer configs
+└── Dockerfile             # Container build definition
+```
 
-### Tool naming — IMPORTANT
+## Build & Development
 
-When this Codex session is talking to a Responses-API server that doesn't
-support namespace tool envelopes (LM Studio, Ollama OpenAI compat layer),
-Codex's MCP tools are flattened into single-name function tools by the
-local proxy. The flattened name is:
+```bash
+# Install dependencies (requires Python >= 3.10)
+uv sync --locked --extra dev
 
-    mcp__<server>__<tool>
+# Install the kernel for Jupyter
+uv run python -m agent_client_kernel install --user
 
-with **double underscores** between each segment. So the Jupyter MCP
-tools are exposed to the model as:
+# Run tests
+uv run pytest                      # Unit tests only
+ACK_GOLDEN_E2E=1 uv run pytest -m live_e2e  # E2E tests
+```
 
-- `mcp__jupyter__list_notebooks`
-- `mcp__jupyter__list_files`
-- `mcp__jupyter__list_kernels`
-- `mcp__jupyter__use_notebook`
-- `mcp__jupyter__unuse_notebook`
-- `mcp__jupyter__restart_notebook`
-- `mcp__jupyter__read_notebook`
-- `mcp__jupyter__read_cell`
-- `mcp__jupyter__insert_cell`
-- `mcp__jupyter__delete_cell`
-- `mcp__jupyter__move_cell`
-- `mcp__jupyter__overwrite_cell_source`
-- `mcp__jupyter__edit_cell_source`
-- `mcp__jupyter__execute_cell`
-- `mcp__jupyter__execute_code`
-- `mcp__jupyter__insert_execute_code_cell`
-- `mcp__jupyter__connect_to_jupyter` (only needed if `JUPYTER_URL` env wasn't injected)
+## Coding Standards
 
-Use those exact names. **Do NOT** invent variants like `jupyter.list_notebooks`,
-`mcp_jupyter_list_notebooks` (single underscores), `mcp.jupyter.list_notebooks`,
-or `jupyter_list_notebooks` — none of those will resolve and you will see
-"unsupported call" errors.
+- **Python**: Follow PEP 8 style; use type hints where practical
+- **Tests**: Include tests for all new features; prefer pytest fixtures
+- **Notebooks**: Keep cell output clean; use descriptive variable names
+- **Commit Messages**: Use imperative mood ("Add feature", "Fix bug")
 
-### Pitfalls
+## Testing Guidelines
 
-- **Do NOT call `list_mcp_resources` to test whether the server works.** That
-  enumerates MCP *resources* (a separate concept); jupyter-mcp-server publishes
-  *tools*, not resources, so it always returns `[]`. An empty resource list is
-  not a failure — just call a tool directly (e.g. `mcp__jupyter__list_notebooks`).
-- Prefer the MCP tools over shelling out to `find ... -name "*.ipynb"`,
-  `jupyter notebook list`, `curl http://localhost:8888/...`, etc. Those work
-  but bypass the live notebook state (unsaved cells, kernel sessions) that the
-  MCP server has access to.
-- The Jupyter server is at `http://localhost:8888` with an empty token — this
-  is already wired into the MCP server via env. No need to discover it.
+- **Unit tests**: Place in `tests/test_*.py`; fast, isolated
+- **E2E tests**: Tag with `@pytest.mark.live_e2e`; require external services
+- **Coverage**: Aim for >80% on new code; run `pytest --cov=agent_client_kernel`
+
+## Commit & PR Guidelines
+
+- **Describe the change**: Explain "what" and "why", not "how"
+- **Link issues**: Reference GitHub issues in PR descriptions
+- **Test results**: Include test output or CI status in PR comments
+- **Documentation**: Update README.md or docs/ for user-facing changes
+
+## Agent Configuration
+
+Default agent is Codex. Configure others via environment variables:
+
+```bash
+export ACP_AGENT_COMMAND=/path/to/agent
+export ACP_AGENT_ARGS="--option value"
+```
+
+## MCP Integration
+
+The kernel includes `%agent` magic commands for MCP server and session control:
+
+```python
+%agent mcp add/remove/list/clear   # Manage MCP servers
+%agent session new/restart/info     # Session management
+%agent config/env/permissions       # Configuration
+```
+
+See `examples/jupyter-mcp.ipynb` for usage examples.
+
+## Requirements
+
+- Python >= 3.10
+- ipykernel >= 7.0
+- agent-client-protocol (Python SDK)
+- JupyterLab or Jupyter Notebook

@@ -714,31 +714,6 @@ class ACPKernel(Kernel):
         """Merged list filtered to enabled entries."""
         return [s for s in self._merged_mcp_servers() if s.enabled]
 
-    def _announce_mcp_servers(self, servers: list[MCPServer]) -> None:
-        """Print a one-line summary of the MCP servers wired into the session.
-
-        This is intentionally cheap — we don't probe each server's
-        ``tools/list`` here (that would slow every session start) but
-        we *do* surface their names and sources so the user knows what
-        the agent has access to.  This is the cheap version of the
-        "MCP health probe" in
-        ``docs/mcp-config-and-slash-commands.md``.
-        """
-        try:
-            if not servers:
-                msg = "mcp: no servers configured\n"
-            else:
-                parts = [f"{s.name} [{s.source}]" for s in servers]
-                msg = f"mcp: {len(servers)} server(s): {', '.join(parts)}\n"
-            self.send_response(
-                self.iopub_socket,
-                "stream",
-                {"name": "stderr", "text": msg},
-            )
-        except Exception:
-            # Don't let an iopub hiccup fail session start.
-            pass
-
     async def _start_agent(self) -> None:
         """Start the ACP agent process."""
         if self._proc is not None:
@@ -824,7 +799,6 @@ class ACPKernel(Kernel):
             self.state.session_id = session.session_id
 
             self._log.info("Agent started with session ID: %s", self.state.session_id)
-            self._announce_mcp_servers(active_servers)
 
         except Exception as e:
             self._log.error("Failed to start agent: %s", e)
@@ -994,7 +968,7 @@ class ACPKernel(Kernel):
 
     # Magic command handlers
 
-    def _magic_agent(self, args: str) -> str:
+    async def _magic_agent(self, args: str) -> str:
         """Handle %agent magic command with subcommands."""
         if not args:
             return self._magic_help_agent()
@@ -1005,7 +979,10 @@ class ACPKernel(Kernel):
 
         handler = getattr(self, f"_magic_agent_{subcommand}", None)
         if handler:
-            return handler(subargs.strip())
+            result = handler(subargs.strip())
+            if asyncio.iscoroutine(result):
+                result = await result
+            return result
 
         return f"Unknown subcommand: {subcommand}\n\nUse %agent for help."
 
@@ -1024,7 +1001,6 @@ MCP Server Configuration:
 
 Slash Commands (advertised by the agent):
   %agent commands                          - List slash commands the agent supports
-  /name [args]                             - Invoke a slash command directly
 
 Session Management:
   %agent session new [CWD]                 - Create new session
@@ -1386,30 +1362,6 @@ Configuration:
                 "user_expressions": {},
             }
 
-        # Cells that look like `/command ...` are dispatched as slash
-        # commands.  We forward the literal text via session/prompt —
-        # the agent already advertised which slashes it understands via
-        # AvailableCommandsUpdate, so anything not in that list is
-        # likely a typo or simply a chat message; either way the agent
-        # is the right place to handle it.  We add a brief stderr hint
-        # when the slash isn't in the advertised list so users notice.
-        if code.startswith("/") and not silent:
-            first_token = code.split(None, 1)[0].lstrip("/")
-            known = {c["name"] for c in self.state.available_commands}
-            if known and first_token not in known:
-                self.send_response(
-                    self.iopub_socket,
-                    "stream",
-                    {
-                        "name": "stderr",
-                        "text": (
-                            f"warning: '/{first_token}' is not in the agent's "
-                            f"advertised slash-command list "
-                            f"(see %agent commands).\n"
-                        ),
-                    },
-                )
-
         # Send to agent
         try:
             result = await self._send_prompt(code)
@@ -1471,12 +1423,6 @@ Configuration:
                 if len(rest_parts) <= 1 and not rest.endswith(" "):
                     completions = [s for s in mcp_subs if s.startswith(rest)]
                     cursor_start = cursor_pos - len(rest)
-        elif text.startswith("/"):
-            # Slash-command completion from the agent's advertised list.
-            prefix = text[1:]
-            names = [c["name"] for c in self.state.available_commands]
-            completions = [f"/{n}" for n in names if n.startswith(prefix)]
-            cursor_start = cursor_pos - len(text)
 
         return {
             "status": "ok",

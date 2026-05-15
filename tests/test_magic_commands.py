@@ -266,18 +266,26 @@ class TestSlashCommands:
         assert "/init <path>" in result
         assert "Manage MCP servers" in result
 
-    def test_complete_slash_commands(self, kernel):
-        kernel.state.available_commands = [
-            {"name": "mcp", "description": "", "input_hint": None},
-            {"name": "init", "description": "", "input_hint": None},
-        ]
-        out = kernel.do_complete("/m", 2)
-        assert "/mcp" in out["matches"]
-        assert "/init" not in out["matches"]
-
     def test_complete_mcp_subcommand(self, kernel):
         out = kernel.do_complete("%agent mcp dis", len("%agent mcp dis"))
         assert "disable" in out["matches"]
+
+    def test_no_special_slash_handling_in_complete(self, kernel):
+        """Bare `/` text gets no kernel-level slash completion."""
+        kernel.state.available_commands = [
+            {"name": "mcp", "description": "", "input_hint": None},
+        ]
+        out = kernel.do_complete("/m", 2)
+        assert out["matches"] == []
+
+    @pytest.mark.asyncio
+    async def test_agent_slash_is_unknown_subcommand(self, kernel):
+        """`%agent /name` is no longer special — it's an unknown subcommand."""
+        kernel._send_prompt = AsyncMock(return_value="")
+        is_magic, result = await kernel._handle_magic("%agent /models")
+        assert is_magic
+        kernel._send_prompt.assert_not_awaited()
+        assert "Unknown subcommand" in result
 
 
 class TestSessionMagic:

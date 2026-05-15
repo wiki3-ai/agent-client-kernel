@@ -1,71 +1,45 @@
-# MCP configuration & slash commands — design
+# MCP configuration & slash commands
 
-This document captures what we learned about how MCP servers and slash
-commands flow between the user's notebook, the `agent_client_kernel`, and
-the ACP agent (today: `codex-acp`), and the plan for making that surface
-honest and usable.
+This document captures how MCP servers and slash commands flow between
+the user's notebook, the `agent_client_kernel`, and the ACP agent
+(today: `codex-acp`), and the design decisions we've made — including
+the constraints `codex-acp` imposes on what we can do client-side.
 
-## Status quo
+## Status
 
-There are **two MCP configurations in flight** for every session, and they
-don't currently know about each other:
+| Area | Status |
+| --- | --- |
+| MCP source merge (user / codex-global / codex-project) | ✅ shipped |
+| Per-session enable/disable of preconfigured servers | ✅ shipped |
+| `%agent mcp ignore-codex-config on/off` | ✅ shipped |
+| `AvailableCommandsUpdate` capture | ✅ shipped |
+| `%agent commands` listing | ✅ shipped |
+| Client-side slash dispatch / `%agent /name` | ❌ removed — not needed (see below) |
+| Bare-cell `/name` invocation | ✅ works — handled server-side by `codex-acp` |
+| Session-start MCP probe / tool-failure surfacing | 🟡 not yet |
 
-1. **Agent-side / global.** For Codex, `~/.codex/config.toml`'s
-   `[mcp_servers.*]` (and the project-local equivalent). Loaded by
-   `codex-acp` at startup before the ACP handshake. This is how the
-   `jupyter` MCP server was reaching the model in our golden-notebook test,
-   even though `%agent mcp list` reported nothing.
+## Original problem
+
+There were **two MCP configurations in flight** for every session, and
+they didn't know about each other:
+
+1. **Agent-side / global.** `~/.codex/config.toml`'s `[mcp_servers.*]`
+   (and the project-local equivalent). Loaded by `codex-acp` at startup,
+   before the ACP handshake. This is how the `jupyter` MCP server was
+   reaching the model in the golden-notebook test even though
+   `%agent mcp list` reported nothing.
 2. **Kernel-side / per-session.** `KernelState.mcp_servers`, populated by
-   `%agent mcp add`, handed to `codex-acp` via the `mcp_servers` argument
-   on `new_session` / `resume_session`. `%agent mcp list` only knows about
+   `%agent mcp add`, handed to `codex-acp` via the `mcp_servers` arg on
+   `new_session` / `resume_session`. `%agent mcp list` only knew about
    these.
 
-The kernel therefore can't truthfully answer "which MCP servers does this
-session have?" and the user has no way to remove or disable a globally
-preconfigured server for a single notebook.
+The kernel therefore couldn't truthfully answer "which MCP servers does
+this session have?" and the user had no way to remove or disable a
+globally preconfigured server for a single notebook.
 
-### Slash commands
+## What we built (MCP)
 
-ACP has first-class slash commands. The agent sends
-`AvailableCommandsUpdate` notifications listing
-`AvailableCommand{name, description, input?}` entries (`/mcp`, `/init`,
-… for `codex-acp`). Clients are expected to surface them and invoke them
-by name.
-
-Our kernel today:
-
-- ignores `AvailableCommandsUpdate` notifications entirely; and
-- forwards every cell body straight into `session/prompt` as text.
-
-When a user typed `/mcp` in a cell, `codex-acp` received it as a literal
-prompt string — not as a structured slash-command invocation — and either
-ignored it or treated it as a chat message. The TUI's `/mcp` works because
-the TUI itself implements client-side slash-command dispatch.
-
-## Goals
-
-1. `%agent mcp list` reflects reality — every server the session can reach,
-   and where it came from.
-2. The user can disable or override a preconfigured server for one
-   notebook without editing global config.
-3. Slash commands advertised by the agent are discoverable and invokable
-   from the notebook (typing `/mcp` should "just work").
-4. We surface MCP/tool failures loudly enough that a future
-   "golden-notebook newlines"–class incident is a 30-second debug, not a
-   multi-hour one.
-
-## Non-goals
-
-- Editing `~/.codex/config.toml` from the kernel. The kernel reads it,
-  never writes it. Per-session changes live in kernel state only.
-- Reimplementing the Codex TUI's slash-command set in the kernel. We
-  dispatch what the agent advertises; we don't define commands ourselves.
-
-## Plan
-
-### 1. Unify the MCP view — sources & enable/disable
-
-Introduce an explicit `source` and `enabled` on `MCPServer`:
+`MCPServer` now carries `source` and `enabled`:
 
 ```python
 @dataclass
@@ -74,113 +48,121 @@ class MCPServer:
     command: str
     args: list[str] = field(default_factory=list)
     env: dict[str, str] = field(default_factory=dict)
-    source: Literal[
-        "user",            # added via %agent mcp add
-        "codex-global",    # ~/.codex/config.toml
-        "codex-project",   # ./.codex/config.toml
-    ] = "user"
+    source: str = "user"        # "user" | "codex-global" | "codex-project"
     enabled: bool = True
 ```
 
-On `_start_agent()` (and `_resume_session()`):
+On `_start_agent()` / session resume, the kernel:
 
-1. Parse `$CODEX_HOME/config.toml` (default `~/.codex/config.toml`) and
-   any project-local `.codex/config.toml`. Build `MCPServer` entries
-   tagged with the appropriate source.
-2. Merge with the user's `state.mcp_servers`. Collision rule: **user wins
-   by name**, then `codex-project`, then `codex-global`.
-3. Filter `enabled=False`.
-4. Pass the resulting list to `new_session(mcp_servers=...)`.
+1. Parses `$CODEX_HOME/config.toml` (default `~/.codex/config.toml`) and
+   any project-local `.codex/config.toml`, tagging each entry with its
+   source.
+2. Merges with `state.mcp_servers`. **Precedence: `user` > `codex-project`
+   > `codex-global`** (by name).
+3. Filters out anything in `state.disabled_preconfigured` or with
+   `enabled=False`.
+4. Passes the resulting list to `new_session(mcp_servers=...)`.
 
-UI changes:
+User-facing surface:
 
-- `%agent mcp list` shows a `source` column.
-- `%agent mcp disable NAME` flips `enabled=False` (works for any source).
-- `%agent mcp enable NAME` flips it back.
-- `%agent mcp remove NAME` only removes `source="user"` entries; for
-  others it suggests `disable`.
-- `%agent mcp add NAME ...` works as today; explicitly overrides a
-  same-named preconfigured server.
-- New: `%agent mcp ignore-codex-config on|off` toggles the global merge
-  for the current session (off by default = merge enabled).
+- `%agent mcp list` — shows name, source, enabled.
+- `%agent mcp add NAME ...` — adds a `source="user"` entry (overrides
+  same-named preconfigured server).
+- `%agent mcp remove NAME` — only removes `source="user"` entries; for
+  preconfigured ones it suggests `disable`.
+- `%agent mcp disable NAME` / `%agent mcp enable NAME` — flip a flag for
+  any source.
+- `%agent mcp ignore-codex-config on|off` — toggles the global merge for
+  the current session (off by default → merge enabled).
 
-### 2. Wire `AvailableCommandsUpdate` through
+There is intentionally **no** path that writes to `~/.codex/config.toml`
+from the kernel. Per-session changes live in kernel state only.
 
-Two pieces inside the kernel:
+## Slash commands — what we learned
 
-**a. Capture.** Extend the ACP client implementation to handle
-`AvailableCommandsUpdate` and store the latest list on
-`state.available_commands: list[AvailableCommand]`. (The notification
-arrives at any point during a session and replaces the full list each
-time — we just overwrite.)
+ACP has first-class slash commands. The agent sends
+`AvailableCommandsUpdate` notifications listing
+`AvailableCommand{name, description, input?}` entries. Clients are
+expected to surface them so users know what to type.
 
-**b. Dispatch.** In `do_execute`, before magic-command processing, check
-for a leading `/`. If the first token matches a known
-`AvailableCommand.name`, dispatch through the structured slash-command
-path rather than as plain prompt text. Otherwise fall through to the
-existing prompt path (preserves "I genuinely want to send a message
-starting with `/`" behaviour).
+### How `codex-acp` actually dispatches
 
-The exact wire format for invocation needs experimental confirmation
-against `codex-acp` — ACP's prompt object supports an `_meta` field and
-slash commands can carry structured `input`. Two viable shapes:
+After reading `codex-acp/src/thread.rs`, the wire contract is much
+simpler than we assumed during design:
 
-- Send `session/prompt` with the literal command name as the text plus a
-  `_meta` marker indicating it's a registered slash command.
-- Send `session/prompt` with a structured slash-command content block.
+- There is **no special invocation primitive** in ACP for slash commands.
+  `ContentBlock` is only `Text` / `Image` / `Audio` / `Resource` /
+  `ResourceLink`.
+- `codex-acp::handle_prompt` calls `extract_slash_command(items)`, which
+  inspects **only the first `UserInput::Text`'s first line**, strips a
+  leading `/`, and splits on whitespace into `(name, rest)`.
+- Recognised built-in names dispatch to dedicated `Op`s:
+  `review`, `review-branch <branch>`, `review-commit <sha>`, `init`,
+  `compact`, `logout`.
+- Anything else (including `/mcp`, `/model`, `/models`) falls through
+  to `Op::UserInput` as raw text — the model just sees `/mcp` in chat.
+- The list advertised over `AvailableCommandsUpdate` is exactly the six
+  built-ins above. The Codex TUI's extra slashes (`/mcp`, `/model`, …)
+  are TUI-only and never reach an ACP client.
 
-We'll pick whichever `codex-acp` actually recognises and document it in
-this file once verified.
+### Implication for the kernel
 
-**c. Magic surface.** Add:
+The slash command UX is **entirely a function of what the agent
+advertises and what it dispatches server-side**. There is nothing useful
+for the kernel to do beyond forwarding the cell text.
 
-- `%agent commands` — list everything the agent advertised, with
-  description and input hint.
-- `%agent commands NAME [args...]` — explicit invocation form for users
-  who don't want the leading-`/` interception (or for arguments with
-  awkward characters).
+Concretely:
 
-Tab-completion is updated so `%agent commands ` and a bare leading `/`
-both complete from the cached list.
+- A bare cell whose contents start with `/` is sent unchanged through
+  `_send_prompt(code)` → `prompt=[text_block(code)]`. `codex-acp` then
+  parses the slash exactly as the TUI would. `/init`, `/compact`, etc.
+  work this way today.
+- The kernel does **not**:
+  - intercept `/` in `do_execute` (no warning about "unknown slash"),
+  - offer `/` completions in `do_complete`,
+  - support `%agent /name` (returns "Unknown subcommand"),
+  - try to translate `/mcp` or `/models` into anything — those simply
+    aren't codex-acp slash commands.
 
-### 3. Pre-flight visibility & failure surface
+### What we kept
 
-- **Session-start MCP probe.** Immediately after `new_session` succeeds,
-  emit one line per configured MCP server: `mcp: jupyter ✓ (12 tools)`
-  or `mcp: jupyter ✗ failed to start: <error>`. Implementation: call the
-  server's `tools/list` (the kernel already proxies MCP for its own
-  purposes; if it doesn't, codex-acp can be asked via its standard MCP
-  introspection). If we can't probe directly, at minimum print the names
-  and sources of the servers we passed in.
-- **Tool-failure surface.** Track per-tool-name failure counts in the
-  prompt loop. If the same tool returns errors ≥ N times in a row,
-  surface a `stderr` line to the cell — exactly the signal that would
-  have made the `insert_cell` 404 storm obvious in the golden-notebook
-  incident.
+- `AvailableCommandsUpdate` notifications are captured into
+  `state.available_commands` (replace-on-update).
+- `%agent commands` lists the latest advertised commands with their
+  descriptions, so the user can see what's available without leaving
+  the notebook.
 
-## Implementation order
+### Why `%agent commands` shows fewer entries than the TUI
 
-The three areas are largely independent:
+The TUI implements its own client-side dispatcher with extras like
+`/mcp`, `/model`, `/status`, etc. Over ACP, `codex-acp` advertises only
+the six it actually handles. Not a kernel bug — an upstream constraint.
 
-1. **MCP source merge.** Largest immediate win for honesty; unblocks
-   per-session disable. Land first.
-2. **Slash commands.** Same scaffolding the user has been asking for in
-   `%agent`. Lands after (1) because some slash commands themselves
-   operate on MCP state and we want our list to be canonical.
-3. **Health probe & failure surface.** Smallest delta, big debug payoff;
-   land alongside or just after (1).
+## What's still open
 
-## Open questions
+- **Session-start MCP probe.** After `new_session`, print one line per
+  configured server (`mcp: jupyter ✓ (12 tools)` / `mcp: jupyter ✗ <err>`).
+  An earlier prototype emitted unconditional stderr at session start; we
+  removed it because it was noisy and unsolicited. The probe should be
+  on by default but quiet on success — or gated behind something like
+  `ACP_LOG_LEVEL=info`.
+- **Tool-failure surface.** Count per-tool failures during a prompt; if
+  the same tool name errors ≥ N times in a row, surface a stderr line
+  to the cell. This is the signal that would have made the
+  `insert_cell` 404 storm in the golden-notebook incident a 30-second
+  debug.
+- **Upstream: ask codex to advertise more.** If we want `/mcp` and
+  friends to "just work" in notebooks, that's a `codex-acp` change
+  (add them to `builtin_commands()` and `handle_prompt`'s dispatcher),
+  not a kernel change.
 
-- **Slash-command invocation wire format.** Confirm against
-  `codex-acp` 0.43.x by experimentation. Update this doc with the chosen
-  form and a link to the codex-acp source if/when it becomes available.
-- **Project-local config search path.** Match Codex's own search rules
-  (cwd-relative? walk up?) — TBD by inspecting `codex-acp` behaviour.
-- **MCP introspection.** Is there a standard ACP-level call to ask the
-  agent "which MCP servers do you currently have wired in?" If so, we
-  should prefer that over re-parsing `~/.codex/config.toml`. As of ACP
-  0.9, there isn't — hence the merge approach above.
+## Non-goals
+
+- Writing to `~/.codex/config.toml` from the kernel.
+- Reimplementing the Codex TUI's slash-command set client-side. We
+  dispatch what the agent advertises; we don't define commands
+  ourselves. If a slash isn't recognised by `codex-acp`, the model just
+  sees it as text — that's acceptable and predictable.
 
 ## Related documents
 
@@ -190,3 +172,16 @@ The three areas are largely independent:
   — why `jupyter-collaboration` is required for cell-write tools.
 - [docs/codex-lmstudio-shim.md](codex-lmstudio-shim.md) — the LM Studio
   shim that ran underneath the test.
+
+## References
+
+- `codex-acp` slash dispatch: `extract_slash_command` and
+  `handle_prompt` in
+  [`zed-industries/codex-acp` `src/thread.rs`](https://github.com/zed-industries/codex-acp/blob/main/src/thread.rs).
+- Built-in command list: `ThreadActor::builtin_commands()` in the same
+  file — six entries (review, review-branch, review-commit, init,
+  compact, logout).
+- ACP schema: `acp.schema` has `AvailableCommand`,
+  `AvailableCommandsUpdate`, `PromptRequest`, `ContentBlock`
+  (`Text` / `Image` / `Audio` / `Resource` / `ResourceLink`) — no
+  dedicated slash-command block type.
