@@ -9,13 +9,24 @@
     "--memory=10g"
   ],
   // "remoteUser": "root",
+  // Jupyter always listens on 8888 inside the container (it's the only
+  // thing in here, so that's always free). The host-side mapping is
+  // flexible: requireLocalPort=false lets VS Code pick a free local
+  // port whenever 8888 is busy on the host (e.g. Apple Container, or a
+  // sibling devcontainer).
   "forwardPorts": [
     8888
   ],
   "portsAttributes": {
     "8888": {
       "label": "JupyterLab",
-      "requireLocalPort": true
+      "requireLocalPort": false,
+      // `openBrowser` re-fires whenever VS Code re-detects the forward
+      // (e.g. a Jupyter URL printed by `ps aux`, `jupyter notebook
+      // list`, `curl localhost:8888`, or a Ctrl-C restart), which can
+      // open a dozen tabs in a single Codex session. `notify` lets us
+      // click through once and keeps the cascade off.
+      "onAutoForward": "notify"
     }
   },
   "remoteEnv": {
@@ -39,20 +50,27 @@
   },
   "containerEnv": {
     "JUPYTER_PORT": "8888",
-    "GRANT_SUDO": "yes",
+    "GRANT_SUDO": "no",
     "ACP_AGENT_COMMAND": "/home/jovyan/.local/bin/codex-acp",
     "ACP_AGENT_ARGS": "",
     "RESTARTABLE": "yes"
-  }
-  // The LM Studio request shim (flattens Codex 0.130+ "namespace" MCP
-  // tool envelopes that LM Studio rejects) is started by the kernel
-  // itself when an agent is launched; no devcontainer wiring required.
-  // To disable, set ACP_LMSTUDIO_SHIM=off in your shell.
-  // To point at a non-default upstream, set HOST_GATEWAY_IP or
-  // ACP_LMSTUDIO_SHIM_TARGET. See agent_client_kernel/lmstudio_shim.py.
+  },
+  // The LM Studio request shim (workaround for LM Studio bug-tracker
+  // #1810/#1812, where the Responses endpoint rejects Codex 0.130+
+  // "namespace" MCP tool envelopes) is started by start.sh via the
+  // before-notebook.d hook installed by codex/Dockerfile, so it's up
+  // before any agent (kernel-spawned, codex-acp, or shell codex) needs
+  // it. The kernel also calls ensure_running() defensively at agent
+  // launch in case the hook didn't fire.
+  // To disable: ACP_LMSTUDIO_SHIM=off. To override upstream:
+  // HOST_GATEWAY_IP=... or ACP_LMSTUDIO_SHIM_TARGET=...
   //
   // Codespaces ports are private by default so skip the auth token.
   // Need to disable XSRF check for Jupyter MCP servers if auth token is disabled.
-  // If you need auth or don't mind the token, then just `jupyter lab` will do the trick.
-  // "postStartCommand": "start.sh jupyter lab --NotebookApp.token='' --ServerApp.disable_check_xsrf=True > /tmp/jupyter.log 2>&1 &"
+  // start.sh runs the before-notebook.d hooks (including the LM Studio
+  // shim) and then launches Jupyter Lab. `--no-browser` keeps Jupyter
+  // itself from invoking webbrowser.open() (which in a devcontainer
+  // goes through VS Code's URL handler and opens a host tab every
+  // restart).
+  // "postStartCommand": "nohup start.sh jupyter lab --no-browser --IdentityProvider.token='' --ServerApp.disable_check_xsrf=True > /tmp/jupyter.log 2>&1 &"
 }

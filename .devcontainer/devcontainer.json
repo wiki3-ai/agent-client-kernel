@@ -50,6 +50,7 @@
   },
   "containerEnv": {
     "JUPYTER_PORT": "8888",
+    "GRANT_SUDO": "no",
     "ACP_AGENT_COMMAND": "/home/jovyan/.local/bin/codex-acp",
     "ACP_AGENT_ARGS": "",
     "RESTARTABLE": "yes"
