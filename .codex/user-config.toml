@@ -7,21 +7,6 @@
 
 profile = "lmstudio-qwen3-coder"
 
-[mcp_servers.jupyter]
-command = "uvx"
-args = ["jupyter-mcp-server@latest"]
-# uvx may need to download/build the package on first invocation; the
-# 30s default trips on cold caches. Bump generously — Codex only waits
-# this long once at startup.
-startup_timeout_sec = 180
-# jupyter-mcp-server >=1.0.0 needs to know where the Jupyter server lives
-# and (for v1.0.0+) which MCP_TOKEN the client will present. The devcontainer
-# starts jupyter lab on :8888 with `--IdentityProvider.token=''`, so
-# JUPYTER_TOKEN is empty. MCP_TOKEN is only enforced for HTTP transport
-# (we use stdio) but the server still reads it for its own bookkeeping —
-# set a non-empty value to keep it happy.
-env = { JUPYTER_URL = "http://localhost:8888", JUPYTER_TOKEN = "", MCP_TOKEN = "local-stdio" }
-
 [profiles.lmstudio-qwen3-coder]
 model = "qwen/qwen3-coder-next"
 model_provider = "local_lmstudio"
