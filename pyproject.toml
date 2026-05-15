@@ -35,6 +35,9 @@ dependencies = [
     # 404s and the agent falls back to hand-rolling nbformat JSON, which
     # frequently produces malformed (single-line) cells.
     "jupyter-collaboration",
+    # https://github.com/openags/paper-search-mcp
+    # Install with `pip install paper-search-mcp`
+    "paper-search-mcp",
 ]
 
 # Note: jupyter-mcp-server is intentionally NOT a runtime dependency.
