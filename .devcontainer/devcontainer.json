@@ -72,5 +72,12 @@
   // itself from invoking webbrowser.open() (which in a devcontainer
   // goes through VS Code's URL handler and opens a host tab every
   // restart).
-  // "postStartCommand": "nohup start.sh jupyter lab --no-browser --IdentityProvider.token='' --ServerApp.disable_check_xsrf=True > /tmp/jupyter.log 2>&1 &"
+  // --ServerApp.cookie_secret_file pins the HMAC secret used to sign
+  // login cookies to a path under $HOME (which is a mounted volume), so
+  // the secret survives container rebuilds. Without this Jupyter
+  // regenerates a random secret each start, invalidating every cookie
+  // the VS Code Jupyter extension / Simple Browser / system browser
+  // cached from the previous run — which shows up as a flood of
+  // "Clearing invalid/expired login cookie" warnings on each request.
+  "postStartCommand": "nohup start.sh jupyter lab --no-browser --IdentityProvider.token='' --ServerApp.disable_check_xsrf=True --ServerApp.cookie_secret_file=/home/jovyan/.jupyter/cookie_secret > /tmp/jupyter.log 2>&1 &"
 }

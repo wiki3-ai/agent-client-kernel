@@ -27,7 +27,7 @@ dependencies = [
     "ipympl",
     "ipywidgets",
     "matplotlib",
-    "jupyter-ai",
+    # "jupyter-ai",
     # Required by the standalone `uvx jupyter-mcp-server` process so its
     # cell-mutation tools (insert_cell, overwrite_cell_source, ...) can
     # reach the YDoc collaboration endpoint at
